@@ -12,10 +12,10 @@ class SantriController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
         $query = santri::all();
-        return view ('dashboard.index',compact('query','request'));
+        return view ('dashboard.index',compact('query'));
     }
 
     /**
