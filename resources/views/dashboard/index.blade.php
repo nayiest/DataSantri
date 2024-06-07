@@ -36,7 +36,7 @@
         <div class="content-wrapper pb-0">
           <div class="page-header flex-wrap">
             <div class="header-left">
-              <button class="btn btn-primary mb-2 mb-md-0 mr-2" href="{{ route('tambahsantri') }}"> Add New Data </button>
+              <button class="btn btn-primary mb-2 mb-md-0 mr-2" href=""> Add New Data </button>
               <button class="btn btn-outline-primary bg-white mb-2 mb-md-0"> Import documents </button>
             </div>
             <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
@@ -48,7 +48,7 @@
                   <p class="m-0">ADE-00234</p>
                 </a>
               </div>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" href="{{ route('tambahsantri') }}">
+              <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" href="">
                 <i class="mdi mdi-plus-circle" ></i> Add Prodcut </button>
             </div>
           </div>
