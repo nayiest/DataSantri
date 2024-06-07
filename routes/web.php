@@ -14,13 +14,13 @@ use App\Http\Controllers\SantriController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
-Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
+Route::get('/datasantri',[SantriController::class, 'index'])->name('dashboarddata');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 route::get('/dashboard/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri');
