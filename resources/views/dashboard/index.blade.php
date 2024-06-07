@@ -1,7 +1,7 @@
-@extends('template.main')
-    @section('konten')
 <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
+    @extends('template.main')
+        @section('konten')
         
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
