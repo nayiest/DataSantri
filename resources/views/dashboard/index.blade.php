@@ -1,8 +1,7 @@
-
+@extends('template.main')
+    @section('konten')
 <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
-    @extends('template.main')
-    @section('konten')
         
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -36,7 +35,7 @@
         <div class="content-wrapper pb-0">
           <div class="page-header flex-wrap">
             <div class="header-left">
-              <button class="btn btn-primary mb-2 mb-md-0 mr-2" href="{{ route('tambahsantri') }}"> Add New Data </button>
+              <button class="btn btn-primary mb-2 mb-md-0 mr-2" href=""> Add New Data </button>
               <button class="btn btn-outline-primary bg-white mb-2 mb-md-0"> Import documents </button>
             </div>
             <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
