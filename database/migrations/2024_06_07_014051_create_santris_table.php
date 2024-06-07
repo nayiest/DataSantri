@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_santri');
             $table->string('gender_santri');
             $table->integer('angkatan_santri');
+            $table->integer('ttl_santri');
             $table->timestamps();
         });
     }
