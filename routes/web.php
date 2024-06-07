@@ -21,5 +21,8 @@ Route::get('/', function () {
 
 
 Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
-Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
-Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+// Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
+// Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+Route::get('/santri/formaddsantri',[SantriController::class, 'create'])->name('tambahsantri');
+Route::get('/santri/prosestambahsantri',[SantriController::class, 'store'])->name('storetambahsantri');
+

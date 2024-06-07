@@ -23,15 +23,35 @@ class SantriController extends Controller
      */
     public function create()
     {
-        //
+        $querysantri = Santri::all();
+        return view('datasantri.tambah',compact('querysantri'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSantriRequest $request)
+
+    public function __construct(){
+        $this->santri = new Santri;
+    }
+
+    public function store(Request $request)
     {
-        //
+        $rules= [
+            'namasantri' => 'required',
+            'jeniskelamin' => 'required',
+            'angkatan' => 'required'
+        ];
+
+        $this->validate($request, $rules,);
+
+        $this->santri->nama_santri = $request->namasantri;
+        $this->santri->jenis_kelamin = $request->jeniskelamin;
+        $this->santri->angkatan = $request->angkatan;
+
+        $this->santri->save();
+
+        return redirect()->route('santri')->with('status', 'Data santri berhasil ditambahkan!'); 
     }
 
     /**
