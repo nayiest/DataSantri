@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\PelanggaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\Controllers\SantriController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('welcome');
 });
 
@@ -23,3 +24,12 @@ Route::get('/', function () {
 Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+
+
+
+
+// PELANGGARAN
+Route::resource('pelanggaran', PelanggaranController::class);
+Route::post('/pelanggaran/updatepelanggaran',[PelanggaranController::class, 'update'])->name('updatepelanggaranmodal');
+Route::get('/pelanggaran/hapuspelanggaran/{id}',[PelanggaranController::class, 'destroy'])->name('hapuspelanggaran');
+Route::get('/pelanggaran',[PelanggaranController::class, 'index'])->name('indexpelanggaran');

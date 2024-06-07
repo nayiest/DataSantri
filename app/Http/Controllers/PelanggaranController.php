@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\pelanggaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class PelanggaranController extends Controller
 {
@@ -12,7 +13,9 @@ class PelanggaranController extends Controller
      */
     public function index()
     {
-        //
+        $query = pelanggaran::all();
+    
+        return view('pelanggaran.index',compact('query'));
     }
 
     /**
@@ -20,7 +23,7 @@ class PelanggaranController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -28,7 +31,13 @@ class PelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pelanggaran = new Pelanggaran;
+
+        $pelanggaran->nama_pelanggaran = $request->namapelanggaran;
+
+        $pelanggaran->save();
+
+        return redirect()->route('indexpelanggaran')->with('add','Data Buku Berhasil ditambahkan');
     }
 
     /**
