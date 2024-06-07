@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_santri');
+            $table->string('gender_santri');
+            $table->integer('angkatan_santri');
             $table->timestamps();
         });
     }
