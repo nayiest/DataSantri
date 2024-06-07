@@ -14,7 +14,7 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $query = santri::all();
+        $query = Santri::all();
         return view ('dashboard.index',compact('query'));
     }
 
