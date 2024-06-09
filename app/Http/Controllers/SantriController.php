@@ -89,15 +89,21 @@ class SantriController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         $edit = Santri::findOrFail($id);
         $query = Santri::all();
         return view ('santri.edit',compact('edit'));
         return view ('santri.edit',compact('query'));
+=======
+        $edit = Buku::FindOrfail($id);
+        return view ('datasantri.edit', compact('edit'));
+>>>>>>> 220f9f8dcf9f200ca434f570baf9a9fb0baed74d
     }
 
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
     public function update(Request $request, $id)
     {
         $santri = santri::findOrFail($id);
@@ -123,6 +129,18 @@ class SantriController extends Controller
         
         $santri->save();
         return redirect()->route('santri')->with('success','Data Buku Berhasil diupdate');
+=======
+    public function update(UpdateSantriRequest $request, $id)
+    {
+        $update = Buku::FindOrFail($id);
+        
+        $update ->nama_santri = $request->namabuku;
+        $update ->gender_santri = $request->genrebuku;
+        $update ->angkatan_santri = $request->jumlahbuku;
+
+        $update->save();
+        return redirect()->route('santri');
+>>>>>>> 220f9f8dcf9f200ca434f570baf9a9fb0baed74d
     }
 
     /**
@@ -130,8 +148,14 @@ class SantriController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         $hapus = santri::findOrFail($id);
         $hapus->delete();
         return redirect()->route('santri')->with('destroy','Data Buku Berhasil dihapus');
+=======
+        $hapus = Santri::FindOrFail($id);
+        $hapus->delete();
+        return redirect()->route('santri');
+>>>>>>> 220f9f8dcf9f200ca434f570baf9a9fb0baed74d
     }
 }
