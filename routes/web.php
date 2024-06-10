@@ -35,6 +35,7 @@ Route::post('/santri/store',[SantriController::class, 'store'])->name('storetamb
 
 
 
+
 // PELANGGARAN
 Route::resource('pelanggaran', PelanggaranController::class);
 Route::post('/pelanggaran/updatepelanggaran',[PelanggaranController::class, 'update'])->name('updatepelanggaranmodal');

@@ -11,11 +11,18 @@
             @csrf
             <div class="form-group">
               <label for="Masukan Nama Santri">Nama Santri</label>
-              <input type="text" class="form-control" value="{{$edit['nama_santri']}}" name="namasantri" />
+              <input type="text" value="{{$edit['nama_santri']}}" class="form-control" value="{{$edit['nama_santri']}}" name="namasantri" />
             </div>
-        
-            <button type="submit" class="btn btn-primary mr-2"> Submit </button>
-            <button class="btn btn-light">Cancel</button>
+            <div class="form-group">
+              <label for="Masukan Gender Santri">Nama Santri</label>
+              <input type="text" value="{{$edit['gender_santri']}}" class="form-control" value="{{$edit['gender_santri']}}" name="gendersantri" />
+            </div>
+            <div class="form-group">
+              <label for="Masukan Angkatan Santri">Nama Santri</label>
+              <input type="text" value="{{$edit['angkatan_santri']}}" class="form-control" value="{{$edit['angkatan_santri']}}" name="angkatansantri" />
+            </div>
+            <button type="submit" class="btn btn-primary mr-2"> Edit </button>
+
           </form>
         </div>
       </div>

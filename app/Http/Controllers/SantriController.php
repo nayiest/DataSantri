@@ -65,24 +65,34 @@ class SantriController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Santri $santri)
+    public function edit($id)
     {
-        //
+        $edit = Buku::FindOrfail($id);
+        return view ('datasantri.edit', compact('edit'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSantriRequest $request, Santri $santri)
+    public function update(UpdateSantriRequest $request, $id)
     {
-        //
+        $update = Buku::FindOrFail($id);
+        
+        $update ->nama_santri = $request->namabuku;
+        $update ->gender_santri = $request->genrebuku;
+        $update ->angkatan_santri = $request->jumlahbuku;
+
+        $update->save();
+        return redirect()->route('santri');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Santri $santri)
+    public function destroy($id)
     {
-        //
+        $hapus = Santri::FindOrFail($id);
+        $hapus->delete();
+        return redirect()->route('santri');
     }
 }
