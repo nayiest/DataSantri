@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\SantriController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SantriController;
+use App\Http\Controllers\PelanggaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+
+Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
+// Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
+// Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+Route::get('/santri/formaddsantri',[SantriController::class, 'create'])->name('tambahsantri');
+Route::get('/santri/prosestambahsantri',[SantriController::class, 'store'])->name('storetambahsantri');
+
+
+Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
-Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah'); 
+Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+
+Route::get('/datasantri',[SantriController::class, 'index'])->name('dashboarddata');
+
+Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
+
+Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
+Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri');
 Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
 Route::get('show/{id}',[SantriController::class, 'show'])->name('detailsantri');
