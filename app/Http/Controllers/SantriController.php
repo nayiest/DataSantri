@@ -44,6 +44,7 @@ class SantriController extends Controller
         // $this->validate($request, $rules, $message);
 
         $santri = new santri();
+        $test = 1;
 
         $filePath = public_path('storage/images');
         $santri->nama_santri = $request->nama_santri;
