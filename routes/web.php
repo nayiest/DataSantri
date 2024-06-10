@@ -19,9 +19,6 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-
-
-
 Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
 // Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 // Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
