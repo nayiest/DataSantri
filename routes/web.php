@@ -14,9 +14,10 @@ use App\Http\Controllers\SantriController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 
 
 
@@ -25,4 +26,8 @@ Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
 // Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 Route::get('/santri/formaddsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::get('/santri/prosestambahsantri',[SantriController::class, 'store'])->name('storetambahsantri');
+
+Route::get('/datasantri',[SantriController::class, 'index'])->name('dashboarddata');
+Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
+Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 
