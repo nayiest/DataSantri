@@ -100,7 +100,8 @@ class SantriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $santri = santri::findOrFail($id);
+        $filePath = public_path('storage/images');
+        $santri = Santri::findOrFail($id);
         $santri->nama_santri = $request->nama_santri;
         $santri->jk_santri = $request->jk_santri;
         $santri->angkatan_santri = $request->angkatan_santri;
