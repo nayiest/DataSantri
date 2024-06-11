@@ -43,6 +43,10 @@ Route::get('/datasantri',[SantriController::class, 'index'])->name('santri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 
+route::put('/dashboard/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
+route::get('/dashboard/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
+
+
 
 
 
