@@ -1,626 +1,997 @@
-<div class="container-scroller">
-    <!-- partial:partials/_sidebar.html -->
-    @extends('template.main')
-        @section('konten')
-        
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div id="settings-trigger"><i class="mdi mdi-settings"></i></div>
-      <div id="theme-settings" class="settings-panel">
-        <i class="settings-close mdi mdi-close"></i>
-        <p class="settings-heading">SIDEBAR SKINS</p>
-        <div class="sidebar-bg-options selected" id="sidebar-default-theme">
-          <div class="img-ss rounded-circle bg-light border mr-3"></div>Default
-        </div>
-        <div class="sidebar-bg-options" id="sidebar-dark-theme">
-          <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
-        </div>
-        <p class="settings-heading mt-2">HEADER SKINS</p>
-        <div class="color-tiles mx-0 px-4">
-          <div class="tiles default primary"></div>
-          <div class="tiles success"></div>
-          <div class="tiles warning"></div>
-          <div class="tiles danger"></div>
-          <div class="tiles info"></div>
-          <div class="tiles dark"></div>
-          <div class="tiles light"></div>
-        </div>
-      </div>
-      <!-- partial -->
-      <!-- partial:partials/_navbar.html -->
-      
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper pb-0">
-          <div class="page-header flex-wrap">
-            <div class="header-left">
-              <button class="btn btn-primary mb-2 mb-md-0 mr-2" href=""> Add New Data </button>
-              <button class="btn btn-outline-primary bg-white mb-2 mb-md-0"> Import documents </button>
-            </div>
-            <div class="header-right d-flex flex-wrap mt-2 mt-sm-0">
-              <div class="d-flex align-items-center">
-                <a href="#">
-                  <p class="m-0 pr-3">Dashboard</p>
-                </a>
-                <a class="pl-3 mr-4" href="#">
-                  <p class="m-0">ADE-00234</p>
-                </a>
-              </div>
-              <button type="button" class="btn btn-primary mt-2 mt-sm-0 btn-icon-text" href="">
-                <i class="mdi mdi-plus-circle" ></i> Add Prodcut </button>
-            </div>
-          </div>
+<!DOCTYPE html>
+<html lang="en">
 
-          <!-- TABLE START -->
-          <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Data Santri</h4>
-                  <p class="card-description"> Add class <code>.table-bordered</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nama Santri</th>
-                          <th>Jenis Kelamin</th>
-                          <th>Angkatan</th>
-                          
-                        </tr>
-                      </thead>
-                      <tbody>
-                          <?php
-                          $no = 1;
-                      ?>  
-                      @foreach ($query as $item)
-                      <tr>
-                          <td>{{$no}}</td>
-                          <td>{{$item->nama_santri}}</td>
-                          <td>{{$item->gender_santri}}</td>
-                          <td>{{$item->angkatan_santri}}</td>
-                          {{-- <td>{{$item->nama_penerbit}}</td> --}}
-                          {{-- <td class="text-center">
-                              <a class="btn btn-warning rounded-pill m-2" href="{{route('editbuku',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                              <a class="btn btn-light rounded-pill m-2" href="{{route('hapusbuku',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
-                          </td> --}}
-                      </tr>
-                      <?php
-                          $no++;
-                          ?>
-                      @endforeach
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- TABLE END -->
-          
-          
-          {{-- CHART START --}}
-          <div class="row">
-            <div class="col-sm-6 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <div class="card-title"> Customers <small class="d-block text-muted">August 01 - August 31</small>
-                    </div>
-                    <div class="d-flex text-muted font-20">
-                      <i class="mdi mdi-printer mouse-pointer"></i>
-                      <i class="mdi mdi-help-circle-outline ml-2 mouse-pointer"></i>
-                    </div>
-                  </div>
-                  <h3 class="font-weight-bold mb-0"> 2,409 <span class="text-success h5">4,5%<i class="mdi mdi-arrow-up"></i></span>
-                  </h3>
-                  <span class="text-muted font-13">Avg customers/Day</span>
-                  <div class="line-chart-wrapper">
-                    <canvas id="linechart" height="80"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <div class="card-title"> Conversions <small class="d-block text-muted">August 01 - August 31</small>
-                    </div>
-                    <div class="d-flex text-muted font-20">
-                      <i class="mdi mdi-printer mouse-pointer"></i>
-                      <i class="mdi mdi-help-circle-outline ml-2 mouse-pointer"></i>
-                    </div>
-                  </div>
-                  <h3 class="font-weight-bold mb-0"> 0.40% <span class="text-success h5">0.20%<i class="mdi mdi-arrow-up"></i></span>
-                  </h3>
-                  <span class="text-muted font-13">Avg customers/Day</span>
-                  <div class="bar-chart-wrapper">
-                    <canvas id="barchart" height="80"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- CHART END -->
-         
-         
-         <!-- image card row starts here -->
-          <div class="row">
-            <div class="col-sm-4 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img class="img-fluid w-100" src="{{ asset('plus-admin') }}/assets/images/dashboard/img_1.jpg" alt="" />
-                </div>
-                <div class="card-body px-3 text-dark">
-                  <div class="d-flex justify-content-between">
-                    <p class="text-muted font-13 mb-0">ENTIRE APARTMENT</p>
-                    <i class="mdi mdi-heart-outline"></i>
-                  </div>
-                  <h5 class="font-weight-semibold"> Cosy Studio flat in London </h5>
-                  <div class="d-flex justify-content-between font-weight-semibold">
-                    <p class="mb-0">
-                      <i class="mdi mdi-star star-color pr-1"></i>4.60 (35) </p>
-                    <p class="mb-0">$5,267/night</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img class="img-fluid w-100" src="{{ asset('plus-admin') }}/assets/images/dashboard/img_2.jpg" alt="" />
-                </div>
-                <div class="card-body px-3 text-dark">
-                  <div class="d-flex justify-content-between">
-                    <p class="text-muted font-13 mb-0">ENTIRE APARTMENT</p>
-                    <i class="mdi mdi-heart-outline"></i>
-                  </div>
-                  <h5 class="font-weight-semibold"> Victoria Bedsit Studio Ensuite </h5>
-                  <div class="d-flex justify-content-between font-weight-semibold">
-                    <p class="mb-0">
-                      <i class="mdi mdi-star star-color pr-1"></i>4.83 (12) </p>
-                    <p class="mb-0">$6,144/night</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-4 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body p-0">
-                  <img class="img-fluid w-100" src="{{ asset('plus-admin') }}/assets/images/dashboard/img_3.jpg" alt="" />
-                </div>
-                <div class="card-body px-3 text-dark">
-                  <div class="d-flex justify-content-between">
-                    <p class="text-muted font-13 mb-0">ENTIRE APARTMENT</p>
-                    <i class="mdi mdi-heart-outline"></i>
-                  </div>
-                  <h5 class="font-weight-semibold">Fabulous Huge Room</h5>
-                  <div class="d-flex justify-content-between font-weight-semibold">
-                    <p class="mb-0">
-                      <i class="mdi mdi-star star-color pr-1"></i>3.83 (15) </p>
-                    <p class="mb-0">$5,267/night</p>
-        
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- table row starts here -->
-          <div class="row">
-            <div class="col-xl-4 grid-margin">
-              <div class="card card-stat stretch-card mb-3">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <div class="text-white">
-                      <h3 class="font-weight-bold mb-0">$168.90</h3>
-                      <h6>This Month</h6>
-                      <div class="badge badge-danger">23%</div>
-                    </div>
-                    <div class="flot-bar-wrapper">
-                      <div id="column-chart" class="flot-chart"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card stretch-card mb-3">
-                <div class="card-body d-flex flex-wrap justify-content-between">
-                  <div>
-                    <h4 class="font-weight-semibold mb-1 text-black"> Member Profit </h4>
-                    <h6 class="text-muted">Average Weekly Profit</h6>
-                  </div>
-                  <h3 class="text-success font-weight-bold">+168.900</h3>
-                </div>
-              </div>
-              <div class="card stretch-card mb-3">
-                <div class="card-body d-flex flex-wrap justify-content-between">
-                  <div>
-                    <h4 class="font-weight-semibold mb-1 text-black"> Total Profit </h4>
-                    <h6 class="text-muted">Weekly Customer Orders</h6>
-                  </div>
-                  <h3 class="text-success font-weight-bold">+6890.00</h3>
-                </div>
-              </div>
-              <div class="card mt-3">
-                <div class="card-body d-flex flex-wrap justify-content-between">
-                  <div>
-                    <h4 class="font-weight-semibold mb-1 text-black"> Issue Reports </h4>
-                    <h6 class="text-muted">System bugs and issues</h6>
-                  </div>
-                  <h3 class="text-danger font-weight-bold">-8380.00</h3>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-8 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body pb-0">
-                  <h4 class="card-title mb-0">Financial management review</h4>
-                </div>
-                <div class="card-body p-0">
-                  <div class="table-responsive">
-                    <table class="table custom-table text-dark">
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>Sale Rate</th>
-                          <th>Actual</th>
-                          <th>Variance</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face2.jpg" class="mr-2" alt="image" /> Jacob Jensen </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">85%</span>
-                              <select id="star-1" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>32,435</td>
-                          <td>40,234</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face3.jpg" class="mr-2" alt="image" /> Cecelia Bradley </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">55%</span>
-                              <select id="star-2" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>4,36780</td>
-                          <td>765728</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face4.jpg" class="mr-2" alt="image" /> Leah Sherman </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">23%</span>
-                              <select id="star-3" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>2300</td>
-                          <td>22437</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face5.jpg" class="mr-2" alt="image" /> Ina Curry </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">44%</span>
-                              <select id="star-4" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>53462</td>
-                          <td>1,75938</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face7.jpg" class="mr-2" alt="image" /> Lida Fitzgerald </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">65%</span>
-                              <select id="star-5" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>67453</td>
-                          <td>765377</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face2.jpg" class="mr-2" alt="image" /> Stella Johnson </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">49%</span>
-                              <select id="star-6" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>43662</td>
-                          <td>96535</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <img src="{{ asset('plus-admin') }}/assets/images/faces/face9.jpg" class="mr-2" alt="image" /> Maria Ortiz </td>
-                          <td>
-                            <div class="d-flex">
-                              <span class="pr-2 d-flex align-items-center">65%</span>
-                              <select id="star-7" name="rating" autocomplete="off">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select>
-                            </div>
-                          </td>
-                          <td>76555</td>
-                          <td>258546</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <a class="text-black font-13 d-block pt-2 pb-2 pb-lg-0 font-weight-bold pl-4" href="#">Show more</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- doughnut chart row starts -->
-          <div class="row">
-            <div class="col-sm-12 stretch-card grid-margin">
-              <div class="card">
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="card border-0">
-                      <div class="card-body">
-                        <div class="card-title">Channel Sessions</div>
-                        <div class="d-flex flex-wrap">
-                          <div class="doughnut-wrapper w-50">
-                            <canvas id="doughnutChart1" width="100" height="100"></canvas>
-                          </div>
-                          <div id="doughnut-chart-legend" class="pl-lg-3 rounded-legend align-self-center flex-grow legend-vertical legend-bottom-left"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card border-0">
-                      <div class="card-body">
-                        <div class="card-title">News Sessions</div>
-                        <div class="d-flex flex-wrap">
-                          <div class="doughnut-wrapper w-50">
-                            <canvas id="doughnutChart2" width="100" height="100"></canvas>
-                          </div>
-                          <div id="doughnut-chart-legend2" class="pl-lg-3 rounded-legend align-self-center flex-grow legend-vertical legend-bottom-left"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="card border-0">
-                      <div class="card-body">
-                        <div class="card-title">Device Sessions</div>
-                        <div class="d-flex flex-wrap">
-                          <div class="doughnut-wrapper w-50">
-                            <canvas id="doughnutChart3" width="100" height="100"></canvas>
-                          </div>
-                          <div id="doughnut-chart-legend3" class="pl-lg-3 rounded-legend align-self-center flex-grow legend-vertical legend-bottom-left"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- last row starts here -->
-          <div class="row">
-            <div class="col-sm-6 col-xl-4 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <div class="card-title mb-2">Upcoming events (3)</div>
-                  <h3 class="mb-3">23 september 2019</h3>
-                  <div class="d-flex border-bottom border-top py-3">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" checked /></label>
-                    </div>
-                    <div class="pl-2">
-                      <span class="font-12 text-muted">Tue, Mar 5, 9.30am</span>
-                      <p class="m-0 text-black"> Hey I attached some new PSD files… </p>
-                    </div>
-                  </div>
-                  <div class="d-flex border-bottom py-3">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" /></label>
-                    </div>
-                    <div class="pl-2">
-                      <span class="font-12 text-muted">Mon, Mar 11, 4.30 PM</span>
-                      <p class="m-0 text-black"> Discuss performance with manager </p>
-                    </div>
-                  </div>
-                  <div class="d-flex border-bottom py-3">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" /></label>
-                    </div>
-                    <div class="pl-2">
-                      <span class="font-12 text-muted">Tue, Mar 5, 9.30am</span>
-                      <p class="m-0 text-black">Meeting with Alisa</p>
-                    </div>
-                  </div>
-                  <div class="d-flex pt-3">
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" /></label>
-                    </div>
-                    <div class="pl-2">
-                      <span class="font-12 text-muted">Mon, Mar 11, 4.30 PM</span>
-                      <p class="m-0 text-black"> Hey I attached some new PSD files… </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-xl-4 stretch-card grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex border-bottom mb-4 pb-2">
-                    <div class="hexagon">
-                      <div class="hex-mid hexagon-warning">
-                        <i class="mdi mdi-clock-outline"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h4 class="font-weight-bold text-warning mb-0"> 12.45 </h4>
-                      <h6 class="text-muted">Schedule Meeting</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex border-bottom mb-4 pb-2">
-                    <div class="hexagon">
-                      <div class="hex-mid hexagon-danger">
-                        <i class="mdi mdi-account-outline"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h4 class="font-weight-bold text-danger mb-0">34568</h4>
-                      <h6 class="text-muted">Profile visits</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex border-bottom mb-4 pb-2">
-                    <div class="hexagon">
-                      <div class="hex-mid hexagon-success">
-                        <i class="mdi mdi-laptop-chromebook"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h4 class="font-weight-bold text-success mb-0"> 33.50% </h4>
-                      <h6 class="text-muted">Bounce Rate</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex border-bottom mb-4 pb-2">
-                    <div class="hexagon">
-                      <div class="hex-mid hexagon-info">
-                        <i class="mdi mdi-clock-outline"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h4 class="font-weight-bold text-info mb-0">12.45</h4>
-                      <h6 class="text-muted">Schedule Meeting</h6>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <div class="hexagon">
-                      <div class="hex-mid hexagon-primary">
-                        <i class="mdi mdi-timer-sand"></i>
-                      </div>
-                    </div>
-                    <div class="pl-4">
-                      <h4 class="font-weight-bold text-primary mb-0"> 12.45 </h4>
-                      <h6 class="text-muted mb-0">Browser Usage</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-xl-4 stretch-card grid-margin">
-              <div class="card color-card-wrapper">
-                <div class="card-body">
-                  <img class="img-fluid card-top-img w-100" src="{{ asset('plus-admin') }}/assets/images/dashboard/img_5.jpg" alt="" />
-                  <div class="d-flex flex-wrap justify-content-around color-card-outer">
-                    <div class="col-6 p-0 mb-4">
-                      <div class="color-card primary m-auto">
-                        <i class="mdi mdi-clock-outline"></i>
-                        <p class="font-weight-semibold mb-0">Delivered</p>
-                        <span class="small">15 Packages</span>
-                      </div>
-                    </div>
-                    <div class="col-6 p-0 mb-4">
-                      <div class="color-card bg-success m-auto">
-                        <i class="mdi mdi-tshirt-crew"></i>
-                        <p class="font-weight-semibold mb-0">Ordered</p>
-                        <span class="small">72 Items</span>
-                      </div>
-                    </div>
-                    <div class="col-6 p-0">
-                      <div class="color-card bg-info m-auto">
-                        <i class="mdi mdi-trophy-outline"></i>
-                        <p class="font-weight-semibold mb-0">Arrived</p>
-                        <span class="small">34 Upgraded</span>
-                      </div>
-                    </div>
-                    <div class="col-6 p-0">
-                      <div class="color-card bg-danger m-auto">
-                        <i class="mdi mdi-presentation"></i>
-                        <p class="font-weight-semibold mb-0">Reported</p>
-                        <span class="small">72 Support</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Navbar - Mazer Admin Dashboard</title>
+    
+    
+    
+    
+    <link rel="shortcut icon" href="{{ asset('template/dist') }}/assets/compiled/svg/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAYAAADRcLDBAAAEs2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMzIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMzQiCiAgIGV4aWY6Q29sb3JTcGFjZT0iMSIKICAgdGlmZjpJbWFnZVdpZHRoPSIzMyIKICAgdGlmZjpJbWFnZUxlbmd0aD0iMzQiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249Ijk2LjAiCiAgIHRpZmY6WVJlc29sdXRpb249Ijk2LjAiCiAgIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiCiAgIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIKICAgeG1wOk1vZGlmeURhdGU9IjIwMjItMDMtMzFUMTA6NTA6MjMrMDI6MDAiCiAgIHhtcDpNZXRhZGF0YURhdGU9IjIwMjItMDMtMzFUMTA6NTA6MjMrMDI6MDAiPgogICA8eG1wTU06SGlzdG9yeT4KICAgIDxyZGY6U2VxPgogICAgIDxyZGY6bGkKICAgICAgc3RFdnQ6YWN0aW9uPSJwcm9kdWNlZCIKICAgICAgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWZmaW5pdHkgRGVzaWduZXIgMS4xMC4xIgogICAgICBzdEV2dDp3aGVuPSIyMDIyLTAzLTMxVDEwOjUwOjIzKzAyOjAwIi8+CiAgICA8L3JkZjpTZXE+CiAgIDwveG1wTU06SGlzdG9yeT4KICA8L3JkZjpEZXNjcmlwdGlvbj4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz5V57uAAAABgmlDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kc8rRFEUxz9maORHo1hYKC9hISNGTWwsRn4VFmOUX5uZZ36oeTOv954kW2WrKLHxa8FfwFZZK0WkZClrYoOe87ypmWTO7dzzud97z+nec8ETzaiaWd4NWtYyIiNhZWZ2TvE946WZSjqoj6mmPjE1HKWkfdxR5sSbgFOr9Ll/rXoxYapQVik8oOqGJTwqPL5i6Q5vCzeo6dii8KlwpyEXFL519LjLLw6nXP5y2IhGBsFTJ6ykijhexGra0ITl5bRqmWU1fx/nJTWJ7PSUxBbxJkwijBBGYYwhBgnRQ7/MIQIE6ZIVJfK7f/MnyUmuKrPOKgZLpEhj0SnqslRPSEyKnpCRYdXp/9++msneoFu9JgwVT7b91ga+LfjetO3PQ9v+PgLvI1xkC/m5A+h7F32zoLXug38dzi4LWnwHzjeg8UGPGbFfySvuSSbh9QRqZ6H+Gqrm3Z7l9zm+h+iafNUV7O5Bu5z3L/wAdthn7QIme0YAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAJTSURBVFiF7Zi9axRBGIefEw2IdxFBRQsLWUTBaywSK4ubdSGVIY1Y6HZql8ZKCGIqwX/AYLmCgVQKfiDn7jZeEQMWfsSAHAiKqPiB5mIgELWYOW5vzc3O7niHhT/YZvY37/swM/vOzJbIqVq9uQ04CYwCI8AhYAlYAB4Dc7HnrOSJWcoJcBS4ARzQ2F4BZ2LPmTeNuykHwEWgkQGAet9QfiMZjUSt3hwD7psGTWgs9pwH1hC1enMYeA7sKwDxBqjGnvNdZzKZjqmCAKh+U1kmEwi3IEBbIsugnY5avTkEtIAtFhBrQCX2nLVehqyRqFoCAAwBh3WGLAhbgCRIYYinwLolwLqKUwwi9pxV4KUlxKKKUwxC6ZElRCPLYAJxGfhSEOCz6m8HEXvOB2CyIMSk6m8HoXQTmMkJcA2YNTHm3congOvATo3tE3A29pxbpnFzQSiQPcB55IFmFNgFfEQeahaAGZMpsIJIAZWAHcDX2HN+2cT6r39GxmvC9aPNwH5gO1BOPFuBVWAZue0vA9+A12EgjPadnhCuH1WAE8ivYAQ4ohKaagV4gvxi5oG7YSA2vApsCOH60WngKrA3R9IsvQUuhIGY00K4flQG7gHH/mLytB4C42EgfrQb0mV7us8AAMeBS8mGNMR4nwHamtBB7B4QRNdaS0M8GxDEog7iyoAguvJ0QYSBuAOcAt71Kfl7wA8DcTvZ2KtOlJEr+ByyQtqqhTyHTIeB+ONeqi3brh+VgIN0fohUgWGggizZFTplu12yW8iy/YLOGWMpDMTPXnl+Az9vj2HERYqPAAAAAElFTkSuQmCC" type="image/png">
+  <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app.css">
+  <script src="https://kit.fontawesome.com/14732ec0b9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
+</head>
 
-          <div>
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block"> Distributed By: <a href="https://themewagon.com/" target="_blank">Themewagon</a></span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
+<body>
+    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
+    <div id="app">
+        <div id="sidebar">
+            <div class="sidebar-wrapper active">
+    <div class="sidebar-header position-relative">
+        <div class="d-flex justify-content-between align-items-center" >
+            <div class="logo">
+                <a href=" {{ route('santri') }}">IB Data</a>
+            </div>
+            <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                    role="img" class="iconify iconify--system-uicons" width="20" height="20"
+                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
+                    <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path
+                            d="M10.5 14.5c2.219 0 4-1.763 4-3.982a4.003 4.003 0 0 0-4-4.018c-2.219 0-4 1.781-4 4c0 2.219 1.781 4 4 4zM4.136 4.136L5.55 5.55m9.9 9.9l1.414 1.414M1.5 10.5h2m14 0h2M4.135 16.863L5.55 15.45m9.899-9.9l1.414-1.415M10.5 19.5v-2m0-14v-2"
+                            opacity=".3"></path>
+                        <g transform="translate(-210 -1)">
+                            <path d="M220.5 2.5v2m6.5.5l-1.5 1.5"></path>
+                            <circle cx="220.5" cy="11.5" r="4"></circle>
+                            <path d="m214 5l1.5 1.5m5 14v-2m6.5-.5l-1.5-1.5M214 18l1.5-1.5m-4-5h2m14 0h2"></path>
+                        </g>
+                    </g>
+                </svg>
+                <div class="form-check form-switch fs-6">
+                    <input class="form-check-input  me-0" type="checkbox" id="toggle-dark" style="cursor: pointer">
+                    <label class="form-check-label"></label>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
+                    role="img" class="iconify iconify--mdi" width="20" height="20" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="m17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 4l1.06-3l1.06 3l3.19.09m3.5 6.91l-1.64 1.25l.59 1.98l-1.7-1.17l-1.7 1.17l.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95l2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85c-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14c.4-.4.82-.76 1.27-1.08c.75-.53 1.93.36 1.85 1.19c-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82c-2.81 3.14-2.7 7.96.31 10.98c3.02 3.01 7.84 3.12 10.98.31Z">
+                    </path>
+                </svg>
+            </div>
+            <div class="sidebar-toggler  x">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+            
+            <li
+                class="sidebar-item ">
+                <a href="index.html" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item ">
+                <a href="pelanggaran" class='sidebar-link'>
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>Pelanggaran</span>
+                </a>
+                
+
+            </li>
+
+           <!-- < <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-stack"></i>
+                    <span>Components</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-accordion.html" class="submenu-link">Accordion</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-alert.html" class="submenu-link">Alert</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-badge.html" class="submenu-link">Badge</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-breadcrumb.html" class="submenu-link">Breadcrumb</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-button.html" class="submenu-link">Button</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-card.html" class="submenu-link">Card</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-carousel.html" class="submenu-link">Carousel</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-collapse.html" class="submenu-link">Collapse</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-dropdown.html" class="submenu-link">Dropdown</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-list-group.html" class="submenu-link">List Group</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-modal.html" class="submenu-link">Modal</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-navs.html" class="submenu-link">Navs</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-pagination.html" class="submenu-link">Pagination</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-progress.html" class="submenu-link">Progress</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-spinner.html" class="submenu-link">Spinner</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-toasts.html" class="submenu-link">Toasts</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="component-tooltip.html" class="submenu-link">Tooltip</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-collection-fill"></i>
+                    <span>Extra Components</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-avatar.html" class="submenu-link">Avatar</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-divider.html" class="submenu-link">Divider</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-date-picker.html" class="submenu-link">Date Picker</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-sweetalert.html" class="submenu-link">Sweet Alert</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-toastify.html" class="submenu-link">Toastify</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="extra-component-rating.html" class="submenu-link">Rating</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item active has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Layouts</span>
+                </a>
+                
+                <ul class="submenu active">
+                    
+                    <li class="submenu-item  ">
+                        <a href="layout-default.html" class="submenu-link">Default Layout</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="layout-vertical-1-column.html" class="submenu-link">1 Column</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item active ">
+                        <a href="layout-vertical-navbar.html" class="submenu-link">Vertical Navbar</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="layout-rtl.html" class="submenu-link">RTL Layout</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="layout-horizontal.html" class="submenu-link">Horizontal Menu</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li class="sidebar-title">Forms &amp; Tables</li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-hexagon-fill"></i>
+                    <span>Form Elements</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-input.html" class="submenu-link">Input</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-input-group.html" class="submenu-link">Input Group</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-select.html" class="submenu-link">Select</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-radio.html" class="submenu-link">Radio</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-checkbox.html" class="submenu-link">Checkbox</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-element-textarea.html" class="submenu-link">Textarea</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="form-layout.html" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>Form Layout</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-journal-check"></i>
+                    <span>Form Validation</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-validation-parsley.html" class="submenu-link">Parsley</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-pen-fill"></i>
+                    <span>Form Editor</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-editor-quill.html" class="submenu-link">Quill</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-editor-ckeditor.html" class="submenu-link">CKEditor</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-editor-summernote.html" class="submenu-link">Summernote</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="form-editor-tinymce.html" class="submenu-link">TinyMCE</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="table.html" class='sidebar-link'>
+                    <i class="bi bi-grid-1x2-fill"></i>
+                    <span>Table</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
+                    <span>Datatables</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="table-datatable.html" class="submenu-link">Datatable</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="table-datatable-jquery.html" class="submenu-link">Datatable (jQuery)</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li class="sidebar-title">Extra UI</li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-pentagon-fill"></i>
+                    <span>Widgets</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-widgets-chatbox.html" class="submenu-link">Chatbox</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-widgets-pricing.html" class="submenu-link">Pricing</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-widgets-todolist.html" class="submenu-link">To-do List</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-egg-fill"></i>
+                    <span>Icons</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-icons-bootstrap-icons.html" class="submenu-link">Bootstrap Icons </a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-icons-fontawesome.html" class="submenu-link">Fontawesome</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-icons-dripicons.html" class="submenu-link">Dripicons</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-bar-chart-fill"></i>
+                    <span>Charts</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-chart-chartjs.html" class="submenu-link">ChartJS</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-chart-apexcharts.html" class="submenu-link">Apexcharts</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="ui-file-uploader.html" class='sidebar-link'>
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                    <span>File Uploader</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-map-fill"></i>
+                    <span>Maps</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-map-google-map.html" class="submenu-link">Google Map</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="ui-map-jsvectormap.html" class="submenu-link">JS Vector Map</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-three-dots"></i>
+                    <span>Multi-level Menu</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  has-sub">
+                        <a href="#" class="submenu-link">First Level</a>
+                        
+                        <ul class="submenu submenu-level-2 ">
+
+                            
+                            <li class="submenu-item ">
+                                <a href="ui-multi-level-menu.html" class="submenu-link">Second Level</a>
+                            </li>
+                            
+                            <li class="submenu-item ">
+                                <a href="#" class="submenu-link">Second Level Menu</a>
+                            </li>
+                            
+
+                        </ul>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  has-sub">
+                        <a href="#" class="submenu-link">Another Menu</a>
+                        
+                        <ul class="submenu submenu-level-2 ">
+
+                            
+                            <li class="submenu-item ">
+                                <a href="#" class="submenu-link">Second Level Menu</a>
+                            </li>
+                            
+
+                        </ul>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li class="sidebar-title">Pages</li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="application-email.html" class='sidebar-link'>
+                    <i class="bi bi-envelope-fill"></i>
+                    <span>Email Application</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="application-chat.html" class='sidebar-link'>
+                    <i class="bi bi-chat-dots-fill"></i>
+                    <span>Chat Application</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="application-gallery.html" class='sidebar-link'>
+                    <i class="bi bi-image-fill"></i>
+                    <span>Photo Gallery</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="application-checkout.html" class='sidebar-link'>
+                    <i class="bi bi-basket-fill"></i>
+                    <span>Checkout Page</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-person-badge-fill"></i>
+                    <span>Authentication</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="auth-login.html" class="submenu-link">Login</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="auth-register.html" class="submenu-link">Register</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="auth-forgot-password.html" class="submenu-link">Forgot Password</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i class="bi bi-x-octagon-fill"></i>
+                    <span>Errors</span>
+                </a>
+                
+                <ul class="submenu ">
+                    
+                    <li class="submenu-item  ">
+                        <a href="error-403.html" class="submenu-link">403</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="error-404.html" class="submenu-link">404</a>
+                        
+                    </li>
+                    
+                    <li class="submenu-item  ">
+                        <a href="error-500.html" class="submenu-link">500</a>
+                        
+                    </li>
+                    
+                </ul>
+                
+
+            </li>
+            
+            <li class="sidebar-title">Raise Support</li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
+                    <i class="bi bi-life-preserver"></i>
+                    <span>Documentation</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
+                    <i class="bi bi-puzzle"></i>
+                    <span>Contribute</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item  ">
+                <a href="https://github.com/zuramai/mazer#donation" class='sidebar-link'>
+                    <i class="bi bi-cash"></i>
+                    <span>Donate</span>
+                </a>
+                
+
+            </li>>
+         -->
+            
+        </ul>
+    </div>
+</div>
+        </div>
+        <div id="main" class='layout-navbar navbar-fixed'>
+            <header>
+                <nav class="navbar navbar-expand navbar-light navbar-top">
+                    <div class="container-fluid">
+                        <a href="#" class="burger-btn d-block">
+                            <i class="bi bi-justify fs-3"></i>
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-lg-0">
+                                <li class="nav-item dropdown me-1">
+                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class='bi bi-envelope bi-sub fs-4'></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                        <li>
+                                            <h6 class="dropdown-header">Mail</h6>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown me-3">
+                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                        <i class='bi bi-bell bi-sub fs-4'></i>
+                                        <span class="badge badge-notification bg-danger">7</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="dropdownMenuButton">
+                                        <li class="dropdown-header">
+                                            <h6>Notifications</h6>
+                                        </li>
+                                        <li class="dropdown-item notification-item">
+                                            <a class="d-flex align-items-center" href="#">
+                                                <div class="notification-icon bg-primary">
+                                                    <i class="bi bi-cart-check"></i>
+                                                </div>
+                                                <div class="notification-text ms-4">
+                                                    <p class="notification-title font-bold">Successfully check out</p>
+                                                    <p class="notification-subtitle font-thin text-sm">Order ID #256</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="dropdown-item notification-item">
+                                            <a class="d-flex align-items-center" href="#">
+                                                <div class="notification-icon bg-success">
+                                                    <i class="bi bi-file-earmark-check"></i>
+                                                </div>
+                                                <div class="notification-text ms-4">
+                                                    <p class="notification-title font-bold">Homework submitted</p>
+                                                    <p class="notification-subtitle font-thin text-sm">Algebra math homework</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <p class="text-center py-2 mb-0"><a href="#">See all notification</a></p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="dropdown">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="user-menu d-flex">
+                                        <div class="user-name text-end me-3">
+                                            <h6 class="mb-0 text-gray-600">John Ducky</h6>
+                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                        </div>
+                                        <div class="user-img d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="{{ asset('template/dist') }}/assets/compiled/jpg/1.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
+                                    <li>
+                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                                            Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                            Settings</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
+                                            Wallet</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><i
+                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="main-content">                
+                                  
+
+                
+                <div class=" text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h3 class="mb-0">Data Santri</h3>
+                        <center>
+                            <div class="card-body">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
+                                            aria-controls="home" aria-selected="true">Card</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
+                                            aria-controls="profile" aria-selected="false">Table</a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
+                                            aria-controls="contact" aria-selected="false">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </center>
+                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahsantri')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
+                    </div>
+                </div>
 
 
-@endsection
+                        
+                   
+
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                            
+                            
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <br>
+
+
+                                        {{-- Table Card Data --}}
+
+                                        <div class="page-content"> 
+                                            <section class="row">
+                                                
+                                                @foreach ($query as $item)
+                                                <div class="col-12 col-lg-4" >
+                                                    <div class="row">
+                                                        <div class="column">
+                        
+                                                            <div class="card">
+                                                                <div class="card-body py-4 px-4">
+                                                                    <div class="d-flex align-items-center">
+                                                                            
+                                                                        <div class="avatar avatar-xl">
+                                                                            <img src="storage/images/{{ $item->photo_santri }}">
+                                                                        </div>
+                                                                        <div class="ms-3 name">
+                                                                            <h5 class="font-bold">{{$item->nama_santri}}</h5>
+                                                                            <h6 class="text-muted mb-0">{{$item->angkatan_santri}}</h6>
+                                                                        </div>
+                                                                    </div>
+                                                                    <br>
+                                                                    
+                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
+                                                                        <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
+                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
+                        
+                                                                    
+                                                                </div>
+                                                            </div>
+                        
+                                                        
+                                                        </div>
+                                                 </div>
+                        
+                                                </div>
+                                                    @endforeach
+                                                    
+                                            </section>
+                                        </div>
+
+
+
+                                        
+                                    </div>
+                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br>
+                                        
+
+
+                                        <div class="card">
+                                            <div class="card-body py-4 px-4">
+                                        <table class="table text-start align-right table-bordered table-hover mb-0 ">
+
+                                            <h5 class="card-title">Table Data Santri</h5><br>
+                                            <thead>
+                                                <tr class="text-white">
+                                                    <th scope="col">No</th>
+                                                    <th scope="col">Nama Santri</th>
+                                                    <th scope="col">Angkatan</th>
+                                                    <th scope="col">Jenis Kelamin</th>
+                                                    <th scope="col">Ttl</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                    $no = 1;
+                                                ?>  
+                                                @foreach ($query as $item)
+                                                <tr>
+                                                    <td>{{$no}}</td>
+                                                    <td>{{$item->nama_santri}}</td>
+                                                    <td>{{$item->angkatan_santri}}</td>
+                                                    <td>{{$item->jk_santri}}</td>
+                                                    <td>{{$item->tgllahir_santri}}</td>
+                                                    <td class="text-center">
+                                                        <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
+                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
+                                                    </td>
+                                                </tr>
+                                                <?php
+                                                    $no++;
+                                                    ?>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                    </div>
+                                    {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
+                                        
+                                    </div> --}}
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                
+                
+                </div>
+            
+        </div>
+    </div>
+    <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    
+    <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
+
+
+
+
+</style>
+    
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+      
+    
+</body>
+</html>

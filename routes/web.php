@@ -31,3 +31,6 @@ Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->nam
 Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
 Route::get('show/{id}',[SantriController::class, 'show'])->name('detailsantri');
 Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri'); 
+
+//pelanggaran
+route::get('/pelanggaran',[pelanggarancontroller::class, 'index'])->name('tambahpelanggaran');
