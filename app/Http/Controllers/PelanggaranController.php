@@ -23,7 +23,8 @@ class PelanggaranController extends Controller
      */
     public function create()
     {
-       
+        $query = pelanggaran::all();
+        return view('pelanggaran.tambah',compact('query'));
     }
 
     /**
@@ -33,11 +34,14 @@ class PelanggaranController extends Controller
     {
         $pelanggaran = new Pelanggaran;
 
+        $pelanggaran->nama_santri = $request->namasantri;
         $pelanggaran->nama_pelanggaran = $request->namapelanggaran;
+        $pelanggaran->kategori_pelanggaran = $request->kategoripelanggaran;
+
 
         $pelanggaran->save();
 
-        return redirect()->route('indexpelanggaran')->with('add','Data Buku Berhasil ditambahkan');
+        return redirect()->route('pelanggaran')->with('add','Data Pelanggaran Santri Berhasil ditambahkan');
     }
 
     /**
@@ -45,8 +49,11 @@ class PelanggaranController extends Controller
      */
     public function show(pelanggaran $pelanggaran)
     {
-        //
+        $pelanggaran = pelanggaran::findOrFail($id);
+
+        return view('pelanggaran.store',compact('pelanggaran'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.
