@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_santri');
-            $table->string('gender_santri');
-            $table->integer('angkatan_santri');
+            $table->string('jk_santri');
+            $table->string('angkatan_santri');
+            $table->date('tgllahir_santri');
+            $table->string('domisili_santri');
+            $table->string('alamat_santri');
+            $table->string('photo_santri');
             $table->timestamps();
         });
     }
