@@ -12,7 +12,7 @@ class PelanggaranController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {  
         $query = pelanggaran::all();
     
         return view('pelanggaran.index',compact('query'));
@@ -49,7 +49,7 @@ class PelanggaranController extends Controller
      */
     public function show(pelanggaran $pelanggaran)
     {
-        $pelanggaran = pelanggaran::findOrFail($id);
+        $pelanggaran = pelanggaran::findOrFail();
 
         return view('pelanggaran.store',compact('pelanggaran'));
     }

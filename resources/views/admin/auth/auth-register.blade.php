@@ -22,7 +22,7 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            <div class="auth-logo">
+            <div class="auth-logo"> 
                 <a href="index.html"><img src="{{ asset('template/dist') }}/assets/compiled/svg/logo.svg" alt="Logo"></a>
             </div>
             <h1 class="auth-title">Sign Up</h1>

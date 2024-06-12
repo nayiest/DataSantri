@@ -42,7 +42,7 @@ Route::middleware('auth:admin')->group(function () {
                 ->middleware('throttle:6,1')
                 ->name('admin.verification.send');
 
-    Route::get('admin/confirm-password', [ConfirmablePasswordController::class, 'show'])
+    Route::get('admin/confirm-password', [ConfirmablePasswordController::class, 'show']) 
                 ->name('admin.password.confirm');
 
     Route::post('admin/confirm-password', [ConfirmablePasswordController::class, 'store']);
