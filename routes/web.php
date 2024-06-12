@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    
+     
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 // >>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
 Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
