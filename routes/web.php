@@ -65,3 +65,7 @@ Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->nam
 route::get('/pelanggaran',[pelanggarancontroller::class, 'index'])->name('pelanggaran');
 route::get('/pelanggaran/addpelanggaran', [pelanggarancontroller::class, 'create'])->name('tambahpelanggaran');
 Route::post('/pelanggaran/store',[pelanggaranController::class, 'store'])->name('storepelanggaran');
+Route::get('/pelanggaran/formeditpelanggaran/{id}',[pelanggaranController::class, 'edit'])->name('editpelanggaran'); 
+Route::put('/pelanggaran/updatepelanggaran/{id}',[pelanggaranController::class, 'update'])->name('updatepelanggaran');
+Route::get('show/{id}',[pelanggaranController::class, 'show'])->name('detailpelanggaran');
+Route::get('/pelanggaran/hapuspelanggaran/{id}',[pelanggaranController::class, 'destroy'])->name('hapuspelanggaran');
