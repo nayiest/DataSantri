@@ -1,7 +1,19 @@
 <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
-    @extends('template.main')
-        @section('konten')
+    @extends('template.chart')
+        @section('chart')
+             <!-- Chart Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Doughnut Chart</h6>
+                            <canvas id="doughnut-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chart End -->
         
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -102,8 +114,8 @@
           <!-- TABLE END -->
           
           
-          {{-- CHART START --}}
-          <div class="row">
+          CHART START
+          {{-- <div class="row">
             <div class="col-sm-6 stretch-card grid-margin">
               <div class="card">
                 <div class="card-body">
@@ -144,7 +156,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- CHART END -->
          
          
@@ -203,7 +215,6 @@
                     <p class="mb-0">
                       <i class="mdi mdi-star star-color pr-1"></i>3.83 (15) </p>
                     <p class="mb-0">$5,267/night</p>
-        
                   </div>
                 </div>
               </div>
@@ -298,7 +309,7 @@
             </div>
           </div>
           <!-- doughnut chart row starts -->
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-sm-12 stretch-card grid-margin">
               <div class="card">
                 <div class="row">
@@ -344,7 +355,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- last row starts here -->
           <div class="row">
             <div class="col-sm-6 col-xl-4 stretch-card grid-margin">

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <body>
     <script>
@@ -5,20 +6,20 @@
     
     // Doughnut Chart
 var query = {!! $query !!};
-const namabuku = [];
-const genrebuku = [];
-const jumlahbuku = [];
+const nama_santri = [];
+const angkatan_santri = [];
+const jk_santri = [];
 
 $.each(query,function(key,val){
-    namabuku.push(val.nama_buku);
-    genrebuku.push(val.genre_buku);
-    jumlahbuku.push(val.jumlah_buku);
+    nama_santri.push(val. nama_santri);
+    angkatan_santri.push(val.angkatan_santri);
+    jk_santri.push(val.jk_santri);
 });
 var ctx6 = $("#doughnut-chart").get(0).getContext("2d");
 var myChart6 = new Chart(ctx6, {
     type: "doughnut",
     data: {
-        labels: namabuku,
+        labels: namasantri,
         datasets: [{
             backgroundColor: [
                 "rgba(60, 60, 60 .7)",
@@ -27,7 +28,7 @@ var myChart6 = new Chart(ctx6, {
                 "rgba(180, 180, 180 .4)",
                 "rgba(200, 200, 200 .3)"
             ],
-            data: jumlahbuku
+            data: santri
         }]
     },
     options: {
