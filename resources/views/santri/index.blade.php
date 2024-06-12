@@ -18,6 +18,13 @@
 
 <body>
     <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
+    <div class="row">
+        <div class="col">
+            <div class="card-body">
+                {!! $angkatansantrichart->container() !!}
+            </div>
+        </div>
+    </div>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
@@ -962,6 +969,9 @@
             
         </div>
     </div>
+    <script src="{{ $angkatansantrichart->cdn() }}"></script>
+
+    {{ $angkatansantrichart->script() }}
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
