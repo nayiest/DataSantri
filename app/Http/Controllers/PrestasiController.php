@@ -46,10 +46,9 @@ class PrestasiController extends Controller
         $prestasi = new prestasi();
         $test = 1;
 
-        $filePath = public_path('storage');
         $prestasi->nama_santri = $request->nama_santri;
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
-        $prestasi->angkatan_santri = $request->keterangan_prestasi;
+        $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
 
         $prestasi->save();
 
@@ -82,7 +81,7 @@ class PrestasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $filePath = public_path('storage');
+        
         $prestasi = prestasi::findOrFail($id); 
         $prestasi->nama_santri = $request->nama_santri;
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
@@ -99,6 +98,6 @@ class PrestasiController extends Controller
     {
         $hapus = prestasi::findOrFail($id);
         $hapus->delete();
-        return redirect()->route('santri')->with('destroy','Data Prestasi Berhasil dihapus');
+        return redirect()->route('prestasi')->with('destroy','Data Prestasi Berhasil dihapus');
     }
 }

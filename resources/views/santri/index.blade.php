@@ -89,6 +89,16 @@
 
             </li>
 
+            <li
+            class="sidebar-item ">
+            <a href="prestasi" class='sidebar-link'>
+                <i class="bi bi-trophy"></i>
+              <span>prestasi</span>
+            </a>
+            
+
+        </li>
+
            <!-- < <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -841,7 +851,7 @@
                                 </ul>
                             </div>
                         </center>
-                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahsantri')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
+                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahprestasi')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
                     </div>
                 </div>
 
