@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\prestasi;
+use App\Http\Requests\StoreprestasiRequest;
+use App\Http\Requests\UpdateprestasiRequest;
 use Illuminate\Http\Request;
 
 class PrestasiController extends Controller
@@ -12,7 +14,8 @@ class PrestasiController extends Controller
      */
     public function index()
     {
-        //
+        $query = Prestasi::all();
+        return view ('prestasi.index',compact('query'));
     }
 
     /**
@@ -20,7 +23,8 @@ class PrestasiController extends Controller
      */
     public function create()
     {
-        //
+        $query = Prestasi::all();
+        return view('prestasi.tambah',compact('query'));
     }
 
     /**
@@ -28,38 +32,73 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // $rules = [
+        //     'nama_santri' => 'required',
+        //     'kategori_prestasi' => 'required'
+        //    'keterangan_prestasi' => 'required'
+        // ];
+        // $message = [
+        //     'required' => 'data yang di input tidak sesuai'
+        // ];
+
+        // $this->validate($request, $rules, $message);
+
+        $prestasi = new prestasi();
+        $test = 1;
+
+        $filePath = public_path('storage');
+        $prestasi->nama_santri = $request->nama_santri;
+        $prestasi->kategori_prestasi = $request->kategori_prestasi;
+        $prestasi->angkatan_santri = $request->keterangan_prestasi;
+
+        $prestasi->save();
+
+        return redirect()->route('prestasi')->with('add','Data Prestasi Berhasil ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(prestasi $prestasi)
+    public function show(string $id)
     {
-        //
+        $prestasi = Prestasi::findOrFail($id);
+
+        return view('prestasi.detail',compact('prestasi'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(prestasi $prestasi)
+    public function edit($id)
     {
-        //
+        $edit = Prestasi::findOrFail($id);
+        $query = Prestasi::all();
+        return view ('prestasi.edit',compact('edit'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, prestasi $prestasi)
+    public function update(Request $request, $id)
     {
-        //
+        $filePath = public_path('storage');
+        $prestasi = prestasi::findOrFail($id); 
+        $prestasi->nama_santri = $request->nama_santri;
+        $prestasi->kategori_prestasi = $request->kategori_prestasi;
+        $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
+
+        $prestasi->save();
+        return redirect()->route('prestasi')->with('success','Data Prestasi Berhasil diupdate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(prestasi $prestasi)
+    public function destroy($id)
     {
-        //
+        $hapus = prestasi::findOrFail($id);
+        $hapus->delete();
+        return redirect()->route('santri')->with('destroy','Data Prestasi Berhasil dihapus');
     }
 }
