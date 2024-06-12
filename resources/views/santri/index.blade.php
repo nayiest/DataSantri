@@ -18,6 +18,12 @@
 
 <body>
     <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
+    <div class="row">
+        <div class="col">
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
@@ -75,7 +81,7 @@
             
             <li
                 class="sidebar-item ">
-                <a href="index.html" class='sidebar-link'>
+                <a href="pelanggaran" class='sidebar-link'>
                     <i class="bi bi-exclamation-triangle"></i>
                     <span>Pelanggaran</span>
                 </a>
@@ -1015,6 +1021,7 @@
             
         </div>
     </div>
+  
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     

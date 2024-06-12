@@ -35,6 +35,7 @@ Route::post('/santri/store',[SantriController::class, 'store'])->name('storetamb
 Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri');
 Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
 Route::get('show/{id}',[SantriController::class, 'show'])->name('detailsantri');
+
 Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
 
 });
@@ -50,3 +51,11 @@ Route::get('/admin/dashboard', function () {
 })->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
 
 require __DIR__.'/adminauth.php';
+
+Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri'); 
+
+//pelanggaran
+route::get('/pelanggaran',[pelanggarancontroller::class, 'index'])->name('pelanggaran');
+route::get('/pelanggaran/addpelanggaran', [pelanggarancontroller::class, 'create'])->name('tambahpelanggaran');
+Route::post('/pelanggaran/store',[pelanggaranController::class, 'store'])->name('storepelanggaran');
+
