@@ -1,7 +1,19 @@
 <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
-    @extends('template.main')
-        @section('konten')
+    @extends('template.chart')
+        @section('chart')
+             <!-- Chart Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Doughnut Chart</h6>
+                            <canvas id="doughnut-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chart End -->
         
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
@@ -80,6 +92,9 @@
                           <td>{{$item->nama_santri}}</td>
                           <td>{{$item->gender_santri}}</td>
                           <td>{{$item->angkatan_santri}}</td>
+                          <td class="text-center">
+                            <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
+                            <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
                           {{-- <td>{{$item->nama_penerbit}}</td> --}}
                           {{-- <td class="text-center">
                               <a class="btn btn-warning rounded-pill m-2" href="{{route('editbuku',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
@@ -99,8 +114,8 @@
           <!-- TABLE END -->
           
           
-          {{-- CHART START --}}
-          <div class="row">
+          CHART START
+          {{-- <div class="row">
             <div class="col-sm-6 stretch-card grid-margin">
               <div class="card">
                 <div class="card-body">
@@ -141,7 +156,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- CHART END -->
          
          
@@ -200,7 +215,6 @@
                     <p class="mb-0">
                       <i class="mdi mdi-star star-color pr-1"></i>3.83 (15) </p>
                     <p class="mb-0">$5,267/night</p>
-        
                   </div>
                 </div>
               </div>
@@ -295,7 +309,7 @@
             </div>
           </div>
           <!-- doughnut chart row starts -->
-          <div class="row">
+          {{-- <div class="row">
             <div class="col-sm-12 stretch-card grid-margin">
               <div class="card">
                 <div class="row">
@@ -341,7 +355,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- last row starts here -->
           <div class="row">
             <div class="col-sm-6 col-xl-4 stretch-card grid-margin">

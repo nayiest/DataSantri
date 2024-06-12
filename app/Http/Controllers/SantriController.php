@@ -112,7 +112,7 @@ class SantriController extends Controller
         $santri->alamat_santri = $request->alamat_santri;
         $santri->photo_santri = $request->photo_santri;
        
-        
+         
         // SAVE IMAGE
         
         if ($request->hasFile('photo_santri')){

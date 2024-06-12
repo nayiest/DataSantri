@@ -883,14 +883,14 @@
                                                 <div class="card-body">
                                                     <form class="form">
                                                         <div class="row">
+                                                           
                                                             <div class="col-md-6 col-12">
-                                                                <div class="form-group">
-                                                                    <label for="first-name-column">Nama Santri</label>
+                                                                <div class="mb-3">
+                                                                    <label for="first-name-column">nama_santri</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
-                                                                        placeholder="Nama Santri" name="nama_santri">
+                                                                        placeholder="Nama santri" name="nama_santri">
                                                                 </div>
-                                                            </div>
-                                                            
+                                                            </div> 
 
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">

@@ -18,7 +18,7 @@ class PrestasiController extends Controller
         return view ('prestasi.index',compact('query'));
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      */
     public function create()

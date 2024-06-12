@@ -862,9 +862,9 @@
                                                 @foreach ($query as $item)
                                                 <tr>
                                                     <td>{{$no}}</td>
-                                                    <td>{{$item->Nama_santri}}</td>
-                                                    <td>{{$item->Pelanggaran_santri}}</td>
-                                                    <td>{{$item->KategoriPelanggaran_santri}}</td>
+                                                    <td>{{$item->nama_santri}}</td>
+                                                    <td>{{$item->nama_pelanggaran}}</td>
+                                                    <td>{{$item->kategori_pelanggaran}}</td>
                                                  
                                                     <td class="text-center">
                                                         <a class="btn btn-warning rounded-pill m-2" href="{{route('editpelanggaran',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
