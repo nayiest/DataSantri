@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    @extends('template.chart')
-@section('chart')
-             <!-- Chart Start -->
-             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-4">
-                        <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Doughnut Chart</h6>
-                            <canvas id="doughnut-chart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Chart End -->
 
 <head>
     <meta charset="UTF-8">
@@ -28,6 +14,9 @@
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+@extends('template.chart')
+
 
 <body>
 
@@ -85,7 +74,7 @@
             
             <li
                 class="sidebar-item ">
-                <a href="dashboard" class='sidebar-link'>
+                <a href="index.html" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -904,7 +893,7 @@
                                     </li>
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
-                                            aria-controls="contact" aria-selected="false">Contact</a>
+                                            aria-controls="contact" aria-selected="false">Chart</a>
                                     </li>
                                 </ul>
                             </div>
@@ -945,6 +934,7 @@
 
                                         <div class="page-content"> 
                                             <section class="row">
+                                                
                                                 
                                                 @foreach ($query as $item)
                                                 <div class="col-12 col-lg-4" >
@@ -1038,9 +1028,21 @@
 
 
                                     </div>
-                                    {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
-                                        
-                                    </div> --}}
+                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
+                                        @section('chart')
+                                        <!-- Chart Start -->
+                                        <div class="container-fluid pt-4 px-4">
+                                            <div class="row g-4">
+                                                <div class="col-sm-12 col-xl-4">
+                                                    <div class="bg-secondary rounded h-100 p-4">
+                                                        <h6 class="mb-4">Doughnut Chart</h6>
+                                                        <canvas id="doughnut-chart"></canvas>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Chart End -->
+                                    </div>
                                 </div>
                             </div>
                         
