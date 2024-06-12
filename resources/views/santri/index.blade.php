@@ -82,7 +82,7 @@
             
             <li
                 class="sidebar-item ">
-                <a href="index.html" class='sidebar-link'>
+                <a href="pelanggaran" class='sidebar-link'>
                     <i class="bi bi-exclamation-triangle"></i>
                     <span>Pelanggaran</span>
                 </a>
