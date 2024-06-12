@@ -80,6 +80,9 @@
                           <td>{{$item->nama_santri}}</td>
                           <td>{{$item->gender_santri}}</td>
                           <td>{{$item->angkatan_santri}}</td>
+                          <td class="text-center">
+                            <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
+                            <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
                           {{-- <td>{{$item->nama_penerbit}}</td> --}}
                           {{-- <td class="text-center">
                               <a class="btn btn-warning rounded-pill m-2" href="{{route('editbuku',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
