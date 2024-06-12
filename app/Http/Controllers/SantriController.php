@@ -17,7 +17,6 @@ class SantriController extends Controller
         // $data =  new santri;
         $query = Santri::all();
         return view ('santri.index',compact('request','query'));
-
     }
 
     /**
