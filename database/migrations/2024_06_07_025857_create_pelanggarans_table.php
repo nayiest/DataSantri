@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('pelanggarans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_santri');
+            $table->string('nama_pelanggaran');
+            $table->string('kategori_pelanggaran'); 
             $table->timestamps();
         });
     }
