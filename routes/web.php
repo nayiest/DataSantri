@@ -53,10 +53,9 @@ Route::get('/admin/dashboard', function () {
 
 require __DIR__.'/adminauth.php';
 
-Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri'); 
+Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
 
 //pelanggaran
 route::get('/pelanggaran',[pelanggarancontroller::class, 'index'])->name('pelanggaran');
 route::get('/pelanggaran/addpelanggaran', [pelanggarancontroller::class, 'create'])->name('tambahpelanggaran');
 Route::post('/pelanggaran/store',[pelanggaranController::class, 'store'])->name('storepelanggaran');
-
