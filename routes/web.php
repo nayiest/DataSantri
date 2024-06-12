@@ -20,10 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
-=======
+// =======
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,7 +35,8 @@ Route::middleware('auth')->group(function () {
 
     
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
->>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
+// >>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
+Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri');
