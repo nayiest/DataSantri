@@ -49,18 +49,21 @@ class PelanggaranController extends Controller
      */
     public function show(pelanggaran $pelanggaran)
     {
-        $pelanggaran = pelanggaran::findOrFail();
+        $pelanggaran = pelanggaran::findOrFail($id);
 
-        return view('pelanggaran.store',compact('pelanggaran'));
+        return view('pelanggaran.detail',compact('pelanggaran'));
     }
     
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(pelanggaran $pelanggaran)
+    public function edit($id)
     {
-        //
+        $edit = pelanggaran::findOrFail($id);
+        $query = pelanggaran::all();
+        return view ('pelanggaran.edit',compact('edit'));
+        return view ('pelanggaran.edit',compact('query'));
     }
 
     /**
@@ -68,14 +71,22 @@ class PelanggaranController extends Controller
      */
     public function update(Request $request, pelanggaran $pelanggaran)
     {
-        //
+        $pelanggaran = pelanggaran::findOrFail($id); 
+        $pelanggaran->nama_santri = $request->nama_santri;
+        $pelanggaran->jenis_pelanggaran = $request->jenis_pelanggaran;
+        $pelanggaran->kategori_pelanggaran = $request->kategori_pelanggaran;
+
+        $pelanggaran->save();
+        return redirect()->route('pelanggaran')->with('success','Data Pelanggaran Berhasil diupdate');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(pelanggaran $pelanggaran)
+    public function destroy($id)
     {
-        //
+        $hapus = pelanggaran::findOrFail($id);
+        $hapus->delete();
+        return redirect()->route('pelanggaran')->with('destroy','Data Pelanggaran Berhasil dihapus');
     }
 }
