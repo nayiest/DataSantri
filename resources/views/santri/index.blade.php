@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+    @extends('template.chart')
+@section('chart')
+             <!-- Chart Start -->
+             <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Doughnut Chart</h6>
+                            <canvas id="doughnut-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Chart End -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vertical Navbar - Mazer Admin Dashboard</title>
-    
-    
     
     
     <link rel="shortcut icon" href="{{ asset('template/dist') }}/assets/compiled/svg/favicon.svg" type="image/x-icon">
@@ -71,7 +83,7 @@
             
             <li
                 class="sidebar-item ">
-                <a href="index.html" class='sidebar-link'>
+                <a href="dashboard" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
