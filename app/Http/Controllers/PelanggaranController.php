@@ -47,7 +47,7 @@ class PelanggaranController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(pelanggaran $pelanggaran)
+    public function show($id)
     {
         $pelanggaran = pelanggaran::findOrFail($id);
 
@@ -69,7 +69,7 @@ class PelanggaranController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, pelanggaran $pelanggaran)
+    public function update(Request $request, $id)
     {
         $pelanggaran = pelanggaran::findOrFail($id); 
         $pelanggaran->nama_santri = $request->nama_santri;

@@ -26,9 +26,11 @@
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app.css">
   <script src="https://kit.fontawesome.com/14732ec0b9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
     <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
     <div class="row">
         <div class="col">
@@ -878,7 +880,11 @@
                     </div>
                 </nav>
             </header>
-            <div id="main-content">                
+
+                          
+            <div id="main-content">       
+                
+
                                   
 
                 
@@ -908,7 +914,21 @@
                 </div>
 
 
-                        
+                @if (Session::has('add'))
+                <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('add') }}</center>
+                </div>
+            @endif
+            @if (Session::has('success'))
+                <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('success') }}</center>
+                </div>
+            @endif
+            @if (Session::has('destroy'))
+            <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('destroy') }}</center>
+                </div>
+                @endif          
                    
 
                 <div class="row">
@@ -946,8 +966,7 @@
                                                                     <br>
                                                                     
                                                                     <center>
-
-                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
+                                                                        {{-- <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a> --}}
                                                                         <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
                                                                         <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
                                                                     </center>
@@ -1038,11 +1057,40 @@
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
+    <script src="assets/extensions/toastify-js/src/toastify.js"></script>
+<script src="assets/static/js/pages/toastify.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
-
-</style>
+{{-- Toastr --}}
+ @if (Session::has('add'))
+ <script>
+    toastr.options = {
+        "progressBar" : true,
+        "closeButton" : true,
+    }
+    toastr.success("{{ Session::get('add') }}",'Success!', {timeOut:10000});
+ </script>
+@endif
+@if (Session::has('destroy'))
+<script>
+   toastr.options = {
+       "progressBar" : true,
+       "closeButton" : true,
+   }
+   toastr.success("{{ Session::get('destroy') }}",'Success!', {timeOut:10000});
+</script>
+@endif
+@if (Session::has('success'))
+<script>
+   toastr.options = {
+       "progressBar" : true,
+       "closeButton" : true,
+   }
+   toastr.success("{{ Session::get('success') }}",'Success!', {timeOut:10000});
+</script>
+@endif
     
     
 </body>
@@ -1064,6 +1112,4 @@
             
         
       
-    
-</body>
-</html>
+

@@ -72,13 +72,13 @@ class SantriController extends Controller
 
         $santri->save();
 
-        return redirect()->route('santri')->with('add','Data Santri Berhasil ditambahkan');
+        return redirect()->route('santri')->with('add','Data Santri Berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         $santri = Santri::findOrFail($id);
 
@@ -124,7 +124,7 @@ class SantriController extends Controller
         }
         
         $santri->save();
-        return redirect()->route('santri')->with('success','Data Buku Berhasil diupdate');
+        return redirect()->route('santri')->with('success','Data Santri Berhasil diupdate!');
     }
 
     /**
@@ -134,6 +134,6 @@ class SantriController extends Controller
     {
         $hapus = santri::findOrFail($id);
         $hapus->delete();
-        return redirect()->route('santri')->with('destroy','Data Buku Berhasil dihapus');
+        return redirect()->route('santri')->with('destroy','Data Santri Berhasil dihapus!');
     }
 }

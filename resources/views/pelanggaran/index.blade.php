@@ -822,7 +822,21 @@
                 </div>
 
 
-                        
+                @if (Session::has('add'))
+                <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('add') }}</center>
+                </div>
+            @endif
+            @if (Session::has('success'))
+                <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('success') }}</center>
+                </div>
+            @endif
+            @if (Session::has('destroy'))
+            <div class="alert alert-success" role="alert"><center>
+                    {{ Session::get('destroy') }}</center>
+                </div>
+                @endif   
                    
 
                 <div class="row">
