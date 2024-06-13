@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
 </head>
 
+
 <body>
     <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
     <div class="row">
