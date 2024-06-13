@@ -25,6 +25,14 @@ Route::get('/', function() {
     return view('welcome');
 });
 
+<<<<<<< HEAD
+=======
+// DASHBOARD
+Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
+
+
+// <<<<<<< HEAD
+>>>>>>> d2036aa00d5c8f00ea3345230c9ee1401f5a8580
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 // =======

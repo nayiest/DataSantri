@@ -233,12 +233,12 @@
   </nav>
 
   {{-- SIDEBAR END --}}
-
-
-  @yield('konten')
-
-
-
+  
+  
+  @yield('chart')
+  
+  
+  
 {{-- JS --}}
 <script src="{{ asset('plus-admin') }}/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -261,11 +261,11 @@
     <!-- Custom js for this page -->
     <script src="{{ asset('plus-admin') }}/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-
+    
       <!-- Template Javascript -->
-      <script src="{{asset('darkpan-1.0.0')}}/js/main.js"></script>
+      <script src="{{asset('plus-admin')}}/assets/js/santri.js"></script>
       <script>
-           // Doughnut Chart
+        // Doughnut Chart
       var query = {!! $query !!};
       const nama_santri = [];
       const angktan_santri = [];
@@ -290,7 +290,7 @@
                       "rgba(200, 200, 200 .3)"
                   ],
                   data: jumlahsantri
-              }]
+                  }]
           },
           options: {
               responsive: true
