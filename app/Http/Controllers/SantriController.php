@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\santriChart;
 use App\Models\Santri;
 use App\Http\Requests\StoresantriRequest;
 use App\Http\Requests\UpdatesantriRequest;
@@ -14,10 +15,29 @@ class SantriController extends Controller
      */
     public function index(Request $request)
     {
+
+
         // $data =  new santri;
         $query = Santri::all();
         return view ('santri.index',compact('request','query'));
     }
+    public function detail(Request $request)
+    {
+
+
+        
+    }
+
+    // public function dashboard(Request $request)
+    // {
+    //     $santri =  new santri;
+    //     $query = Santri::all();
+    //     $santri->jk_santri = $request->count('jk_santri');
+
+
+    //     // $santri = Santri::table('santri')->count();
+    //     return view ('dashboard.index',compact('request','query','santri'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -81,6 +101,7 @@ class SantriController extends Controller
     public function show($id)
     {
         $santri = Santri::findOrFail($id);
+        
 
         return view('santri.detail',compact('santri'));
     }
@@ -101,7 +122,7 @@ class SantriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $filePath = public_path('storage/images');
+        // $filePath = public_path('storage/images');
         $santri = Santri::findOrFail($id); 
         $santri->nama_santri = $request->nama_santri;
         $santri->jk_santri = $request->jk_santri;

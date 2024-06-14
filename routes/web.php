@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PelanggaranController;
+use App\Http\Controllers\DashboardController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +24,12 @@ Route::get('/', function () {
 });
 
 // DASHBOARD
-Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
 
 // <<<<<<< HEAD
-Route::get('/santri',[SantriController::class, 'index'])->name('santri');
-Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
+// Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+// Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 // =======
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -40,12 +43,13 @@ Route::middleware('auth')->group(function () {
      
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 // >>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
-Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri'); 
 Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
-Route::get('show/{id}',[SantriController::class, 'show'])->name('detailsantri');
+Route::get('/santri/show/{id}',[SantriController::class, 'show'])->name('detailsantri');
 
 Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
 
