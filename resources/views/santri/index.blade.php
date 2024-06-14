@@ -106,14 +106,12 @@
             </li>
 
             <li
-            class="sidebar-item ">
-            <a href="prestasi" class='sidebar-link'>
-                <i class="bi bi-trophy"></i>
-              <span>prestasi</span>
-            </a>
-            
-
-        </li>
+                class="sidebar-item ">
+                <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                    <i class="bi bi-trophy"></i>
+                <span>prestasi</span>
+                </a>
+           </li>
 
            <!-- < <li
                 class="sidebar-item  has-sub">
