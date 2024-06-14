@@ -931,7 +931,7 @@
                                 </ul>
                             </div>
                         </center>
-                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahprestasi')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
+                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahsantri')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
                     </div>
                 </div>
 
