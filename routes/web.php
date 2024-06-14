@@ -25,6 +25,9 @@ Route::get('/', function () {
 });
 
 
+Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
+
 
 // DASHBOARD
 
