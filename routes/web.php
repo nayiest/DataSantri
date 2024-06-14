@@ -24,14 +24,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 // DASHBOARD
+
+Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
+
+Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
+
+
+Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
+
 // Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
 
-// <<<<<<< HEAD
+
 // Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 // Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
-// =======
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -43,7 +56,9 @@ Route::middleware('auth')->group(function () {
 
      
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
-// >>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
+
+Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
+
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
@@ -78,7 +93,6 @@ Route::get('/pelanggaran/formeditpelanggaran/{id}',[pelanggaranController::class
 Route::put('/pelanggaran/updatepelanggaran/{id}',[pelanggaranController::class, 'update'])->name('updatepelanggaran');
 Route::get('show/{id}',[pelanggaranController::class, 'show'])->name('detailpelanggaran');
 Route::get('/pelanggaran/hapuspelanggaran/{id}',[pelanggaranController::class, 'destroy'])->name('hapuspelanggaran');
-
 
 //prestasi
 route::get('/prestasi',[prestasicontroller::class, 'index'])->name('prestasi');
