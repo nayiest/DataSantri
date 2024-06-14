@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PrestasiController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -77,3 +78,13 @@ Route::get('/pelanggaran/formeditpelanggaran/{id}',[pelanggaranController::class
 Route::put('/pelanggaran/updatepelanggaran/{id}',[pelanggaranController::class, 'update'])->name('updatepelanggaran');
 Route::get('show/{id}',[pelanggaranController::class, 'show'])->name('detailpelanggaran');
 Route::get('/pelanggaran/hapuspelanggaran/{id}',[pelanggaranController::class, 'destroy'])->name('hapuspelanggaran');
+
+
+//prestasi
+route::get('/prestasi',[prestasicontroller::class, 'index'])->name('prestasi');
+route::get('/prestasi/addprestasi', [prestasicontroller::class, 'create'])->name('tambahprestasi');
+Route::post('/prestasi/store',[prestasiController::class, 'store'])->name('storeprestasi');
+Route::get('/prestasi/formeditprestasi/{id}',[prestasiController::class, 'edit'])->name('editprestasi'); 
+Route::put('/prestasi/updateprestasi/{id}',[prestasiController::class, 'update'])->name('updateprestasi');
+Route::get('show/{id}',[prestasiController::class, 'show'])->name('detailprestasi');
+Route::get('/prestasi/hapusprestasi/{id}',[prestasiController::class, 'destroy'])->name('hapusprestasi');
