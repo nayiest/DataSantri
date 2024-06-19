@@ -24,22 +24,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 51edfc76e1f5b53232a2c78b8860372a3e4d037e
+
 // DASHBOARD
 
 Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
-<<<<<<< HEAD
-
-
-
 
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 
-=======
+
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 
@@ -50,7 +44,7 @@ Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 // Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 // Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 
->>>>>>> 51edfc76e1f5b53232a2c78b8860372a3e4d037e
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
