@@ -76,11 +76,9 @@
             
             <li
             class="sidebar-item active">
-<<<<<<< HEAD
             <a href="{{ route('dashboard') }}" class='sidebar-link '>
-=======
-            <a href="{{ route('dashboard') }}" class='sidebar-link'>
->>>>>>> 1a3ada46c55ead27c0ae0943b62523e97631b4c6
+         
+
                 <i class="bi bi-grid-fill"></i>
                 <span>Dashboard</span>
             </a>
@@ -89,11 +87,8 @@
         </li>
 
         <li
-<<<<<<< HEAD
+
             class="sidebar-item">
-=======
-            class="sidebar-item ">
->>>>>>> 1a3ada46c55ead27c0ae0943b62523e97631b4c6
             <a href="{{ route('santri') }}" class='sidebar-link'>
                 <i class="bi bi-file-earmark-medical-fill"></i>
                 <span>Data Santri</span>
