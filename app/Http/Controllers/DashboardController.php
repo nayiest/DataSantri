@@ -2,19 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\santriChart;
 use App\Models\dashboard;
+use App\Models\Santri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, santriChart $santriChart)
     {
           // $data =  new santri;
           $query = dashboard::all();
-          return view ('dashboard',compact('request','query'));
+
+        // CHART
+        $data['santriChart']= $santriChart->build(); 
+
+
+
+          $totalSantri = DB::table('santris')->count();
+          $jk_santri_counts = Santri::selectRaw('jk_santri, COUNT(*) as count')
+            ->groupBy('jk_santri')
+            ->pluck('count', 'jk_santri')
+            ->all();
+          return view ('dashboard.index',compact('request','query','totalSantri','jk_santri_counts'));
+    }
+
+    public function Chart()
+    {
+        
     }
 
     /**
