@@ -4,32 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Navbar - Mazer Admin Dashboard</title>
+    <title>Dashboard - Mazer Admin Dashboard</title>
     
     
-    <link rel="shortcut icon" href="{{ asset('template/dist') }}/assets/compiled/svg/favicon.svg" type="image/x-icon">
+    
+    <link rel="shortcut icon" href="{{ asset('template/dist')}}/assets/compiled/svg/favicon.svg" type="image/x-icon">
     <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAYAAADRcLDBAAAEs2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIKICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIgogICAgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIKICAgZXhpZjpQaXhlbFhEaW1lbnNpb249IjMzIgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMzQiCiAgIGV4aWY6Q29sb3JTcGFjZT0iMSIKICAgdGlmZjpJbWFnZVdpZHRoPSIzMyIKICAgdGlmZjpJbWFnZUxlbmd0aD0iMzQiCiAgIHRpZmY6UmVzb2x1dGlvblVuaXQ9IjIiCiAgIHRpZmY6WFJlc29sdXRpb249Ijk2LjAiCiAgIHRpZmY6WVJlc29sdXRpb249Ijk2LjAiCiAgIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiCiAgIHBob3Rvc2hvcDpJQ0NQcm9maWxlPSJzUkdCIElFQzYxOTY2LTIuMSIKICAgeG1wOk1vZGlmeURhdGU9IjIwMjItMDMtMzFUMTA6NTA6MjMrMDI6MDAiCiAgIHhtcDpNZXRhZGF0YURhdGU9IjIwMjItMDMtMzFUMTA6NTA6MjMrMDI6MDAiPgogICA8eG1wTU06SGlzdG9yeT4KICAgIDxyZGY6U2VxPgogICAgIDxyZGY6bGkKICAgICAgc3RFdnQ6YWN0aW9uPSJwcm9kdWNlZCIKICAgICAgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWZmaW5pdHkgRGVzaWduZXIgMS4xMC4xIgogICAgICBzdEV2dDp3aGVuPSIyMDIyLTAzLTMxVDEwOjUwOjIzKzAyOjAwIi8+CiAgICA8L3JkZjpTZXE+CiAgIDwveG1wTU06SGlzdG9yeT4KICA8L3JkZjpEZXNjcmlwdGlvbj4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz5V57uAAAABgmlDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kc8rRFEUxz9maORHo1hYKC9hISNGTWwsRn4VFmOUX5uZZ36oeTOv954kW2WrKLHxa8FfwFZZK0WkZClrYoOe87ypmWTO7dzzud97z+nec8ETzaiaWd4NWtYyIiNhZWZ2TvE946WZSjqoj6mmPjE1HKWkfdxR5sSbgFOr9Ll/rXoxYapQVik8oOqGJTwqPL5i6Q5vCzeo6dii8KlwpyEXFL519LjLLw6nXP5y2IhGBsFTJ6ykijhexGra0ITl5bRqmWU1fx/nJTWJ7PSUxBbxJkwijBBGYYwhBgnRQ7/MIQIE6ZIVJfK7f/MnyUmuKrPOKgZLpEhj0SnqslRPSEyKnpCRYdXp/9++msneoFu9JgwVT7b91ga+LfjetO3PQ9v+PgLvI1xkC/m5A+h7F32zoLXug38dzi4LWnwHzjeg8UGPGbFfySvuSSbh9QRqZ6H+Gqrm3Z7l9zm+h+iafNUV7O5Bu5z3L/wAdthn7QIme0YAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAJTSURBVFiF7Zi9axRBGIefEw2IdxFBRQsLWUTBaywSK4ubdSGVIY1Y6HZql8ZKCGIqwX/AYLmCgVQKfiDn7jZeEQMWfsSAHAiKqPiB5mIgELWYOW5vzc3O7niHhT/YZvY37/swM/vOzJbIqVq9uQ04CYwCI8AhYAlYAB4Dc7HnrOSJWcoJcBS4ARzQ2F4BZ2LPmTeNuykHwEWgkQGAet9QfiMZjUSt3hwD7psGTWgs9pwH1hC1enMYeA7sKwDxBqjGnvNdZzKZjqmCAKh+U1kmEwi3IEBbIsugnY5avTkEtIAtFhBrQCX2nLVehqyRqFoCAAwBh3WGLAhbgCRIYYinwLolwLqKUwwi9pxV4KUlxKKKUwxC6ZElRCPLYAJxGfhSEOCz6m8HEXvOB2CyIMSk6m8HoXQTmMkJcA2YNTHm3congOvATo3tE3A29pxbpnFzQSiQPcB55IFmFNgFfEQeahaAGZMpsIJIAZWAHcDX2HN+2cT6r39GxmvC9aPNwH5gO1BOPFuBVWAZue0vA9+A12EgjPadnhCuH1WAE8ivYAQ4ohKaagV4gvxi5oG7YSA2vApsCOH60WngKrA3R9IsvQUuhIGY00K4flQG7gHH/mLytB4C42EgfrQb0mV7us8AAMeBS8mGNMR4nwHamtBB7B4QRNdaS0M8GxDEog7iyoAguvJ0QYSBuAOcAt71Kfl7wA8DcTvZ2KtOlJEr+ByyQtqqhTyHTIeB+ONeqi3brh+VgIN0fohUgWGggizZFTplu12yW8iy/YLOGWMpDMTPXnl+Az9vj2HERYqPAAAAAElFTkSuQmCC" type="image/png">
-  <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app.css">
-  <script src="https://kit.fontawesome.com/14732ec0b9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
+    
+
+
+  <link rel="stylesheet" href="{{ asset('template/dist')}}/assets/compiled/css/app.css">
+  <link rel="stylesheet" href="{{ asset('template/dist')}}/assets/compiled/css/app-dark.css">
+  <link rel="stylesheet" href="{{ asset('template/dist')}}/assets/compiled/css/iconly.css">
+  
 </head>
 
-
 <body>
-    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
-    <div class="row">
-        <div class="col">
-            <div class="card-body">
-            </div>
-        </div>
-    </div>
+
+    {{-- JS CHART --}}
+    {{-- <script src="{{ $santriChart->cdn() }}"></script>
+
+    {{ $santriChart->script() }} --}}
+
+    {{-- JS CHART END --}}
+    
+    <script src="assets/static/js/initTheme.js"></script>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
     <div class="sidebar-header position-relative">
-        <div class="d-flex justify-content-between align-items-center" >
+        <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href=" {{ route('santri') }}">IB Data</a>
+                <a href="index.html"><img src="{{ asset('template/dist')}}/assets/compiled/svg/logo.svg" alt="Logo" srcset=""></a>
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -69,24 +75,42 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item ">
-                <a href="dashboard" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-                
-
-            </li>
+            class="sidebar-item">
+            <a href="{{ route('dashboard') }}" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
             
-            <li
-                class="sidebar-item ">
-                <a href="pelanggaran" class='sidebar-link'>
-                    <i class="bi bi-exclamation-triangle"></i>
-                    <span>Pelanggaran</span>
-                </a>
-                
 
-            </li>
+        </li>
+
+        <li
+            class="sidebar-item active">
+            <a href="{{ route('santri') }}" class='sidebar-link'>
+                <i class="bi bi-file-earmark-medical-fill"></i>
+                <span>Data Santri</span>
+            </a>
+            
+
+        </li>
+        
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Pelanggaran</span>
+            </a>
+            
+
+        </li>
+
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                <i class="bi bi-trophy"></i>
+            <span>prestasi</span>
+            </a>
+       </li>
 
            <!-- < <li
                 class="sidebar-item  has-sub">
@@ -716,341 +740,307 @@
     </div>
 </div>
         </div>
-        <div id="main" class='layout-navbar navbar-fixed'>
-            <header>
-                <nav class="navbar navbar-expand navbar-light navbar-top">
-                    <div class="container-fluid">
-                        <a href="#" class="burger-btn d-block">
-                            <i class="bi bi-justify fs-3"></i>
-                        </a>
-
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ms-auto mb-lg-0">
-                                <li class="nav-item dropdown me-1">
-                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        <i class='bi bi-envelope bi-sub fs-4'></i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                                        <li>
-                                            <h6 class="dropdown-header">Mail</h6>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#">No new mail</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown me-3">
-                                    <a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                                        <i class='bi bi-bell bi-sub fs-4'></i>
-                                        <span class="badge badge-notification bg-danger">7</span>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="dropdownMenuButton">
-                                        <li class="dropdown-header">
-                                            <h6>Notifications</h6>
-                                        </li>
-                                        <li class="dropdown-item notification-item">
-                                            <a class="d-flex align-items-center" href="#">
-                                                <div class="notification-icon bg-primary">
-                                                    <i class="bi bi-cart-check"></i>
-                                                </div>
-                                                <div class="notification-text ms-4">
-                                                    <p class="notification-title font-bold">Successfully check out</p>
-                                                    <p class="notification-subtitle font-thin text-sm">Order ID #256</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-item notification-item">
-                                            <a class="d-flex align-items-center" href="#">
-                                                <div class="notification-icon bg-success">
-                                                    <i class="bi bi-file-earmark-check"></i>
-                                                </div>
-                                                <div class="notification-text ms-4">
-                                                    <p class="notification-title font-bold">Homework submitted</p>
-                                                    <p class="notification-subtitle font-thin text-sm">Algebra math homework</p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <p class="text-center py-2 mb-0"><a href="#">See all notification</a></p>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="dropdown">
-                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="user-menu d-flex">
-                                        <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
-                                        </div>
-                                        <div class="user-img d-flex align-items-center">
-                                            <div class="avatar avatar-md">
-                                                <img src="{{ asset('template/dist') }}/assets/compiled/jpg/1.jpg">
-                                            </div>
-                                        </div>
+        <div id="main">
+            <header class="mb-3">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+            
+<div class="page-heading">
+    <h3>Profile Statistics</h3>
+</div> 
+<div class="page-content"> 
+    <section class="row">
+        <div class="col-12 col-lg-9">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon purple mb-2">
+                                        <i class="iconly-boldProfile"></i>
                                     </div>
-                                </a>
-
-                                <ul class="dropdown-menu dropdown-menu-end x-slot" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
-                                    <li>
-                                        <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
-                                    </li>
-                                    <li><x-dropdown-link :href="route('profile.edit')" class="dropdown-item"><i class="icon-mid bi bi-person me-2"></i>
-                                                {{ __('Profile') }}
-                                            </x-dropdown-link></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
-                                            Settings</a></li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <a class="dropdown-item" href="#" :href="route('logout')"
-                                        onclick="event.preventDefault();
-                                                    this.closest('form').submit();"><i class="icon-mid bi bi-box-arrow-left me-2"></i>{{ __('Log Out') }}</a></li>
-                                                    </form>
-                                </ul>
-
-
-
-
-
-
-
-                                {{-- <div class="hidden sm:flex sm:items-center sm:ms-6">
-                                    <x-dropdown align="right" width="48">
-                                        <x-slot name="trigger">
-                                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                                <div>{{ Auth::user()->name }}</div>
-                    
-                                                <div class="ms-1">
-                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </div>
-                                            </button>
-                                        </x-slot>
-                    
-                                        <x-slot name="content">
-                                            <x-dropdown-link :href="route('profile.edit')">
-                                                {{ __('Profile') }}
-                                            </x-dropdown-link>
-                    
-                                            <!-- Authentication -->
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
-                    
-                                                <x-dropdown-link :href="route('logout')"
-                                                        onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
-                                                    {{ __('Log Out') }}
-                                                </x-dropdown-link>
-                                            </form>
-                                        </x-slot>
-                                    </x-dropdown>
-                                </div> --}}
-
-
-
-
-
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Mus 1</h6>
+                                    <h6 class="font-extrabold mb-0">112.000</h6>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card"> 
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon blue mb-2">
+                                        <i class="iconly-boldProfile"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Mus 2</h6>
+                                    <h6 class="font-extrabold mb-0">183.000</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </nav>
-            </header>
-            <div id="main-content">                
-                                  
-
-                
-                <div class=" text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3 class="mb-0">Data Santri</h3>
-                        <center>
-                            <div class="card-body">
-                                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
-                                            aria-controls="home" aria-selected="true">Card</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
-                                            aria-controls="profile" aria-selected="false">Table</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
-                                            aria-controls="contact" aria-selected="false">Contact</a>
-                                    </li>
-                                </ul>
+                </div>
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon green mb-2">
+                                        <i class="iconly-boldProfile"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Mus 3</h6>
+                                    <h6 class="font-extrabold mb-0">80.000</h6>
+                                </div>
                             </div>
-                        </center>
-                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahsantri')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
+                        </div>
                     </div>
                 </div>
-
-
-                        
-                   
-
-                <div class="row">
-                    <div class="col-md-12">
-                        
-                            
-                            
-                                <div class="tab-content" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                        <br>
-
-
-                                        {{-- Table Card Data --}}
-
-                                        <div class="page-content"> 
-                                            <section class="row">
-                                                
-                                                @foreach ($query as $item)
-                                                <div class="col-12 col-lg-4" >
-                                                    <div class="row">
-                                                        <div class="column">
-                        
-                                                            <div class="card">
-                                                                <div class="card-body py-4 px-4">
-                                                                    <div class="d-flex align-items-center">
-                                                                            
-                                                                        <div class="avatar avatar-xl">
-                                                                            <img src="storage/images/{{ $item->photo_santri }}">
-                                                                        </div>
-                                                                        <div class="ms-3 name">
-                                                                            <h5 class="font-bold">{{$item->nama_santri}}</h5>
-                                                                            <h6 class="text-muted mb-0">{{$item->angkatan_santri}}</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <br>
-                                                                    
-                                                                    <center>
-
-                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
-                                                                        <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
-                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
-                                                                    </center>
-                                                                        
-                                                                    
-                                                                </div>
-                                                            </div>
-                        
-                                                        
-                                                        </div>
-                                                 </div>
-                        
+                <div class="col-6 col-lg-3 col-md-6">
+                    <div class="card">
+                        <div class="card-body px-4 py-4-5">
+                            <div class="row">
+                                <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start ">
+                                    <div class="stats-icon red mb-2">
+                                        <i class="iconly-boldBookmark"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                    <h6 class="text-muted font-semibold">Total Santri</h6>
+                                    <h6 class="font-extrabold mb-0">{{ $totalSantri }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Profile Visit</h4>
+                        </div>
+                        <div class="card-body">
+                            <div id="chart-profile-visit"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xl-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Profile Visit</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="d-flex align-items-center">
+                                        <svg class="bi text-primary" width="32" height="32" fill="blue"
+                                            style="width:10px">
+                                            <use
+                                                xlink:href="{{ asset('template/dist/assets') }}/static/images/bootstrap-icons.svg#circle-fill" />
+                                        </svg>
+                                        <h5 class="mb-0 ms-3">Europe</h5>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <h5 class="mb-0 text-end">862</h5>
+                                </div>
+                                <div class="col-12">
+                                    <div id="chart-europe"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="d-flex align-items-center">
+                                        <svg class="bi text-success" width="32" height="32" fill="blue"
+                                            style="width:10px">
+                                            <use
+                                                xlink:href="{{ asset('template/dist/assets') }}/static/images/bootstrap-icons.svg#circle-fill" />
+                                        </svg>
+                                        <h5 class="mb-0 ms-3">America</h5>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <h5 class="mb-0 text-end">375</h5>
+                                </div>
+                                <div class="col-12">
+                                    <div id="chart-america"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="d-flex align-items-center">
+                                        <svg class="bi text-danger" width="32" height="32" fill="blue"
+                                            style="width:10px">
+                                            <use
+                                                xlink:href="{{ asset('template/dist/assets') }}/static/images/bootstrap-icons.svg#circle-fill" />
+                                        </svg>
+                                        <h5 class="mb-0 ms-3">Indonesia</h5>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <h5 class="mb-0 text-end">1025</h5>
+                                </div>
+                                <div class="col-12">
+                                    <div id="chart-indonesia"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Latest Comments</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-lg">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Comment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-md">
+                                                        <img src="{{ asset('template/dist')}}/assets/compiled/jpg/5.jpg">
+                                                    </div>
+                                                    <p class="font-bold ms-3 mb-0">Si Cantik</p>
                                                 </div>
-                                                    @endforeach
-                                                    
-                                            </section>
-                                        </div>
-
-
-
-                                        
-                                    </div>
-                                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><br>
-                                        
-
-
-                                        <div class="card">
-                                            <div class="card-body py-4 px-4">
-                                        <table class="table text-start align-right table-bordered table-hover mb-0 ">
-
-                                            <h5 class="card-title">Table Data Santri</h5><br>
-                                            <thead>
-                                                <tr class="text-white">
-                                                    <th scope="col">No</th>
-                                                    <th scope="col">Nama Santri</th>
-                                                    <th scope="col">Angkatan</th>
-                                                    <th scope="col">Jenis Kelamin</th>
-                                                    <th scope="col">Ttl</th>
-                                                    <th scope="col">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                    $no = 1;
-                                                ?>  
-                                                @foreach ($query as $item)
-                                                <tr>
-                                                    <td>{{$no}}</td>
-                                                    <td>{{$item->nama_santri}}</td>
-                                                    <td>{{$item->angkatan_santri}}</td>
-                                                    <td>{{$item->jk_santri}}</td>
-                                                    <td>{{$item->tgllahir_santri}}</td>
-                                                    <td class="text-center">
-                                                        <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <?php
-                                                    $no++;
-                                                    ?>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                    </div>
-                                    {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
-                                        
-                                    </div> --}}
-                                </div>
+                                            </td>
+                                            <td class="col-auto">
+                                                <p class=" mb-0">Congratulations on your graduation!</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-3">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar avatar-md">
+                                                        <img src="{{ asset('template/dist')}}/assets/compiled/jpg/2.jpg">
+                                                    </div>
+                                                    <p class="font-bold ms-3 mb-0">Si Ganteng</p>
+                                                </div>
+                                            </td>
+                                            <td class="col-auto">
+                                                <p class=" mb-0">Wow amazing design! Can you make another tutorial for
+                                                    this design?</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        
+                        </div>
                     </div>
-
-                
-                
                 </div>
-            
+            </div>
+        </div>
+        <div class="col-12 col-lg-3">
+            <div class="card">
+                <div class="card-body py-4 px-4">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-xl">
+                            <img src="{{ asset('template/dist')}}/assets/compiled/jpg/1.jpg" alt="Face 1">
+                        </div>
+                        <div class="ms-3 name">
+                            <h5 class="font-bold">User</h5>
+                            <h6 class="text-muted mb-0">{{ Auth::user()->name }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h4>Recent Messages</h4>
+                </div>
+                <div class="card-content pb-4">
+                    <div class="recent-message d-flex px-4 py-3">
+                        <div class="avatar avatar-lg">
+                            <img src="{{ asset('template/dist')}}/assets/compiled/jpg/4.jpg">
+                        </div>
+                        <div class="name ms-4">
+                            <h5 class="mb-1">Hank Schrader</h5>
+                            <h6 class="text-muted mb-0">@johnducky</h6>
+                        </div>
+                    </div>
+                    <div class="recent-message d-flex px-4 py-3">
+                        <div class="avatar avatar-lg">
+                            <img src="{{ asset('template/dist')}}/assets/compiled/jpg/5.jpg">
+                        </div>
+                        <div class="name ms-4">
+                            <h5 class="mb-1">Dean Winchester</h5>
+                            <h6 class="text-muted mb-0">@imdean</h6>
+                        </div>
+                    </div>
+                    <div class="recent-message d-flex px-4 py-3">
+                        <div class="avatar avatar-lg">
+                            <img src="{{ asset('template/dist')}}/assets/compiled/jpg/1.jpg">
+                        </div>
+                        <div class="name ms-4">
+                            <h5 class="mb-1">John Dodol</h5>
+                            <h6 class="text-muted mb-0">@dodoljohn</h6>
+                        </div>
+                    </div>
+                    <div class="px-4">
+                        <button class='btn btn-block btn-xl btn-outline-primary font-bold mt-3'>Start Conversation</button>
+                    </div>
+                </div>
+            </div> 
+            <div class="card">
+                <div class="card-header">
+                    <h4>Visitors Profile</h4>
+                </div>
+                <div class="card-body">
+                    {{-- {!! $santriChart->container() !!} --}}
+                    <div id="chart-visitors-profile"></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+            <footer>
+    <div class="footer clearfix mb-0 text-muted">
+        <div class="float-start">
+            <p>2023 &copy; Mazer</p>
+        </div>
+        <div class="float-end">
+            <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
+                by <a href="https://saugi.me">Saugi</a></p>
         </div>
     </div>
-  
+</footer>
+        </div>
+    </div>
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/extensions/chartjs/chart.js"></script>
+
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
+    
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-
-
-
-
-</style>
     
+
     
+<!-- Need: Apexcharts -->
+<script src="{{ asset('template/dist/assets') }}/extensions/apexcharts/apexcharts.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/static/js/pages/dashboard.js"></script>
+
 </body>
 
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-      
-    
-</body>
 </html>

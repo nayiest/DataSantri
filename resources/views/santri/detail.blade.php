@@ -23,7 +23,7 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href=" {{ route('santri.index') }}">IB Data</a>
+                <a href=" {{ route('santri') }}">IB Data</a>
             </div>
             <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -706,7 +706,7 @@
                     <div class="container-fluid">
                         <div class="row mb-3">
                             <div class="col-xl-4">
-                                <a href="{{route('santri.index')}}"><button type="submit" name="submit" class="btn btn-primary me-1 mb-1"> Back </button></a>
+                                <a href="{{route('santri')}}"><button type="submit" name="submit" class="btn btn-primary me-1 mb-1"> Back </button></a>
                             </div>
                         </div>
 
@@ -889,6 +889,59 @@
                         </div>
                     </section>
                 </div>
+                <div class="page-heading">
+                    <h3 >Data Nilai Santri</h3>
+                    
+                </div> 
+                <div class="page-content"> 
+                    <section class="section">
+                        <div class="card">
+                            <section id="multiple-column-form">
+                                <div class="row match-height">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            {{-- <center>
+                                                <div class="avatar avatar-xl">
+                                                    <img src="storage/images/{{ $santri->photo_santri }}">
+                                                </div>
+                                            </center> --}}
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <form class="form">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="card">
+                                                                    <div class="card-header">
+                                                                        <h4>Bar Chart</h4>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div id="bar"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+
+                                                            
+                                                            
+                                                            <div class="col-12 d-flex justify-content-end">
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                                            
+                                    
+
+
+                        </div>
+                    </section>
+                </div>
                 
                 </div>
             
@@ -898,6 +951,14 @@
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
      
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
+
+
+
+
+    {{-- JS CHART --}}
+    <script src="{{ asset('template/dist/assets') }}/extensions/dayjs/dayjs.min.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/static/js/pages/ui-apexchart.js"></script>
     
     
 </body>

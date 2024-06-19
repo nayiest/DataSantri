@@ -12,13 +12,16 @@
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app.css">
   <script src="https://kit.fontawesome.com/14732ec0b9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-@extends('template.chart')
+
 
 
 <body>
+
+    
 
     <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
     <div class="row">
@@ -73,10 +76,20 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item ">
-                <a href="index.html" class='sidebar-link'>
+                class="sidebar-item">
+                <a href="{{ route('dashboard') }}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item active">
+                <a href="{{ route('santri') }}" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>Data Santri</span>
                 </a>
                 
 
@@ -84,7 +97,7 @@
             
             <li
                 class="sidebar-item ">
-                <a href="pelanggaran" class='sidebar-link'>
+                <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
                     <i class="bi bi-exclamation-triangle"></i>
                     <span>Pelanggaran</span>
                 </a>
@@ -93,14 +106,12 @@
             </li>
 
             <li
-            class="sidebar-item ">
-            <a href="prestasi" class='sidebar-link'>
-                <i class="bi bi-trophy"></i>
-              <span>prestasi</span>
-            </a>
-            
-
-        </li>
+                class="sidebar-item ">
+                <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                    <i class="bi bi-trophy"></i>
+                <span>prestasi</span>
+                </a>
+           </li>
 
            <!-- < <li
                 class="sidebar-item  has-sub">
@@ -793,7 +804,23 @@
                                         </li>
                                     </ul>
                                 </li>
+                                
                             </ul>
+                            <div class=" mt-2" style="margin-right: 20px">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle me-15" type="button"
+                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <i class="fa-regular fa-address-book fs-4"></i>
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Tambah Santri</a>
+                                        <a class="dropdown-item" href="#">Tambah Pelanggaran</a>
+                                        <a class="dropdown-item" href="#">Tambah Prestasi</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
@@ -901,10 +928,6 @@
                                         <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab"
                                             aria-controls="profile" aria-selected="false">Table</a>
                                     </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab"
-                                            aria-controls="contact" aria-selected="false">Chart</a>
-                                    </li>
                                 </ul>
                             </div>
                         </center>
@@ -966,7 +989,7 @@
                                                                     <br>
                                                                     
                                                                     <center>
-                                                                        {{-- <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a> --}}
+                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
                                                                         <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
                                                                         <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
                                                                     </center>
