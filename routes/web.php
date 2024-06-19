@@ -25,14 +25,8 @@ Route::get('/', function() {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-=======
 // DASHBOARD
 Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
-
-
-// <<<<<<< HEAD
->>>>>>> d2036aa00d5c8f00ea3345230c9ee1401f5a8580
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 // =======
@@ -47,7 +41,7 @@ Route::middleware('auth')->group(function () {
 
      
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
-// >>>>>>> d2fcbce708e122cb381dd11d7ae4d52797ee49c2
+
 Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
