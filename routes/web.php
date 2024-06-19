@@ -25,16 +25,19 @@ Route::get('/', function () {
 });
 
 
-
-// DASHBOARD
-
-Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
-
 Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 
 
-Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+// DASHBOARD
+
+// Route::get('/dashboard',[SantriController::class, 'index'])->name('dashboard');
+
+// Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+// Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
+
+
+// Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/dashboard',[SantriController::class, 'index'])->name('santri');
 
 // Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
@@ -59,30 +62,16 @@ Route::middleware('auth')->group(function () {
 
 // Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
 
+// DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
+// DATA SANTRI
+Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
 Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
 Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri'); 
 Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
 Route::get('/santri/show/{id}',[SantriController::class, 'show'])->name('detailsantri');
-
-Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
-
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
-
-require __DIR__.'/auth.php';
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
-
-require __DIR__.'/adminauth.php';
-
 Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
 
 //pelanggaran
@@ -102,3 +91,21 @@ Route::get('/prestasi/formeditprestasi/{id}',[prestasiController::class, 'edit']
 Route::put('/prestasi/updateprestasi/{id}',[prestasiController::class, 'update'])->name('updateprestasi');
 Route::get('show/{id}',[prestasiController::class, 'show'])->name('detailprestasi');
 Route::get('/prestasi/hapusprestasi/{id}',[prestasiController::class, 'destroy'])->name('hapusprestasi');
+
+});
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin', 'verified'])->name('admin.dashboard');
+
+require __DIR__.'/adminauth.php';
+
+Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
+
+

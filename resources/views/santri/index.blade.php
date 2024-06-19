@@ -916,7 +916,7 @@
                 
                 <div class=" text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3 class="mb-0">Data Santri</h3>
+                        <h3 class="mb-0">Data aSantri</h3>
                         <center>
                             <div class="card-body">
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">

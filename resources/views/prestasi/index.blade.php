@@ -90,7 +90,7 @@
         </li>
         
         <li
-            class="sidebar-item ">
+            class="sidebar-item active">
             <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
                 <i class="bi bi-exclamation-triangle"></i>
                 <span>Pelanggaran</span>
