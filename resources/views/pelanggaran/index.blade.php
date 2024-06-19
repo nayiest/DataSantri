@@ -74,11 +74,8 @@
         </li>
 
         <li
-<<<<<<< HEAD
+
             class="sidebar-item">
-=======
-            class="sidebar-item ">
->>>>>>> 1a3ada46c55ead27c0ae0943b62523e97631b4c6
             <a href="{{ route('santri') }}" class='sidebar-link'>
                 <i class="bi bi-file-earmark-medical-fill"></i>
                 <span>Data Santri</span>
@@ -88,11 +85,8 @@
         </li>
         
         <li
-<<<<<<< HEAD
+
             class="sidebar-item active ">
-=======
-            class="sidebar-item active">
->>>>>>> 1a3ada46c55ead27c0ae0943b62523e97631b4c6
             <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
                 <i class="bi bi-exclamation-triangle"></i>
                 <span>Pelanggaran</span>
