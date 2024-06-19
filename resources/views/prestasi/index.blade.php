@@ -80,7 +80,7 @@
         </li>
 
         <li
-            class="sidebar-item active">
+            class="sidebar-item ">
             <a href="{{ route('santri') }}" class='sidebar-link'>
                 <i class="bi bi-file-earmark-medical-fill"></i>
                 <span>Data Santri</span>
@@ -100,7 +100,7 @@
         </li>
 
         <li
-            class="sidebar-item ">
+            class="sidebar-item active ">
             <a href="{{ route('prestasi') }}" class='sidebar-link'>
                 <i class="bi bi-trophy"></i>
             <span>prestasi</span>
