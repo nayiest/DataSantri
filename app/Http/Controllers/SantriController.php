@@ -25,7 +25,7 @@ class SantriController extends Controller
 
         
     }
-
+ 
     // public function dashboard(Request $request)
     // {
     //     $santri =  new santri;
