@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ChartController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
@@ -58,6 +58,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
      
+    Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+
+// Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
+
 // DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 

@@ -74,7 +74,7 @@ class PelanggaranController extends Controller
     {
         $pelanggaran = pelanggaran::findOrFail($id); 
         $pelanggaran->nama_santri = $request->nama_santri;
-        $pelanggaran->jenis_pelanggaran = $request->jenis_pelanggaran;
+        $pelanggaran->nama_pelanggaran = $request->nama_pelanggaran;
         $pelanggaran->kategori_pelanggaran = $request->kategori_pelanggaran;
 
         $pelanggaran->save();

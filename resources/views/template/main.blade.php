@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Plus Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/vendors/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/vendors/jquery-bar-rating/css-stars.css" />
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/vendors/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/vendors/jquery-bar-rating/css-stars.css" />
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/vendors/font-awesome/css/font-awesome.min.css" />
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="{{ asset('plus-admin') }}/assets/css/demo_1/style.css" />
+    <link rel="stylesheet" href="{{ asset('template') }}/dist/assets/css/demo_1/style.css" />
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('plus-admin') }}/assets/images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('template') }}/dist/assets/images/favicon.png" />
   </head>
 
 {{-- SIDEBAR --}}
@@ -31,7 +31,7 @@
             <span class="mdi mdi-chevron-double-left"></span>
           </button>
           <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('plus-admin') }}/assets/images/logo-mini.svg" alt="logo" /></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{ asset('template') }}/dist/assets/images/logo-mini.svg" alt="logo" /></a>
           </div>
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
@@ -43,7 +43,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{ asset('plus-admin') }}/assets/images/faces/face1.jpg" alt="image" class="profile-pic">
+                    <img src="{{ asset('template') }}/dist/assets/images/faces/face1.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -53,7 +53,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{ asset('plus-admin') }}/assets/images/faces/face6.jpg" alt="image" class="profile-pic">
+                    <img src="{{ asset('template') }}/dist/assets/images/faces/face6.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -63,7 +63,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="{{ asset('plus-admin') }}/assets/images/faces/face7.jpg" alt="image" class="profile-pic">
+                    <img src="{{ asset('template') }}/dist/assets/images/faces/face7.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -164,7 +164,7 @@
       <li class="nav-item nav-profile border-bottom">
         <a href="#" class="nav-link flex-column">
           <div class="nav-profile-image">
-            <img src="{{ asset('plus-admin') }}/assets/images/faces/face1.jpg" alt="profile" />
+            <img src="{{ asset('template') }}/dist/assets/images/faces/face1.jpg" alt="profile" />
             <!--change to offline or busy as needed-->
           </div>
           <div class="nav-profile-text d-flex ml-0 mb-3 flex-column">
@@ -175,8 +175,8 @@
       </li>
       <li class="nav-item pt-3">
         <a class="nav-link d-block" href="index.html">
-          <img class="sidebar-brand-logo" src="{{ asset('plus-admin') }}/assets/images/logo.svg" alt="" />
-          <img class="sidebar-brand-logomini" src="{{ asset('plus-admin') }}/assets/images/logo-mini.svg" alt="" />
+          <img class="sidebar-brand-logo" src="{{ asset('template') }}/dist/assets/images/logo.svg" alt="" />
+          <img class="sidebar-brand-logomini" src="{{ asset('template') }}/dist/assets/images/logo-mini.svg" alt="" />
           <div class="small font-weight-light pt-1">Responsive Dashboard</div>
         </a>
         <form class="d-flex align-items-center" action="#">
@@ -240,26 +240,26 @@
 
 
 {{-- JS --}}
-<script src="{{ asset('plus-admin') }}/assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="{{ asset('template') }}/dist/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="{{ asset('plus-admin') }}/assets/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/chart.js/Chart.min.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/flot/jquery.flot.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/flot/jquery.flot.resize.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/flot/jquery.flot.categories.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/vendors/flot/jquery.flot.stack.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/flot/jquery.flot.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/flot/jquery.flot.resize.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/flot/jquery.flot.categories.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/flot/jquery.flot.fillbetween.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/vendors/flot/jquery.flot.stack.js"></script>
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="{{ asset('plus-admin') }}/assets/js/off-canvas.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/js/hoverable-collapse.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/js/misc.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/js/settings.js"></script>
-    <script src="{{ asset('plus-admin') }}/assets/js/todolist.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/off-canvas.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/hoverable-collapse.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/misc.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/settings.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/todolist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script src="{{ asset('plus-admin') }}/assets/js/dashboard.js"></script>
+    <script src="{{ asset('template') }}/dist/assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
 </body>
 </html>

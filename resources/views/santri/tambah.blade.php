@@ -20,12 +20,12 @@
 </head>
 
 <body>
-    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js "></script>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
     <div class="sidebar-header position-relative">
-        <div class="d-flex justify-content-between align-items-center"> 
+        <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
                 <a href=" {{ route('santri') }}">IB Data</a>
             </div>
@@ -67,15 +67,44 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item  ">
-                <a href="index.html" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-                
-
-            </li>
+            class="sidebar-item ">
+            <a href="{{ route('dashboard') }}" class='sidebar-link '>
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
             
+
+        </li>
+
+        <li
+            class="sidebar-item active">
+            <a href="{{ route('santri') }}" class='sidebar-link'>
+                <i class="bi bi-file-earmark-medical-fill"></i>
+                <span>Data Santri</span>
+            </a>
+            
+
+        </li>
+        
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Pelanggaran</span>
+            </a>
+            
+
+        </li>
+
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                <i class="bi bi-trophy"></i>
+            <span>prestasi</span>
+            </a>
+       </li>
+
+        
            <!-- < <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -810,7 +839,6 @@
             <div id="main-content">                
                 <div class="page-heading">
                     <h3 >Tambah Data Santri</h3>
-                    
                 </div> 
                 <div class="page-content"> 
                     <section class="section">
@@ -819,6 +847,62 @@
                 <form method="post" action="{{ route('storetambah') }}" enctype="multipart/form-data">
                     
                     @csrf
+
+                            {{-- <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <h6 for="basicInput">Nama Santri</h6>
+                                            <input type="text" class="form-control" id="basicInput" placeholder="Masukkan Nama Santri" id="namasantri" name="namasantri">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <h6 for="basicInput">Alamat</h6>
+                                            <input type="text" class="form-control" id="basicInput" placeholder="Masukkan Alamat Santri" id="alamatsantri" name="alamatsantri">
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <h6>Tingkatan Santri</h6>
+                                            <div class="input-group mb-3">
+                                                <label class="input-group-text" for="inputGroupSelect01">Tingkatan</label>
+                                                <select class="form-select" id="inputGroupSelect01">
+                                                    <option selected>Choose...</option>
+                                                    <option value="1">Mustawa 1</option>
+                                                    <option value="2">Mustawa 2</option>
+                                                    <option value="3">Mustawa 3</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <h6 for="basicInput">Jenis Kelamin Santri</h6>
+                                        
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Ikhwan
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Akhwat
+                                            </label>
+                                        </div>    
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 for="basicInput">Tanggal Lahir</h6>
+                                        <input type="date" class="form-control flatpickr-no-config" placeholder="Select date..">
+                                            
+                                        
+                                    </div>
+                                </div>
+                                <br>
+                                <button type="button" class="btn btn-primary"> Simpan </button>
+                            </div> --}}
+
                                     
                             <section id="multiple-column-form">
                                 <div class="row match-height">
@@ -836,11 +920,11 @@
                                                                     <label for="first-name-column">Nama Lengkap</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama Lengkap" name="nama_santri">
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col-md-6 col-12">
-                                                                <label>Tingkatan/Kelas</label>
-                                                                <div class="input-group mb-3">
+                                                                <div class="col-md-6 col-12">
+                                                                    <label>Tingkatan/Kelas</label>
+                                                                    <div class="input-group mb-3">
                                                                     <select class="form-select" id="inputGroupSelect01" name="angkatan_santri">
                                                                         <option selected>Pilih...</option>
                                                                         <option>Mustawa 1</option>
@@ -854,7 +938,7 @@
                                                                 <div class="form-group">
                                                                     <label for="city-column">Domisili</label>
                                                                     <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
-                                                                        name="domisili_santri">
+                                                                    name="domisili_santri">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
@@ -865,7 +949,7 @@
                                                                 <div class="form-group">
                                                                     <label for="company-column">ALamat Lengkap</label>
                                                                     <input type="text" id="company-column" class="form-control"
-                                                                        name="alamat_santri" placeholder="Alamat Lengkap">
+                                                                    name="alamat_santri" placeholder="Alamat Lengkap">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
@@ -884,13 +968,12 @@
                                                                 </div>    
                                                             </div>
 
-                                                            <div class="col-md-3 col-12">
+                                                            <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
                                                                     <label for="formFile" class="form-label">Photo Santri</label>
                                                                     <input type="file" id="formFile" name="photo_santri" class="image-crop-filepond" image-crop-aspect-ratio="1:1">
                                                                 </div>
                                                             </div>
-                                                            
                                                             <div class="col-12 d-flex justify-content-end">
                                                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                                                 <a href="{{ route('santri') }}" type="reset" class="btn btn-light-secondary me-1 mb-1">Kembali</a>
@@ -908,7 +991,7 @@
 
                 </form>
 
-                        </div> 
+                        </div>
                     </section>
                 </div>
                 
@@ -918,24 +1001,10 @@
     </div>
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
     
-
-    {{-- PHOTO UPLOADER JS --}}
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-filter/filepond-plugin-image-filter.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/filepond/filepond.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/extensions/toastify-js/src/toastify.js"></script>
-  <script src="{{ asset('template/dist/assets') }}/static/js/pages/filepond.js"></script>
     
 </body>
-
 </html>
 
 
@@ -947,3 +1016,12 @@
 
 
 
+
+
+
+            
+        
+      
+    
+</body>
+</html>

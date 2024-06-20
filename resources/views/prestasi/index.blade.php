@@ -100,7 +100,7 @@
         </li>
 
         <li
-            class="sidebar-item active">
+            class="sidebar-item active ">
             <a href="{{ route('prestasi') }}" class='sidebar-link'>
                 <i class="bi bi-trophy"></i>
             <span>prestasi</span>
@@ -1307,7 +1307,7 @@
                 
                 <div class=" text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h3 class="mb-0">Data Santri</h3>
+                        <h3 class="mb-0">Prestasi Santri</h3>
                         <center>
                                 {{-- Center Navs --}}
 

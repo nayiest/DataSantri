@@ -66,22 +66,25 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item">
-                <a href="{{ route('dashboard') }}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-                
+            class="sidebar-item active">
+            <a href="{{ route('dashboard') }}" class='sidebar-link '>
+         
+
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
+            
 
             </li>
 
-            <li
-                class="sidebar-item active">
-                <a href="{{ route('santri') }}" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-medical-fill"></i>
-                    <span>Data Santri</span>
-                </a>
-                
+        <li
+
+            class="sidebar-item">
+            <a href="{{ route('santri') }}" class='sidebar-link'>
+                <i class="bi bi-file-earmark-medical-fill"></i>
+                <span>Data Santri</span>
+            </a>
+            
 
             </li>
             
