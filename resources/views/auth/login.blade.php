@@ -5,9 +5,18 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        {{--  --}}
-        
-        
+        <!-- Logo -->
+        {{-- <div class="text-center">
+            <img src="{{ asset('public/storage/images/logo.png') }}" alt="Logo" class="mb-4">
+        </div> --}}
+        <div class="card-header">
+            <div class="text-center">
+                <img src="{{ asset('public/storage/images/logo.png')}}" class="img-responsive img-body">
+            </div>
+           
+            <h3 class="text-center font-weight-light my-4"><b>LOG IN</b></h3>
+        </div>
+   
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
