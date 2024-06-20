@@ -922,8 +922,15 @@
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group">
                                                                     <label for="first-name-column">Kategori Prestasi </label>
-                                                                    <input type="text" id="first-name-column" class="form-control"
-                                                                        placeholder="kategori prestasi" name="kategori_prestasi">
+                                                                    <div class="input-group mb-3">
+                                                                        <select class="form-select" id="inputGroupSelect01" name="kategori_prestasi">
+                                                                            <option selected>Pilih...</option>
+                                                                            <option>Mustawa 1</option>
+                                                                            <option>Mustawa 2</option>
+                                                                            <option>Mustawa 3</option>
+                                                                        </select>
+                                                                        <label class="input-group-text" for="inputGroupSelect01">Kategori</label>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">

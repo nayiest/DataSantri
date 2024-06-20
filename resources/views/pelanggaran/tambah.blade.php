@@ -929,14 +929,18 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
-                                                                <div class="mb-3">
-                                                                    <label for="first-name-column">Kategori Pelanggaran</label>
-                                                                    <input type="text" id="first-name-column" class="form-control"
-                                                                        placeholder="Kategori pelanggaran" name="kategori_pelanggaran">
+                                                                <div class="col-md-6 col-12">
+                                                                    <label>Kategori Pelanggaran</label>
+                                                                    <div class="input-group mb-3">
+                                                                    <select class="form-select" id="inputGroupSelect01" name="kategori_pelanggaran">
+                                                                        <option selected>Pilih...</option>
+                                                                        <option>Berat</option>
+                                                                        <option>Sedang</option>
+                                                                        <option>Ringan</option>
+                                                                    </select>
+                                                                    <label class="input-group-text" for="inputGroupSelect01">Kategori</label>
                                                                 </div>
                                                             </div>
-                                                            
-                                                            
                                                             <div class="col-12 d-flex justify-content-end">
                                                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                                                 <a href="{{ route('pelanggaran') }}" type="reset" class="btn btn-light-secondary me-1 mb-1">Kembali</a>
