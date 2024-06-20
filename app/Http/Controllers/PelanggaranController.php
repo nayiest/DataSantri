@@ -37,6 +37,7 @@ class PelanggaranController extends Controller
         $pelanggaran->nama_santri = $request->nama_santri;
         $pelanggaran->nama_pelanggaran = $request->nama_pelanggaran;
         $pelanggaran->kategori_pelanggaran = $request->kategori_pelanggaran;
+        $pelanggaran->deskripsi_pelanggaran = $request->deskripsi_pelanggaran;
 
 
         $pelanggaran->save();

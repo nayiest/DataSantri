@@ -816,61 +816,7 @@
                     
                     @csrf
 
-                            {{-- <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <h6 for="basicInput">Nama Santri</h6>
-                                            <input type="text" class="form-control" id="basicInput" placeholder="Masukkan Nama Santri" id="namasantri" name="namasantri">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <h6 for="basicInput">Alamat</h6>
-                                            <input type="text" class="form-control" id="basicInput" placeholder="Masukkan Alamat Santri" id="alamatsantri" name="alamatsantri">
-                                        </div>
-                                        <div class="col-md-12 mb-4">
-                                            <h6>Tingkatan Santri</h6>
-                                            <div class="input-group mb-3">
-                                                <label class="input-group-text" for="inputGroupSelect01">Tingkatan</label>
-                                                <select class="form-select" id="inputGroupSelect01">
-                                                    <option selected>Choose...</option>
-                                                    <option value="1">Mustawa 1</option>
-                                                    <option value="2">Mustawa 2</option>
-                                                    <option value="3">Mustawa 3</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                    </div>
-                                    
-                                    <div class="col-md-6">
-                                        <h6 for="basicInput">Jenis Kelamin Santri</h6>
-                                        
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Ikhwan
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Akhwat
-                                            </label>
-                                        </div>    
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6 for="basicInput">Tanggal Lahir</h6>
-                                        <input type="date" class="form-control flatpickr-no-config" placeholder="Select date..">
-                                            
-                                        
-                                    </div>
-                                </div>
-                                <br>
-                                <button type="button" class="btn btn-primary"> Simpan </button>
-                            </div> --}}
-
+                         
                                     
                             <section id="multiple-column-form">
                                 <div class="row match-height">
@@ -910,7 +856,7 @@
                                                             
                                                             <div class="col-12 d-flex justify-content-end">
                                                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                <button href="{{ route('pelanggaran') }}" type="reset" class="btn btn-light-secondary me-1 mb-1">Kembali</button>
+                                                                <a href="{{ route('pelanggaran') }}" type="reset" class="btn btn-light-secondary me-1 mb-1">Kembali</a>
                                                             </div>
                                                         </div>
                                                     </form>
