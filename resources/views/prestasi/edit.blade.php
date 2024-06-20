@@ -903,6 +903,13 @@
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group">
+                                                                    <label for="first-name-column">Nama Prestasi</label>
+                                                                    <input value="{{$edit['nama_prestasi']}}"  type="text" id="first-name-column" class="form-control"
+                                                                        placeholder="Nama Prestasi" name="nama_prestasi">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="form-group">
                                                                     <label for="first-name-column">Kategori Prestasi </label>
                                                                     <input value="{{$edit['kategori_prestasi']}}" type="text" id="first-name-column" class="form-control"
                                                                         placeholder="kategori prestasi" name="kategori_prestasi">
