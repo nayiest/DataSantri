@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('keterangan_prestasi');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.
