@@ -7,6 +7,7 @@ use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PelanggaranController;    
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\mutabaahController;    
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -91,6 +92,18 @@ Route::get('/prestasi/formeditprestasi/{id}',[prestasiController::class, 'edit']
 Route::put('/prestasi/updateprestasi/{id}',[prestasiController::class, 'update'])->name('updateprestasi');
 Route::get('show/{id}',[prestasiController::class, 'show'])->name('detailprestasi');
 Route::get('/prestasi/hapusprestasi/{id}',[prestasiController::class, 'destroy'])->name('hapusprestasi');
+
+
+
+//mutabaah
+route::get('/mutabaah',[mutabaahcontroller::class, 'index'])->name('mutabaah');
+route::get('/mutabaah/addmutabaah', [mutabaahcontroller::class, 'create'])->name('tambahmutabaah');
+Route::post('/mutabaah/store',[mutabaahcontroller::class, 'store'])->name('storemutabaah');
+Route::get('/mutabaah/formeditmutabaah/{id}',[mutabaahcontroller::class, 'edit'])->name('editmutabaah'); 
+Route::put('/mutabaah/updatemutabaah/{id}',[mutabaahcontroller::class, 'update'])->name('updatemutabaah');
+Route::get('show/{id}',[mutabaahcontroller::class, 'show'])->name('detailprestasi');
+Route::get('/mutabaah/hapusmutabaah/{id}',[mutabaahcontroller::class, 'destroy'])->name('hapusmutabaah');
+
 });
 
 Route::get('/admin/dashboard', function () {

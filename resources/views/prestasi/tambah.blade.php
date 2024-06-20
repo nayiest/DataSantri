@@ -100,6 +100,15 @@
             </a>
        </li>
 
+       <li
+       class="sidebar-item ">
+       <a href="{{ route('mutabaah') }}" class='sidebar-link'>
+           <i class="bi bi-calendar"></i>
+       <span>Mutabaah Santri</span>
+       </a>
+  </li>
+
+
          
            <!-- < <li
                 class="sidebar-item  has-sub">
