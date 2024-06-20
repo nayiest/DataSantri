@@ -86,7 +86,7 @@
         
         <li
 
-            class="sidebar-item active ">
+            class="sidebar-item  ">
             <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
                 <i class="bi bi-exclamation-triangle"></i>
                 <span>Pelanggaran</span>
@@ -104,7 +104,7 @@
        </li>
 
        <li
-       class="sidebar-item ">
+       class="sidebar-item active">
        <a href="{{ route('mutabaah') }}" class='sidebar-link'>
            <i class="bi bi-calendar"></i>
        <span>Mutabaah Santri</span>
