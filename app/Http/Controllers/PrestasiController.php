@@ -85,6 +85,7 @@ class PrestasiController extends Controller
         
         $prestasi = prestasi::findOrFail($id); 
         $prestasi->nama_santri = $request->nama_santri;
+        $prestasi->nama_prestasi = $request->nama_prestasi;
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
         $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
 
