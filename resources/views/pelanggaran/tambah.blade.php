@@ -892,7 +892,7 @@
                                                                 <a href="{{ route('pelanggaran') }}" type="reset" class="btn btn-light-secondary me-1 mb-1">Kembali</a>
                                                             </div>
                                                         </div>
-                                                    </form>
+                                                    </form> 
                                                 </div>
                                             </div>
                                         </div>
