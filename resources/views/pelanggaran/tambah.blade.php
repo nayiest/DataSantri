@@ -861,7 +861,7 @@
                                                            
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
-                                                                    <label for="first-name-column">nama_santri</label>
+                                                                    <label for="first-name-column">nama santri</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama santri" name="nama_santri">
                                                                 </div>
@@ -877,11 +877,21 @@
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
                                                                     <label for="first-name-column">Kategori Pelanggaran</label>
-                                                                    <input type="text" id="first-name-column" class="form-control"
-                                                                        placeholder="Kategori pelanggaran" name="kategori_pelanggaran">
+                                                                    <select class="form-select" id="inputGroupSelect01" name="kategori_pelanggaran">
+                                                                        <option selected>Pilih...</option>
+                                                                        <option>Ringan</option>
+                                                                        <option>Sedang</option>
+                                                                        <option>Berat</option>
+                                                                    </select>
                                                                 </div>
                                                             </div>
-                                                            
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-column">Keterangan Pelanggaran</label>
+                                                                    <input type="text" id="first-name-column" class="form-control"
+                                                                        placeholder="Deskripsi Pelanggaran" name="deskripsi_pelanggaran">
+                                                                </div>
+                                                            </div>
                                                             
                                                             <div class="col-12 d-flex justify-content-end">
                                                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>

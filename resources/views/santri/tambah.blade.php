@@ -100,7 +100,7 @@
             class="sidebar-item ">
             <a href="{{ route('prestasi') }}" class='sidebar-link'>
                 <i class="bi bi-trophy"></i>
-            <span>prestasi</span>
+            <span>Prestasi</span>
             </a>
        </li>
 
@@ -970,7 +970,6 @@
 
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
-                                                                    <label for="formFile" class="form-label">Photo Santri</label>
                                                                     <input type="file" id="formFile" name="photo_santri" class="image-crop-filepond" image-crop-aspect-ratio="1:1">
                                                                 </div>
                                                             </div>
@@ -1002,24 +1001,16 @@
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-    
-    
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
 
             
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-filter/filepond-plugin-image-filter.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond/filepond.js"></script>
         
       
     
