@@ -981,7 +981,7 @@
                                                                           <input type="text" id="company-column" class="form-control"
                                                                                       name="alamat_santri" placeholder="Alamat Lengkap">
                                                                       </div>
-                                                                      <div class="col-md-4">
+                                                                      <div class="col-md-4"> 
                                                                           <label for="angkatan_santri">Angkatan</label>
                                                                       </div>
                                                                       <div class="col-md-8 form-group">

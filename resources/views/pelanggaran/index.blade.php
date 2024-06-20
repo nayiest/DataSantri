@@ -1268,7 +1268,7 @@
                                                                       <textarea class="form-control" id="keterangan_prestasi" class="form-control"
                                                                       placeholder="Deskripsi Prestasi" name="keterangan_prestasi" rows="3"></textarea>
                                                                   </div>
-                                                                  
+                                                                   
                                                                   
                                                                   <br>
                                                                   

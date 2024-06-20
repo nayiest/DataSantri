@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_santri');
-            $table->enum('jk_santri', ['Ikhwan','Akhwat']); 
+            $table->enum('jk_santri', ['Ikhwan','Akhwat']);  
             $table->string('angkatan_santri');
             $table->date('tgllahir_santri');
             $table->string('domisili_santri');

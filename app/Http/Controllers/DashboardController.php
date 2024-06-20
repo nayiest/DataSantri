@@ -25,7 +25,7 @@ class DashboardController extends Controller
           return view ('dashboard.index',compact('request','query','totalSantri','totalpelanggaran','totalprestasi'));
     }
 
-    public function Chart()
+    public function Chart() 
     {
         
     }

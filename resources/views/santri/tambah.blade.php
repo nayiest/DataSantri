@@ -875,7 +875,7 @@
                                         
                                         
                                     </div>
-                                    
+                                     
                                     <div class="col-md-6">
                                         <h6 for="basicInput">Jenis Kelamin Santri</h6>
                                         

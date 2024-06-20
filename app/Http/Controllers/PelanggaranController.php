@@ -32,7 +32,7 @@ class PelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        $pelanggaran = new Pelanggaran;
+        $pelanggaran = new Pelanggaran; 
 
         $pelanggaran->nama_santri = $request->nama_santri;
         $pelanggaran->nama_pelanggaran = $request->nama_pelanggaran;

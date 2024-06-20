@@ -51,7 +51,7 @@ class PrestasiController extends Controller
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
         $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
 
-        $prestasi->save();
+        $prestasi->save(); 
 
         return redirect()->route('prestasi')->with('add','Data Prestasi Berhasil ditambahkan');
     }
