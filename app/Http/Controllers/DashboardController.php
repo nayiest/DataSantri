@@ -20,14 +20,12 @@ class DashboardController extends Controller
         
 
           $totalSantri = DB::table('santris')->count();
-          $jk_santri_counts = Santri::selectRaw('jk_santri, COUNT(*) as count')
-            ->groupBy('jk_santri')
-            ->pluck('count', 'jk_santri')
-            ->all();
-          return view ('dashboard.index',compact('request','query','totalSantri','jk_santri_counts'));
+          $totalpelanggaran = DB::table('pelanggarans')->count();
+          $totalprestasi = DB::table('prestasis')->count();
+          return view ('dashboard.index',compact('request','query','totalSantri','totalpelanggaran','totalprestasi'));
     }
 
-    public function Chart()
+    public function Chart() 
     {
         
     }

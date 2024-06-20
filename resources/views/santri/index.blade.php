@@ -816,23 +816,29 @@
                                 
                             </ul>
                             <div class=" mt-2" style="margin-right: 20px">
+                                
                                 <div class="dropdown">
-                                    <button class="btn dropdown-toggle me-15" type="button"
-                                        id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        <i class="fa-regular fa-address-book fs-4"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Tambah Santri</a>
-                                        <a class="dropdown-item" href="#">Tambah Pelanggaran</a>
-                                        <a class="dropdown-item" href="#">Tambah Prestasi</a>
-                                    </div>
+                                        <button class="btn dropdown-toggle me-15" type="button"
+                                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                             <i class="fa-regular fa-address-book fs-4"></i>
+                                        </button>
+                                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton" >
+                                            
+                                            
+                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#tambahsantri">Tambah Santri</a>
+                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#tambahpelanggaran">Tambah Pelanggaran</a>
+                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#tambahprestasi">Tambah Prestasi</a>
+                                        </div>
                                 </div>
                             </div>
                             
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="user-menu d-flex">
+                                    <div class="user-menu d-flex"> 
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
                                             <p class="mb-0 text-sm text-gray-600">Administrator</p>
@@ -918,12 +924,458 @@
 
                           
             <div id="main-content">       
-                
+                                {{-- MODAL TAMBAH SANTRI --}}
+                                        <div class="modal fade text-left modal-borderless" id="tambahsantri" tabindex="-1"
+                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Masukkan Data Santri</h5>
+                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <i data-feather="x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <form method="post" action="{{ route('storetambah') }}" enctype="multipart/form-data">
+                    
+                                                        @csrf
+                                                                        
+                                                                {{-- <section id="multiple-column-form">
+                                                                    <div class="row match-height">
+                                                                        <div class="col-12">
+                                                                            <div class="card">
+                                                                                <div class="card-content">
+                                                                                    <div class="card-body">
+                                                                                        <form class="form">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="first-name-column">Nama Lengkap</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="Nama Lengkap" name="nama_santri">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <label>Tingkatan/Kelas</label>
+                                                                                                    <div class="input-group mb-3">
+                                                                                                        <select class="form-select" id="inputGroupSelect01" name="angkatan_santri">
+                                                                                                            <option selected>Pilih...</option>
+                                                                                                            <option>Mustawa 1</option>
+                                                                                                            <option>Mustawa 2</option>
+                                                                                                            <option>Mustawa 3</option>
+                                                                                                        </select>
+                                                                                                        <label class="input-group-text" for="inputGroupSelect01">Tingkatan</label>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="city-column">Domisili</label>
+                                                                                                        <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
+                                                                                                            name="domisili_santri">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <label for="basicInput">Tanggal Lahir</label>
+                                                                                                    <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">                                                                
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="company-column">ALamat Lengkap</label>
+                                                                                                        <input type="text" id="company-column" class="form-control"
+                                                                                                            name="alamat_santri" placeholder="Alamat Lengkap">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <label for="basicInput">Jenis Kelamin Santri</label>                                                                
+                                                                                                    <div class="form-check">
+                                                                                                        <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Ikhwan">
+                                                                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                                                                            Ikhwan
+                                                                                                        </label>
+                                                                                                    </div>
+                                                                                                    <div class="form-check">
+                                                                                                        <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Akhwat">
+                                                                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                                                                            Akhwat
+                                                                                                        </label>
+                                                                                                    </div>    
+                                                                                                </div>
+                                    
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="formFile" class="form-label">Photo Santri</label>
+                                                                                                        <input class="form-control" name="photo_santri" type="file" id="formFile">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                
+                                                                                                <div class="col-12 d-flex justify-content-end">
+                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                                                    </div>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section> --}}
+
+                                                                
+                                                                    <div class="card">
+                                                                        <div class="card-content">
+                                                                            <div class="card-body">
+                                                                                <form class="form form-horizontal">
+                                                                                    <div class="form-body">
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-4">
+                                                                                                <label for="nama_santri">Nama Lengkap</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                        <input type="text" id="nama_santri" class="form-control"
+                                                                                                            placeholder="Nama Lengkap" name="nama_santri">
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for="domisili_santri">Domisili</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                        <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
+                                                                                                            name="domisili_santri">
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for="alamat_santri">Alamat Lengkap</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                <input type="text" id="company-column" class="form-control"
+                                                                                                            name="alamat_santri" placeholder="Alamat Lengkap">
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for="angkatan_santri">Angkatan</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                <select class="form-select" id="inputGroupSelect01" name="angkatan_santri">
+                                                                                                    <option selected>Pilih...</option>
+                                                                                                    <option>Mustawa 1</option>
+                                                                                                    <option>Mustawa 2</option>
+                                                                                                    <option>Mustawa 3</option>
+                                                                                                </select>
+                                                                                            
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for=" tgllahir_santri">Tanggal Lahir</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">                                                                
+                                                                                                
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for="photo_santri">Photo Santri</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                    <input class="form-control" name="photo_santri" type="file" id="formFile">
+                                                                                            </div>
+                                                                                            <div class="col-md-4">
+                                                                                                <label for=" jk_santri">Jenis Kelamin</label>
+                                                                                            </div>
+                                                                                            <div class="col-md-8 form-group">
+                                                                                                <div class="form-check">
+                                                                                                    <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Ikhwan">
+                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                                                                        Ikhwan
+                                                                                                    </label>
+                                                                                                </div>
+                                                                                                <div class="form-check">
+                                                                                                    <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Akhwat">
+                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
+                                                                                                        Akhwat
+                                                                                                    </label>
+                                                                                                </div>  
+                                                                                            </div>
+                                                                                            
+                                                                                            <br>
+                                                                                           
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-light-secondary"
+                                                                                    data-bs-dismiss="modal">
+                                                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                                                    <span class="d-none d-sm-block">Close</span>
+                                                                                </button>
+                                                                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>        
+                                                                        
+                                    
+                                                    </form>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        {{-- MODAL PRESTASI --}}
+                                        <div class="modal fade text-left modal-borderless" id="tambahpelanggaran" tabindex="-1"
+                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Masukkan Data Pelanggaran</h5>
+                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <i data-feather="x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <form method="post" action="{{ route('storepelanggaran') }}" enctype="multipart/form-data">
+                    
+                                                        @csrf       
+                                                                {{-- <section id="multiple-column-form">
+                                                                    <div class="row match-height">
+                                                                        <div class="col-12">
+                                                                            <div class="card">
+                                                                                <div class="card-content">
+                                                                                    <div class="card-body">
+                                                                                        <form class="form">
+                                                                                            <div class="row">
+                                                                                               
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="first-name-column">nama_santri</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="Nama santri" name="nama_santri">
+                                                                                                    </div>
+                                                                                                </div> 
+                                    
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="first-name-column">Jenis Pelanggaran</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="Nama pelanggaran" name="nama_pelanggaran">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="mb-3">
+                                                                                                        <label for="first-name-column">Kategori Pelanggaran</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="Kategori pelanggaran" name="kategori_pelanggaran">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                
+                                                                                                
+                                                                                                <div class="col-12 d-flex justify-content-end">
+                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                                                    
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section> --}}
+                                                                                
+                                                                <div class="card">
+                                                                    <div class="card-content">
+                                                                        <div class="card-body">
+                                                                            <form class="form form-horizontal">
+                                                                                <div class="form-body">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="nama_santri">Nama Santri</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                                    <input type="text" id="nama_santri" class="form-control"
+                                                                                                        placeholder="Nama Santri" name="nama_santri">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="nama_pelanggaran">Pelanggaran</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                                    <input type="text" id="nama_pelanggaran" class="form-control"
+                                                                                                        placeholder="Nama pelanggaran" name="nama_pelanggaran">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="kategori_pelanggaran">Jenis</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                                <select class="form-select" id="inputGroupSelect01" name="kategori_pelanggaran">
+                                                                                                    <option selected>Pilih...</option>
+                                                                                                    <option>Ringan</option>
+                                                                                                    <option>Sedang</option>
+                                                                                                    <option>Berat</option>
+                                                                                                </select>
+                                                                                            
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="deskripsi_pelanggaran">Deskripsi</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                            
+                                                                                            <textarea class="form-control" id="deskripsi_pelanggaran" class="form-control"
+                                                                                            placeholder="Deskripsi Pelanggaran" name="deskripsi_pelanggaran" rows="3"></textarea>
+                                                                                        </div>
+                                                                                        
+                                                                                        
+                                                                                        <br>
+                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-light-secondary"
+                                                                                data-bs-dismiss="modal">
+                                                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                                                <span class="d-none d-sm-block">Close</span>
+                                                                            </button>
+                                                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                        
+                                    
+                                                    </form>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal fade text-left modal-borderless" id="tambahprestasi" tabindex="-1"
+                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Masukkan Data Prestasi</h5>
+                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <i data-feather="x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <form method="post" action="{{ route('storeprestasi') }}" enctype="multipart/form-data">
+                    
+                                                        @csrf                               
+                                                                        
+                                                                {{-- <section id="multiple-column-form">
+                                                                    <div class="row match-height">
+                                                                        <div class="col-12">
+                                                                            <div class="card">
+                                                                                <div class="card-content">
+                                                                                    <div class="card-body">
+                                                                                        <form class="form">
+                                                                                            <div class="row">
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="first-name-column">Nama Lengkap</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="Nama lengkap" name="nama_santri">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="first-name-column">Kategori Prestasi </label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="kategori prestasi" name="kategori_prestasi">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-6 col-12">
+                                                                                                    <div class="form-group">
+                                                                                                        <label for="first-name-column">Keterangan Prestasi</label>
+                                                                                                        <input type="text" id="first-name-column" class="form-control"
+                                                                                                            placeholder="keterangan prestasi" name="keterangan_prestasi">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-12 d-flex justify-content-end">
+                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                                                    
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </section> --}}
+                                                                                
+                                                                        
+                                                                <div class="card">
+                                                                    <div class="card-content">
+                                                                        <div class="card-body">
+                                                                            <form class="form form-horizontal">
+                                                                                <div class="form-body">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="nama_santri">Nama Santri</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                                    <input type="text" id="nama_santri" class="form-control"
+                                                                                                        placeholder="Nama Santri" name="nama_santri">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="nama_santri">Nama Prestasi</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                                    <input type="text" id="nama_prestasi" class="form-control"
+                                                                                                        placeholder="Nama Prestasi" name="nama_prestasi">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="kategori_prestasi">Kategori</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                            <input type="text" id="first-name-column" class="form-control"
+                                                                                            placeholder="kategori prestasi" name="kategori_prestasi">
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                            <label for="keterangan_prestasi">Deskripsi</label>
+                                                                                        </div>
+                                                                                        <div class="col-md-8 form-group">
+                                                                                            
+                                                                                            <textarea class="form-control" id="keterangan_prestasi" class="form-control"
+                                                                                            placeholder="Deskripsi Prestasi" name="keterangan_prestasi" rows="3"></textarea>
+                                                                                        </div>
+                                                                                        
+                                                                                        
+                                                                                        <br>
+                                                                                        
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-light-secondary"
+                                                                                data-bs-dismiss="modal">
+                                                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                                                <span class="d-none d-sm-block">Close</span>
+                                                                            </button>
+                                                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                    
+                                                    </form>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                             {{-- Modal End --}}
+
+
+
 
                                   
 
                 
-                <div class=" text-center rounded p-4">
+                
+                
+                
+                                        <div class=" text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3 class="mb-0">Data Santri</h3>
                         <center>
