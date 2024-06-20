@@ -97,8 +97,12 @@ Route::get('/prestasi/hapusprestasi/{id}',[prestasiController::class, 'destroy']
 
 //mutabaah
 route::get('/mutabaah',[mutabaahcontroller::class, 'index'])->name('mutabaah');
-route::get('/mutabaah/addmutabaah', [mutabaahcontroller::class, 'create'])->name('tambahmutabaah');
-Route::post('/mutabaah/store',[mutabaahcontroller::class, 'store'])->name('storemutabaah');
+route::get('/mutabaah/addmutabaahnilai', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahnilai');
+route::get('/mutabaah/addmutabaahtahajud', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahtahajud');
+route::get('/mutabaah/addmutabaahdzikir', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahdzikir');
+route::get('/mutabaah/addmutabaahsholat_jamaah', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahsholat_jamaah');
+route::get('/mutabaah/addmutabaahWO', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahWO');
+Route::post('/mutabaah/storemutabaah',[mutabaahcontroller::class, 'store'])->name('storemutabaah');
 Route::get('/mutabaah/formeditmutabaah/{id}',[mutabaahcontroller::class, 'edit'])->name('editmutabaah'); 
 Route::put('/mutabaah/updatemutabaah/{id}',[mutabaahcontroller::class, 'update'])->name('updatemutabaah');
 Route::get('show/{id}',[mutabaahcontroller::class, 'show'])->name('detailprestasi');

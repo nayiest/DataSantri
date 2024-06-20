@@ -16,7 +16,7 @@ class MutabaahController extends Controller
     {
         // $data =  new mutabaah;
         $query = mutabaah::all();
-        return view ('mutabaah.tambah',compact('request','query'));
+        return view ('mutabaah.index',compact('request','query'));
 
     }
     public function detail(Request $request)
@@ -40,26 +40,32 @@ class MutabaahController extends Controller
      */
     public function store(Request $request)
     {
-        // $mutabaah = new mutabaah();
-        // $test = 1;
+        $mutabaah = new mutabaah();
+        $test = 1;
 
-        // $santri->nama_santri = $request->nama_santri;
-        // $santri->jk_santri = $request->jk_santri;
-        // $santri->angkatan_santri = $request->angkatan_santri;
-        // $santri->tgllahir_santri = $request->tgllahir_santri;
-        // $santri->domisili_santri = $request->domisili_santri;
-        // $santri->alamat_santri = $request->alamat_santri;
-        // $santri->photo_santri = $request->photo_santri;
+        $mutabaah->Fiqih = $request->Fiqih;
+        $mutabaah->Hadis = $request->Hadis;
+        $mutabaah->IT = $request->IT;
+        $mutabaah->Quran = $request->Quran;
+        $mutabaah->Bahasaarab = $request->Bahasaarab;
+        $mutabaah->Bahasainggris = $request->Bahasainggris;
+        $mutabaah->Polygon = $request->Polygon;
        
+        $mutabaah->save();
+
+        return redirect()->route('mutabaah')->with('add','Data Nilai Santri Berhasil ditambahkan!');
        
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(mutabaah $mutabaah)
+    public function show($id)
     {
-        //
+        $mutabaah = mutabaah::findOrFail($id);
+        
+
+        return view('mutabaah.index',compact('mutabaah'));
     }
 
     /**
@@ -67,7 +73,10 @@ class MutabaahController extends Controller
      */
     public function edit(mutabaah $mutabaah)
     {
-        //
+        $edit = mutabaah::findOrFail($id);
+        $query = mutabaah::all();
+        return view ('mutabaah.edit',compact('edit'));
+        ;
     }
 
     /**
@@ -75,8 +84,20 @@ class MutabaahController extends Controller
      */
     public function update(Request $request, mutabaah $mutabaah)
     {
-        //
+        $mutabaah = mutabaah::findOrFail($id); 
+        $mutabaah->Fiqih = $request->Fiqih;
+        $mutabaah->Hadis = $request->Hadis;
+        $mutabaah->IT = $request->IT;
+        $mutabaah->Quran = $request->Quran;
+        $mutabaah->Bahasaarab = $request->Bahasaarab;
+        $mutabaah->Bahasainggris = $request->Bahasainggris;
+        $mutabaah->Polygon = $request->Polygon;
+
+        $santri->save();
+        return redirect()->route('mutabaah')->with('success','Data Nilai Santri Berhasil diupdate!');
     }
+       
+    
 
     /**
      * Remove the specified resource from storage.

@@ -12,15 +12,27 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('mutabaahs', function (Blueprint $table) {
+
+            // $table->id();
+            // $table->integer('tahajud');
+            // $table->integer('sholat_berjamaah');
+            // $table->integer('dhuha');
+            // $table->integer('wo');
+            // $table->integer('puasa');
+            // $table->integer('dzikir_pp');            
+            // $table->integer('nilai');
+            // $table->timestamps();
+
             $table->id();
-            $table->string('tahajud');
-            $table->string('sholat_berjamaah');
-            $table->string('dhuha');
-            $table->string('wo');
-            $table->string('puasa');
-            $table->string('dzikir_pp');            
-            $table->string('nilai');
+            $table->integer('IT');
+            $table->integer('Fiqih');
+            $table->integer('hadis');
+            $table->integer('BahasaInggris');
+            $table->integer('BahasaArab');
+            $table->integer('Quran');            
+            $table->integer('polygon');
             $table->timestamps();
+
         });
     }
 
