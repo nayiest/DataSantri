@@ -7,7 +7,8 @@ use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PelanggaranController;    
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrestasiController;
-use App\Http\Controllers\mutabaahController;    
+use App\Http\Controllers\mutabaahController; 
+use App\Http\Controllers\AuthController;    
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 
 // Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
+
 
 // DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
