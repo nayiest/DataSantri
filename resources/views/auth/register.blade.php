@@ -72,7 +72,7 @@
 
 <body>
     
-    <script src="assets/static/js/initTheme.js"></script>
+    <script src="{{ asset('template/dist/')}}/assets/static/js/initTheme.js"></script>
     <div id="auth">
         
 <div class="row h-100">
@@ -114,7 +114,7 @@
     
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 </div>
-                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log In</button>
+                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Sign up</button>
             </form>
             <div class="text-center mt-5 text-lg fs-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
@@ -137,7 +137,7 @@
 
     </div>
 
-    <script src="assets/static/js/initTheme.js"></script>
+    <script src="{{ asset('template/dist/')}}/assets/static/js/initTheme.js"></script>
     
     {{-- <script src="{{ asset('template/dist/')}}/assets/static/js/initTheme.js"></script>
     <div id="auth">
