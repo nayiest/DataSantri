@@ -66,7 +66,7 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
@@ -74,40 +74,40 @@
             </li>  
             
             <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('santri')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
                     <span>Data Santri</span>
                 </a>
 
                 <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('pelanggaran')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-exclamation"></i>
                     <span>Pelanggaran</span>
                 </a>
             </li>
 
             <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('prestasi')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-trophy"></i>
                     <span>Prestasi</span>
                 </a>
             </li>
 
             <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('mutabaah')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-calendar"></i>
                     <span>Mutaba'ah Santri</span>
                 </a>
             </li>
 
             <li
-                class="sidebar-item active ">
+                class="sidebar-item ">
                 <a href="{{route('nilai')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
+                    <i class="bi bi-award"></i>
                     <span>Nilai Santri</span>
                 </a>
             </li>
