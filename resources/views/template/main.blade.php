@@ -1181,6 +1181,8 @@
 <script src="assets/extensions/apexcharts/apexcharts.min.js"></script>
 <script src="assets/static/js/pages/dashboard.js"></script>
 
+
+
 {{-- JS --}}
 <script src="{{ asset('template') }}/dist/assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->

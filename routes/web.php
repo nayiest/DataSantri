@@ -2,8 +2,6 @@
 use App\Http\Controllers\SantriController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SantriController;
 use App\Http\Controllers\PelanggaranController;    
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrestasiController;
