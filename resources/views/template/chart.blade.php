@@ -66,7 +66,7 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
@@ -74,14 +74,14 @@
             </li>  
             
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('santri')}}" class='sidebar-link'>
                     <i class="bi bi-file-earmark-medical-fill"></i>
                     <span>Data Santri</span>
                 </a>
 
                 <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('pelanggaran')}}" class='sidebar-link'>
                     <i class="bi bi-exclamation-triangle"></i>
                     <span>Pelanggaran</span>
@@ -89,7 +89,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('prestasi')}}" class='sidebar-link'>
                     <i class="bi bi-trophy"></i>
                     <span>Prestasi</span>
@@ -97,7 +97,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('mutabaah')}}" class='sidebar-link'>
                     <i class="bi bi-calendar"></i>
                     <span>Mutaba'ah Santri</span>
@@ -105,7 +105,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('nilai')}}" class='sidebar-link'>
                     <i class="bi bi-award"></i>
                     <span>Nilai Santri</span>
@@ -113,7 +113,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('mutabaah')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Mutaba'ah Santri</span>
@@ -121,7 +121,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item sidebar-link">
                 <a href="{{route('nilai')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Nilai Santri</span>
