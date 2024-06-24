@@ -113,6 +113,13 @@
             </a>
     </a>
   </li>
+  <li class="sidebar-item">
+    <a href="{{ route('nilai') }}" class='sidebar-link'>
+        <i class="bi bi-paper fill"></i>
+        <span>Nilai Santri</span>
+    </a>
+</a>
+</li>
 
 
            <!-- < <li
