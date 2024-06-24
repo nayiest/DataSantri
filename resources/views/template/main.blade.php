@@ -83,7 +83,7 @@
                 <li
                 class="sidebar-item ">
                 <a href="{{route('pelanggaran')}}" class='sidebar-link'>
-                    <i class="bi bi-exclamation"></i>
+                    <i class="bi bi-exclamation-triangle"></i>
                     <span>Pelanggaran</span>
                 </a>
             </li>
