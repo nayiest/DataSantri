@@ -13,25 +13,8 @@ return new class extends Migration
     {
         Schema::create('mutabaahs', function (Blueprint $table) {
 
-            // $table->id();
-            // $table->integer('tahajud');
-            // $table->integer('sholat_berjamaah');
-            // $table->integer('dhuha');
-            // $table->integer('wo');
-            // $table->integer('puasa');
-            // $table->integer('dzikir_pp');            
-            // $table->integer('nilai');
-            // $table->timestamps();
-
-            $table->id();
-            $table->integer('IT');
-            $table->integer('Fiqih');
-            $table->integer('hadis');
-            $table->integer('BahasaInggris');
-            $table->integer('BahasaArab');
-            $table->integer('Quran');            
-            $table->integer('polygon');
-            $table->timestamps();
+           
+           
 
         });
     }
