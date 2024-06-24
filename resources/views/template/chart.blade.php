@@ -126,7 +126,7 @@
 <div class="page-heading">
     <h3>Profile Statistics</h3>
     
-    @yield('konten')
+    @yield('chart')
 </div> 
 
     <script src="assets/static/js/components/dark.js"></script>
