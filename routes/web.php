@@ -1,14 +1,13 @@
 <?php
-
-
-use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SantriController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PelanggaranController;    
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\mutabaahController; 
 use App\Http\Controllers\nilaiController;
+use App\Http\Controllers\AuthController;    
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -22,6 +21,17 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+Route::get('/', function() {
+    return view('welcome');
+});
+
+Route::get('/santri',[SantriController::class, 'index'])->name('santri');
+Route::get('/santri/addsantri',[SantriController::class, 'create'])->name('tambahsantri');
+Route::post('/santri/store',[SantriController::class, 'store'])->name('storetambah');
+Route::get('/santri/formeditsantri/{id}',[SantriController::class, 'edit'])->name('editsantri');
+Route::put('/santri/updatesantri/{id}',[SantriController::class, 'update'])->name('updatesantri');
+Route::get('show/{id}',[SantriController::class, 'show'])->name('detailsantri');
+Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
 Route::get('/', function () {
     return view('welcome');
 });
@@ -63,6 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/santri',[SantriController::class, 'index'])->name('santri');
 
 // Route::get('/dashboard',[SantriController::class, 'index'])->name('datasantri');
+
 
 // DASHBOARD
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
@@ -169,5 +180,3 @@ Route::get('/admin/dashboard', function () {
 require __DIR__.'/adminauth.php';
 
 Route::get('/santri/hapussantri/{id}',[SantriController::class, 'destroy'])->name('hapussantri');
-
-

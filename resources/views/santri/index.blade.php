@@ -764,12 +764,20 @@
                         <a href="#" class="burger-btn d-block">
                             <i class="bi bi-justify fs-3"></i>
                         </a>
-
+                        
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
+                        <div class="col-md-6 mb-1 mt-4" style="margin-left: 80px;">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" name="keyword" placeholder="keyword">
+                                <button class="input-group-text btn btn-primary"><i>search</i></button>
+                            </div>
+                        </div>
+
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-lg-0">
                                 <li class="nav-item dropdown me-1">
@@ -1386,7 +1394,7 @@
                     <div class="d-flex align-items-center justify-content-between mb-4">
                         <h3 class="mb-0">Data Santri</h3>
                         <center>
-                            <div class="card-body">
+                            <div class="card-body">             
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
                                         <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab"
@@ -1404,21 +1412,7 @@
                 </div>
 
 
-                @if (Session::has('add'))
-                <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('add') }}</center>
-                </div>
-            @endif
-            @if (Session::has('success'))
-                <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('success') }}</center>
-                </div>
-            @endif
-            @if (Session::has('destroy'))
-            <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('destroy') }}</center>
-                </div>
-                @endif          
+                        
                    
 
                 <div class="row">
@@ -1459,7 +1453,7 @@
                                                                     <center>
                                                                         <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
                                                                         <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
-                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
+                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus?!')"> Delete </a>
                                                                     </center>
                                                                         
                                                                     
@@ -1512,7 +1506,7 @@
                                                     <td>{{$item->tgllahir_santri}}</td>
                                                     <td class="text-center">
                                                         <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
+                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus?!')"><i class="fa fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php
