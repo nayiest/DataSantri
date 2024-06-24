@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/static/js/initTheme.js "></script>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
@@ -63,15 +63,50 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item  ">
-                <a href="index.html" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-                
-
-            </li>
+            class="sidebar-item">
+            <a href="{{ route('dashboard') }}" class='sidebar-link'>
+                <i class="bi bi-grid-fill"></i>
+                <span>Dashboard</span>
+            </a>
             
+
+        </li>
+
+        <li
+            class="sidebar-item active">
+            <a href="{{ route('santri') }}" class='sidebar-link'>
+                <i class="bi bi-file-earmark-medical-fill"></i>
+                <span>Data Santri</span>
+            </a>
+            
+
+        </li>
+        
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Pelanggaran</span>
+            </a>
+            
+
+        </li>
+
+        <li
+            class="sidebar-item ">
+            <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                <i class="bi bi-trophy"></i>
+            <span>prestasi</span>
+            </a>
+       </li>
+
+       <li
+       class="sidebar-item ">
+       <a href="{{ route('mutabaah') }}" class='sidebar-link'>
+           <i class="bi bi-calendar"></i>
+       <span>Mutabaah Santri</span>
+       </a>
+  </li>
            <!-- < <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>

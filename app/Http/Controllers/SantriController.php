@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Santri;
 use App\Http\Requests\StoresantriRequest;
 use App\Http\Requests\UpdatesantriRequest;
@@ -14,10 +13,29 @@ class SantriController extends Controller
      */
     public function index(Request $request)
     {
+
+
         // $data =  new santri;
         $query = Santri::all();
         return view ('santri.index',compact('request','query'));
     }
+    public function detail(Request $request)
+    {
+
+
+        
+    }
+ 
+    // public function dashboard(Request $request)
+    // {
+    //     $santri =  new santri;
+    //     $query = Santri::all();
+    //     $santri->jk_santri = $request->count('jk_santri');
+
+
+    //     // $santri = Santri::table('santri')->count();
+    //     return view ('dashboard.index',compact('request','query','santri'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -72,15 +90,16 @@ class SantriController extends Controller
 
         $santri->save();
 
-        return redirect()->route('santri')->with('add','Data Santri Berhasil ditambahkan');
+        return redirect()->route('santri')->with('add','Data Santri Berhasil ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         $santri = Santri::findOrFail($id);
+        
 
         return view('santri.detail',compact('santri'));
     }
@@ -101,8 +120,8 @@ class SantriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $filePath = public_path('storage/images');
-        $santri = Santri::findOrFail($id);
+        // $filePath = public_path('storage/images');
+        $santri = Santri::findOrFail($id); 
         $santri->nama_santri = $request->nama_santri;
         $santri->jk_santri = $request->jk_santri;
         $santri->angkatan_santri = $request->angkatan_santri;
@@ -111,7 +130,7 @@ class SantriController extends Controller
         $santri->alamat_santri = $request->alamat_santri;
         $santri->photo_santri = $request->photo_santri;
        
-        
+         
         // SAVE IMAGE
         
         if ($request->hasFile('photo_santri')){
@@ -124,7 +143,7 @@ class SantriController extends Controller
         }
         
         $santri->save();
-        return redirect()->route('santri')->with('success','Data Buku Berhasil diupdate');
+        return redirect()->route('santri')->with('success','Data Santri Berhasil diupdate!');
     }
 
     /**
@@ -134,6 +153,6 @@ class SantriController extends Controller
     {
         $hapus = santri::findOrFail($id);
         $hapus->delete();
-        return redirect()->route('santri')->with('destroy','Data Buku Berhasil dihapus');
+        return redirect()->route('santri')->with('destroy','Data Santri Berhasil dihapus!');
     }
 }

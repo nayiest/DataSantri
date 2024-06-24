@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('prestasis', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_santri'); 
+            $table->string('nama_prestasi');
+            $table->string('kategori_prestasi'); 
+            $table->string('keterangan_prestasi');
             $table->timestamps();
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

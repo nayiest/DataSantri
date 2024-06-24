@@ -63,14 +63,50 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item  ">
-                <a href="index.html" class='sidebar-link'>
+                class="sidebar-item">
+                <a href="{{ route('dashboard') }}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
                 
 
             </li>
+
+            <li
+                class="sidebar-item active">
+                <a href="{{ route('santri') }}" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>Data Santri</span>
+                </a>
+                
+
+            </li>
+            
+            <li
+                class="sidebar-item ">
+                <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>Pelanggaran</span>
+                </a>
+                
+
+            </li>
+
+            <li
+                class="sidebar-item ">
+                <a href="{{ route('prestasi') }}" class='sidebar-link'>
+                    <i class="bi bi-trophy"></i>
+                <span>prestasi</span>
+                </a>
+           </li>
+
+           <li
+           class="sidebar-item ">
+           <a href="{{ route('mutabaah') }}" class='sidebar-link'>
+               <i class="bi bi-calendar"></i>
+           <span>Mutabaah Santri</span>
+           </a>
+      </li>
             
            <!-- < <li
                 class="sidebar-item  has-sub">
@@ -889,6 +925,59 @@
                         </div>
                     </section>
                 </div>
+                <div class="page-heading">
+                    <h3 >Data Nilai Santri</h3>
+                    
+                </div> 
+                <div class="page-content"> 
+                    <section class="section">
+                        <div class="card">
+                            <section id="multiple-column-form">
+                                <div class="row match-height">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            {{-- <center>
+                                                <div class="avatar avatar-xl">
+                                                    <img src="storage/images/{{ $santri->photo_santri }}">
+                                                </div>
+                                            </center> --}}
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <form class="form">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="card">
+                                                                    <div class="card-header">
+                                                                        <h4>Bar Chart</h4>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <div id="bar"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+
+                                                            
+                                                            
+                                                            <div class="col-12 d-flex justify-content-end">
+                                                                
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                                            
+                                    
+
+
+                        </div>
+                    </section>
+                </div>
                 
                 </div>
             
@@ -896,8 +985,16 @@
     </div>
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    
+     
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
+
+
+
+
+    {{-- JS CHART --}}
+    <script src="{{ asset('template/dist/assets') }}/extensions/dayjs/dayjs.min.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/static/js/pages/ui-apexchart.js"></script>
     
     
 </body>
