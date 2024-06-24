@@ -122,14 +122,9 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-            
-<div class="page-heading">
-    <h3>Profile Statistics</h3>
+            @yield('konten')
 
-    @yield('konten')
-</div> 
  
-
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
  
