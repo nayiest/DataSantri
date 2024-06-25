@@ -34,16 +34,6 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-         // $rules = [
-        //     'nama_santri' => 'required',
-        //     'nama_prestasi' => 'required',
-        ];
-        $message = [
-            'required' => 'data yang di input tidak sesuai'
-        ];
-
-        $this->validate($request, $rules, $message);
-
         $prestasi = new prestasi();
         $test = 1;
 

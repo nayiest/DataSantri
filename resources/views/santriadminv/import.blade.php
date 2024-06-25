@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Import Activities</h1>
-    <form action="{{ route('activities.import') }}" method="POST" enctype="multipart/form-data">
+    <h1>Import Santri</h1>
+    <form action="{{ route('santriadminv.import') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label>File:</label>

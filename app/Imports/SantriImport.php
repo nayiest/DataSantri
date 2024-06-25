@@ -6,7 +6,8 @@ use App\Models\Santri;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ActivitiesImport implements ToModel, WithHeadingRow
+
+class SantriImport implements ToModel, WithHeadingRow
 {
     public function model(array $row)
     {
@@ -14,6 +15,7 @@ class ActivitiesImport implements ToModel, WithHeadingRow
             'nama' => $row['nama'],
             'alamat' => $row['alamat'],
             'tanggal_lahir' => $row['tanggal_lahir'],
+            // Sesuaikan dengan kolom-kolom yang ada di file Excel
         ]);
     }
 }

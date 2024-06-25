@@ -30,7 +30,7 @@ class AdminRoleController extends Controller
             'file' => 'required|mimes:xlsx,xls,csv',
         ]);
 
-        // Excel::import(new SantriImport, $request->file('file'));
+        Excel::import(new SantriImport, $request->file('file'));
 
         return redirect()->route('santriadminv.index')->with('success', 'Data Santri berhasil diimpor.');
     }

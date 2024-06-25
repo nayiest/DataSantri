@@ -597,9 +597,9 @@
                         @extends('layouts.app')
 
                             @section('content')
-                                <h1>Activities</h1>
-                                <a href="{{ route('activities.create') }}">Create Activity</a>
-                                <a href="{{ route('activities.import.form') }}">Import Activities</a>
+                                <h1>Santri</h1>
+                                <a href="{{ route('santriadminv.create') }}">Create Activity</a>
+                                <a href="{{ route('santriadminv.import.form') }}">Import santri</a>
                                 <table>
                                     <tr>
                                         <th>Name</th>
@@ -607,15 +607,15 @@
                                         <th>Date</th>
                                         <th>Actions</th>
                                     </tr>
-                                    @foreach ($activities as $activity)
+                                    @foreach ($santri as $item)
                                         <tr>
-                                            <td>{{ $activity->name }}</td>
-                                            <td>{{ $activity->description }}</td>
-                                            <td>{{ $activity->date }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->description }}</td>
+                                            <td>{{ $item->date }}</td>
                                             <td>
-                                                <a href="{{ route('activities.show', $activity->id) }}">Show</a>
-                                                <a href="{{ route('activities.edit', $activity->id) }}">Edit</a>
-                                                <form action="{{ route('activities.destroy', $activity->id) }}" method="POST" style="display:inline;">
+                                                <a href="{{ route('santriadminv.show', $item->id) }}">Show</a>
+                                                <a href="{{ route('santriadminv.edit', $item->id) }}">Edit</a>
+                                                <form action="{{ route('santriadminv.destroy', $item->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit">Delete</button>
