@@ -648,7 +648,7 @@
                                                                         <div class="ms-3 name">
                                                                             <h5 class="font-bold">{{$item->nama_santri}}</h5>
                                                                             <h6 class="text-muted mb-0">{{$item->angkatan_santri}}</h6>
-                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
+                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary"> Detail</a>
 
                                                                         </div>
                                                                     </div>
