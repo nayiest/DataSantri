@@ -108,7 +108,13 @@
        </a>
   </li>
 
-           
+  <li
+  class="sidebar-item ">
+  <a href="{{ route('nilai') }}" class='sidebar-link'>
+      <i class="fa fa-score"></i>
+  <span>Nilai Santri</span>
+  </a>
+</li>
            <!-- < <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>

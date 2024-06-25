@@ -6,6 +6,7 @@ use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\mutabaahController; 
+use App\Http\Controllers\nilaiController;
 use App\Http\Controllers\AuthController;    
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -108,12 +109,26 @@ Route::get('/prestasi/hapusprestasi/{id}',[prestasiController::class, 'destroy']
 
 //mutabaah
 route::get('/mutabaah',[mutabaahcontroller::class, 'index'])->name('mutabaah');
-route::get('/mutabaah/addmutabaahnilai', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahnilai');
-route::get('/mutabaah/addmutabaahtahajud', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahtahajud');
+
+//nilai
+route::get('/nilai',[nilaicontroller::class, 'index'])->name('nilai');
+route::get('/nilai/addnilai', [nilaicontroller::class, 'create'])->name('tambahnilai');
+Route::get('/nilai/formeditnilainiali/{id}',[nilaicontroller::class, 'edit'])->name('editnilai'); 
+Route::put('/nilai/updatenilainilai/{id}',[nilaicontroller::class, 'update'])->name('updatenilai');
+Route::get('/nilai/hapusnilainilai/{id}',[nilaicontroller::class, 'destroy'])->name('hapusnilai');
+Route::post('/nilai/nilai',[nilaicontroller::class, 'store'])->name('storenilai');
+
+//tahajud
+route::get('/mutabaah/addmutabaahtahajud', [mutabaahcontroller::class, 'create2'])->name('tambahmutabaahtahajud');
+Route::get('/mutabaah/formeditmutabaahtahajud/{id}',[mutabaahcontroller::class, 'edit'])->name('editmutabaahtahajud'); 
+Route::put('/mutabaah/updatemutabaahtahajud/{id}',[mutabaahcontroller::class, 'update'])->name('updatemutabaahtahajud');
+Route::get('/mutabaah/hapusmutabaahtahajud/{id}',[mutabaahcontroller::class, 'destroy'])->name('hapusmutabaahtahajud');
+Route::post('/mutabaah/mutabaahtahajud',[mutabaahcontroller::class, 'store'])->name('storemutabaahtahajud');
+
+//shalat jamaah
 route::get('/mutabaah/addmutabaahdzikir', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahdzikir');
 route::get('/mutabaah/addmutabaahsholat_jamaah', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahsholat_jamaah');
 route::get('/mutabaah/addmutabaahWO', [mutabaahcontroller::class, 'create'])->name('tambahmutabaahWO');
-Route::post('/mutabaah/storemutabaah',[mutabaahcontroller::class, 'store'])->name('storemutabaah');
 Route::get('/mutabaah/formeditmutabaah/{id}',[mutabaahcontroller::class, 'edit'])->name('editmutabaah'); 
 Route::put('/mutabaah/updatemutabaah/{id}',[mutabaahcontroller::class, 'update'])->name('updatemutabaah');
 Route::get('show/{id}',[mutabaahcontroller::class, 'show'])->name('detailprestasi');
