@@ -936,6 +936,9 @@
                                                                     <label for="first-name-column">Nama Lengkap</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama Lengkap" name="nama_santri">
+                                                                        @error('nama_santri')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                         @enderror
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 col-12">
@@ -948,6 +951,9 @@
                                                                         <option>Mustawa 3</option>
                                                                     </select>
                                                                     <label class="input-group-text" for="inputGroupSelect01">Tingkatan</label>
+                                                                    @error('angkatan_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
@@ -955,29 +961,44 @@
                                                                     <label for="city-column">Domisili</label>
                                                                     <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
                                                                     name="domisili_santri">
+                                                                    @error('domisili_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <label for="basicInput">Tanggal Lahir</label>
-                                                                <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">                                                                
+                                                                <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">
+                                                                @error('tgllahir_santri')
+                                                                <small class="text-danger">{{$message}}</small>
+                                                                 @enderror                                                             
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group">
                                                                     <label for="company-column">ALamat Lengkap</label>
                                                                     <input type="text" id="company-column" class="form-control"
                                                                     name="alamat_santri" placeholder="Alamat Lengkap">
+                                                                    @error('alamat_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <label for="basicInput">Jenis Kelamin Santri</label>                                                                
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Ikhwan">
+                                                                    @error('jk_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                                         Ikhwan
                                                                     </label>
                                                                 </div>
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Akhwat">
+                                                                    @error('jk_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                                         Akhwat
                                                                     </label>
@@ -988,6 +1009,9 @@
                                                                 <div class="mb-3">
                                                                     <label for="formFile" class="form-label">Photo Santri</label>
                                                                     <input type="file" id="formFile" name="photo_santri" class="image-crop-filepond" image-crop-aspect-ratio="1:1">
+                                                                    @error('photo_santri')
+                                                                    <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 d-flex justify-content-end">
