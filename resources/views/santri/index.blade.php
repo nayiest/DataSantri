@@ -640,7 +640,7 @@
                         
                                                             <div class="card">
                                                                 <div class="card-body py-4 px-4">
-                                                                    <div class="d-flex align-items-center">
+                                                                    <div class="d-flex align-items-center justify-content-between">
                                                                             
                                                                         <div class="avatar avatar-xl">
                                                                             <img src="storage/images/{{ $item->photo_santri }}">
@@ -648,15 +648,10 @@
                                                                         <div class="ms-3 name">
                                                                             <h5 class="font-bold">{{$item->nama_santri}}</h5>
                                                                             <h6 class="text-muted mb-0">{{$item->angkatan_santri}}</h6>
+                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
+
                                                                         </div>
                                                                     </div>
-                                                                    <br>
-                                                                    
-                                                                    <center>
-                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
-                                                                        <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
-                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus?!')"> Delete </a>
-                                                                    </center>
                                                                         
                                                                     
                                                                 </div>
@@ -692,7 +687,6 @@
                                                     <th scope="col">Angkatan</th>
                                                     <th scope="col">Jenis Kelamin</th>
                                                     <th scope="col">Ttl</th>
-                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -705,11 +699,7 @@
                                                     <td>{{$item->nama_santri}}</td>
                                                     <td>{{$item->angkatan_santri}}</td>
                                                     <td>{{$item->jk_santri}}</td>
-                                                    <td>{{$item->tgllahir_santri}}</td>
-                                                    <td class="text-center">
-                                                        <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus?!')"><i class="fa fa-solid fa-trash"></i></a>
-                                                    </td>
+                                                    <td>{{$item->tgllahir_santri}}</td></td>
                                                 </tr>
                                                 <?php
                                                     $no++;
@@ -724,90 +714,6 @@
 
 
 
-                                    </div>
-                                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
-                                        @section('chart')
-                                        <!-- Chart Start -->
-                                        <div class="container-fluid pt-4 px-4">
-                                            <div class="row g-4">
-                                                <div class="col-sm-12 col-xl-4">
-                                                    <div class="bg-secondary rounded h-100 p-4">
-                                                        <h6 class="mb-4">Doughnut Chart</h6>
-                                                        <canvas id="doughnut-chart"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Chart End -->
-                                    </div>
-                                </div>
-                            </div>
-                        
                     </div>
-
-                
-                
-                </div>
-            
-        </div>
-    </div>
-  
-    <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
-    <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    
-    <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-    <script src="{{ asset('template/dist/assets') }}/static/js/themeSwitcher.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
-{{-- Toastr --}}
- @if (Session::has('add'))
- <script>
-    toastr.options = {
-        "progressBar" : true,
-        "closeButton" : true,
-    }
-    toastr.success("{{ Session::get('add') }}",'Success!', {timeOut:10000});
- </script>
-@endif
-@if (Session::has('destroy'))
-<script>
-   toastr.options = {
-       "progressBar" : true,
-       "closeButton" : true,
-   }
-   toastr.success("{{ Session::get('destroy') }}",'Success!', {timeOut:10000});
-</script>
-@endif
-@if (Session::has('success'))
-<script>
-   toastr.options = {
-       "progressBar" : true,
-       "closeButton" : true,
-   }
-   toastr.success("{{ Session::get('success') }}",'Success!', {timeOut:10000});
-</script>
-@endif
-    
-    
-</body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-      
-
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
+@endsection
