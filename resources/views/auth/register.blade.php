@@ -285,8 +285,8 @@
          <div class="row h-100">
              <div class="col-lg-5 col-12">
                  <div id="auth-left">
-                     <div class="auth-logo">
-                         <a href="index.html"><img src="{{ asset('template/dist/assets/compiled/svg/logo.svg') }}" alt="Logo"></a>
+                     <div class="auth-logo" style="width: 500% height: 500%" >
+                         <a href="#" ><img src="{{ asset('template/dist/images/logo.png') }}" alt="Logo"></a>
                      </div>
                      <h1 class="auth-title">Sign Up</h1>
                      <p class="auth-subtitle mb-5">Input your data to register to our website.</p>
@@ -334,7 +334,7 @@
                      <div class="flip-card" id="flip-card">
                          <div class="flip-card-inner">
                              <div class="flip-card-front">
-                                 <img src="{{ asset('template/dist/assets/images/logo.png') }}" alt="Logo">
+                                 <img src="{{ asset('template/dist/images/logo.png') }}" alt="Logo">
                              </div>
                              <div class="flip-card-back">
                                  <h1>Indonesia Berkah</h1>
@@ -342,9 +342,6 @@
                          </div>
                      </div>
                  </div>
-                 
-                 
-                 
              </div>
          </div>
      </div>
@@ -359,8 +356,6 @@
              });
          });
      </script>
-     
-     
      
  </body>
  
