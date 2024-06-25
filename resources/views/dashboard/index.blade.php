@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.chart')
+@section('chart')
 
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,35 +242,11 @@
              
         </section>
 </div>
+=======
+{{-- HEADING --}}
+<div class="page-heading">
+    <h3>Dashboard</h3>
+</div>  
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d
 
-            <footer>
-    <div class="footer clearfix mb-0 text-muted">
-        <div class="float-start"> 
-            <p>2023 &copy; Mazer</p>
-        </div>
-        <div class="float-end">
-            <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                by <a href="https://saugi.me">Saugi</a></p>
-        </div>
-    </div>
-</footer>
-        </div>
-    </div>
-    <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
-    <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    
-    
-    <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-    
-
-    
-<!-- Need: Apexcharts -->
-<script src="{{ asset('template/dist/assets') }}/extensions/apexcharts/apexcharts.min.js"></script>
-<script src="{{ asset('template/dist/assets') }}/extensions/dayjs/dayjs.min.js"></script>
-<script src="{{ asset('template/dist/assets') }}/extensions/apexcharts/apexcharts.min.js"></script>
-<script src="{{ asset('template/dist/assets') }}/static/js/pages/ui-apexchart.js"></script>
-<script src="{{ asset('template/dist/assets') }}/static/js/pages/dashboard.js"></script>
-
-</body>
-
-</html>
+@endsection

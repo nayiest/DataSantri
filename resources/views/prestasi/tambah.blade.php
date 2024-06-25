@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.main')
+@section('konten')
 
 <head>
     <meta charset="UTF-8">
@@ -103,6 +103,22 @@
             <span>prestasi</span>
             </a>
        </li>
+
+       <li
+       class="sidebar-item ">
+       <a href="{{ route('mutabaah') }}" class='sidebar-link'>
+           <i class="bi bi-calendar"></i>
+       <span>Mutabaah Santri</span>
+       </a>
+  </li>
+
+  <li
+  class="sidebar-item ">
+  <a href="{{ route('nilai') }}" class='sidebar-link'>
+      <i class="bi bi-paper fill"></i>
+  <span>Nilai Santri</span>
+  </a>
+</li>
 
          
             
@@ -260,21 +276,48 @@
                                                             </div>
                                                             
                                                             <div class="col-md-6 col-12">
+<<<<<<< HEAD
                                                                 <label for="first-name-column">Kategori Prestasi</label>
                                                                 <select class="choices form-select" name="kategori_prestasi">
+=======
+                                                                <div class="form-group">
+                                                                    <label for="first-name-column">Nama Prestasi</label>
+                                                                    <input type="text" id="first-name-column" class="form-control"
+                                                                        placeholder="Nama Prestasi" name="nama_prestasi">
+                                                                        @error('nama_prestasi')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-column">Kategori Prestasi </label>
+                                                                    <div class="input-group mb-3">
+                                                                    <select class="choices form-select" name="kategori_prestasi">
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d
                                                                         <option value="Akademik">Akademik</option>
                                                                         <option value="Olahraga">Olahraga</option>
                                                                         <option value="Seni dan Budaya">Seni dan Budaya</option>
                                                                         <option value="Kebersihan">Kebersihan</option>
                                                                         <option value="Public Speaking">Public Speaking</option>
                                                                         <option value="Ekstrakurikuler">Ekstrakurikuler</option>
+<<<<<<< HEAD
                                                                 </select>
+=======
+                                                                    </select>
+                                                                    <label class="input-group-text" for="inputGroupSelect01">Kategori</label>
+                                                                </div>
+                                                                </div>
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d
                                                             </div>
                                                             <div class="col-md-6 col-12">
                                                                 <div class="form-group">
                                                                     <label for="first-name-column">Keterangan Prestasi</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="keterangan prestasi" name="keterangan_prestasi">
+                                                                        @error('keterangan_prestasi')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 d-flex justify-content-end">
@@ -306,13 +349,41 @@
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
+<<<<<<< HEAD
 
 <script src="{{ asset('template/dist/assets') }}/extensions/choices.js/public/assets/scripts/choices.js"></script>
 
     <script src="{{ asset('template/dist/assets') }}/extensions/choices.js/public/assets/scripts/choices.js"></script>
 <script src="{{ asset('template/dist/assets') }}/static/js/pages/form-element-select.js"></script>
+=======
+    <script src="{{ asset('template/dist/assets')}}/extensions/choices.js/public/assets/scripts/choices.js"></script>
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d
     
     
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+      
+    
+</body>
+</html>
+@endsection
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d

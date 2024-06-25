@@ -107,6 +107,22 @@
             </a>
        </li>
 
+       <li
+       class="sidebar-item ">
+       <a href="{{ route('mutabaah') }}" class='sidebar-link'>
+           <i class="bi bi-calendar"></i>
+       <span>Mutabaah Santri</span>
+       </a>
+  </li>
+
+  <li
+  class="sidebar-item ">
+  <a href="{{ route('nilai') }}" class='sidebar-link'>
+      <i class="bi bi-paper fill"></i>
+  <span>Nilai Santri</span>
+  </a>
+</li>
+
 
            <!-- < <li
                 class="sidebar-item  has-sub">
@@ -1395,7 +1411,7 @@
                                                     <td>{{$item->keterangan_prestasi}}</td>
                                                     <td class="text-center">
                                                         <a class="btn btn-warning rounded-pill m-2" href="{{route('editprestasi',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapusprestasi',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
+                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapusprestasi',$item->id)}}" onclick="return confirm('Mau Dihapus?!')"><i class="fa fa-solid fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php

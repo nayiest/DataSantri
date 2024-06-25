@@ -97,7 +97,7 @@
             </li>
 
             <li
-                class="sidebar-item active">
+                class="sidebar-item ">
                 <a href="{{route('mutabaah')}}" class='sidebar-link'>
                     <i class="bi bi-calendar"></i>
                     <span>Mutaba'ah Santri</span>
@@ -105,7 +105,7 @@
             </li>
 
             <li
-                class="sidebar-item ">
+                class="sidebar-item active">
                 <a href="{{route('nilai')}}" class='sidebar-link'>
                     <i class="bi bi-award"></i>
                     <span>Nilai Santri</span>
@@ -122,7 +122,7 @@
                     <i class="bi bi-justify fs-3"></i>
                 </a>
             </header>
-            @yield('konten')
+            @yield('nilai')
 
  
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
