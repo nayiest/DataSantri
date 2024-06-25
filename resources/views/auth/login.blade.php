@@ -75,7 +75,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="{{ url('/') }}"><img src="{{ asset('template/dist/assets/compiled/svg/logo.svg') }}" alt="Logo"></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('template/dist/images/logo.png') }}" alt="Logo"></a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
