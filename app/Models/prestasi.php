@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class prestasi extends Model
 {
     use HasFactory;
+    public function santri(){
+        return $this->hasMany(Santri::class);
+    }
 }

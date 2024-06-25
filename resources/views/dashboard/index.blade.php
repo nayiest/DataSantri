@@ -88,24 +88,6 @@
 
             </li>
             
-            <li
-                class="sidebar-item ">
-                <a href="{{ route('pelanggaran') }}" class='sidebar-link'>
-                    <i class="bi bi-exclamation-triangle"></i>
-                    <span>Pelanggaran</span>
-                </a>
-                
-
-            </li>
-
-            <li
-                class="sidebar-item ">
-                <a href="{{ route('prestasi') }}" class='sidebar-link'>
-                    <i class="bi bi-trophy"></i>
-                <span>prestasi</span>
-                </a>
-           </li>
-            
             
         </ul>
     </div>
@@ -136,7 +118,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Total Santri</h6>
+                                    <h6 class="text-muted font-semibold"><a href=""  data-bs-toggle="modal"
+                                        data-bs-target="#tambahsantri">Total Santri</a></h6>
                                     <h6 class="font-extrabold mb-0">{{ $totalSantri }}</h6>
                                 </div>
                             </div> 
@@ -153,7 +136,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Prestasi</h6>
+                                    <h6 class="text-muted font-semibold"><a href="" data-bs-toggle="modal"
+                                        data-bs-target="#tambahprestasi">Prestasi</a></h6>
                                     <h6 class="font-extrabold mb-0">{{ $totalprestasi }}</h6>
                                 </div>
                             </div>
@@ -170,7 +154,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
-                                    <h6 class="text-muted font-semibold">Melanggar</h6>
+                                    <h6 class="text-muted font-semibold"><a href="" data-bs-toggle="modal"
+                                        data-bs-target="#tambahpelanggaran">Melanggar</a></h6>
                                     <h6 class="font-extrabold mb-0">{{ $totalpelanggaran }}</h6>
                                 </div>
                             </div>
@@ -200,16 +185,46 @@
             </div>
             
         </div>
+
         <div class="col-12 col-lg-3">
             <div class="card">
                 <div class="card-body py-4 px-4">
                     <div class="d-flex align-items-center">
-                        <div class="avatar avatar-xl">
-                            <img src="{{ asset('template/dist') }}/assets/compiled/jpg/1.jpg" alt="Face 1">
-                        </div>
-                        <div class="ms-3 name">
-                            <h5 class="font-bold">John Duck</h5>
-                            <h6 class="text-muted mb-0">@johnducky</h6>
+                        <div class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="user-menu d-flex"> 
+                                    <div class="avatar avatar-xl">
+                                        <img src="{{ asset('template/dist') }}/assets/compiled/jpg/1.jpg" alt="Face 1">
+                                    </div>
+                                    <div class="ms-3 name">
+                                        <h6 class="font-bold mt-2">Us, {{ Auth::user()->name }}</h6>
+                                        <label class="text-muted mb-0">Log <code>Out? </code></label>
+                                    </div>
+                                    
+                                </div>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end x-slot" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
+                                <li>
+                                    <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
+                                </li>
+                                <li><x-dropdown-link :href="route('profile.edit')" class="dropdown-item"><i class="icon-mid bi bi-person me-2"></i>
+                                            {{ __('Profile') }}
+                                        </x-dropdown-link></li>
+                                <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                        Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="dropdown-item" href="#" :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();"><i class="icon-mid bi bi-box-arrow-left me-2"></i>{{ __('Log Out') }}</a></li>
+                                                </form>
+                            </ul>
+
+
                         </div>
                     </div>
                 </div>

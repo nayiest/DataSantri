@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Navbar - Mazer Admin Dashboard</title>
+    <title>IB Data</title>
     
     
     <link rel="shortcut icon" href="{{ asset('template/dist') }}/assets/compiled/svg/favicon.svg" type="image/x-icon">
@@ -13,6 +13,11 @@
   <script src="https://kit.fontawesome.com/14732ec0b9.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{{ asset('template/dist') }}/assets/compiled/css/app-dark.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="{{ asset('template/dist/assets') }}/extensions/toastify-js/src/toastify.css">
+<link rel="stylesheet" href="{{ asset('template/dist/assets') }}/extensions/sweetalert2/sweetalert2.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -112,630 +117,6 @@
                 <span>prestasi</span>
                 </a>
            </li>
-
-           <!-- < <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-stack"></i>
-                    <span>Components</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-accordion.html" class="submenu-link">Accordion</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-alert.html" class="submenu-link">Alert</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-badge.html" class="submenu-link">Badge</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-breadcrumb.html" class="submenu-link">Breadcrumb</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-button.html" class="submenu-link">Button</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-card.html" class="submenu-link">Card</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-carousel.html" class="submenu-link">Carousel</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-collapse.html" class="submenu-link">Collapse</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-dropdown.html" class="submenu-link">Dropdown</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-list-group.html" class="submenu-link">List Group</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-modal.html" class="submenu-link">Modal</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-navs.html" class="submenu-link">Navs</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-pagination.html" class="submenu-link">Pagination</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-progress.html" class="submenu-link">Progress</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-spinner.html" class="submenu-link">Spinner</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-toasts.html" class="submenu-link">Toasts</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="component-tooltip.html" class="submenu-link">Tooltip</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-collection-fill"></i>
-                    <span>Extra Components</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-avatar.html" class="submenu-link">Avatar</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-divider.html" class="submenu-link">Divider</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-date-picker.html" class="submenu-link">Date Picker</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-sweetalert.html" class="submenu-link">Sweet Alert</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-toastify.html" class="submenu-link">Toastify</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="extra-component-rating.html" class="submenu-link">Rating</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item active has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Layouts</span>
-                </a>
-                
-                <ul class="submenu active">
-                    
-                    <li class="submenu-item  ">
-                        <a href="layout-default.html" class="submenu-link">Default Layout</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="layout-vertical-1-column.html" class="submenu-link">1 Column</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item active ">
-                        <a href="layout-vertical-navbar.html" class="submenu-link">Vertical Navbar</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="layout-rtl.html" class="submenu-link">RTL Layout</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="layout-horizontal.html" class="submenu-link">Horizontal Menu</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li class="sidebar-title">Forms &amp; Tables</li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-hexagon-fill"></i>
-                    <span>Form Elements</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-input.html" class="submenu-link">Input</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-input-group.html" class="submenu-link">Input Group</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-select.html" class="submenu-link">Select</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-radio.html" class="submenu-link">Radio</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-checkbox.html" class="submenu-link">Checkbox</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-element-textarea.html" class="submenu-link">Textarea</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="form-layout.html" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-medical-fill"></i>
-                    <span>Form Layout</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-journal-check"></i>
-                    <span>Form Validation</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-validation-parsley.html" class="submenu-link">Parsley</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-pen-fill"></i>
-                    <span>Form Editor</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-editor-quill.html" class="submenu-link">Quill</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-editor-ckeditor.html" class="submenu-link">CKEditor</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-editor-summernote.html" class="submenu-link">Summernote</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="form-editor-tinymce.html" class="submenu-link">TinyMCE</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="table.html" class='sidebar-link'>
-                    <i class="bi bi-grid-1x2-fill"></i>
-                    <span>Table</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-file-earmark-spreadsheet-fill"></i>
-                    <span>Datatables</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="table-datatable.html" class="submenu-link">Datatable</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="table-datatable-jquery.html" class="submenu-link">Datatable (jQuery)</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li class="sidebar-title">Extra UI</li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-pentagon-fill"></i>
-                    <span>Widgets</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-widgets-chatbox.html" class="submenu-link">Chatbox</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-widgets-pricing.html" class="submenu-link">Pricing</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-widgets-todolist.html" class="submenu-link">To-do List</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-egg-fill"></i>
-                    <span>Icons</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-icons-bootstrap-icons.html" class="submenu-link">Bootstrap Icons </a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-icons-fontawesome.html" class="submenu-link">Fontawesome</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-icons-dripicons.html" class="submenu-link">Dripicons</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-bar-chart-fill"></i>
-                    <span>Charts</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-chart-chartjs.html" class="submenu-link">ChartJS</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-chart-apexcharts.html" class="submenu-link">Apexcharts</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="ui-file-uploader.html" class='sidebar-link'>
-                    <i class="bi bi-cloud-arrow-up-fill"></i>
-                    <span>File Uploader</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-map-fill"></i>
-                    <span>Maps</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-map-google-map.html" class="submenu-link">Google Map</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="ui-map-jsvectormap.html" class="submenu-link">JS Vector Map</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-three-dots"></i>
-                    <span>Multi-level Menu</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  has-sub">
-                        <a href="#" class="submenu-link">First Level</a>
-                        
-                        <ul class="submenu submenu-level-2 ">
-
-                            
-                            <li class="submenu-item ">
-                                <a href="ui-multi-level-menu.html" class="submenu-link">Second Level</a>
-                            </li>
-                            
-                            <li class="submenu-item ">
-                                <a href="#" class="submenu-link">Second Level Menu</a>
-                            </li>
-                            
-
-                        </ul>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  has-sub">
-                        <a href="#" class="submenu-link">Another Menu</a>
-                        
-                        <ul class="submenu submenu-level-2 ">
-
-                            
-                            <li class="submenu-item ">
-                                <a href="#" class="submenu-link">Second Level Menu</a>
-                            </li>
-                            
-
-                        </ul>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li class="sidebar-title">Pages</li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-email.html" class='sidebar-link'>
-                    <i class="bi bi-envelope-fill"></i>
-                    <span>Email Application</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-chat.html" class='sidebar-link'>
-                    <i class="bi bi-chat-dots-fill"></i>
-                    <span>Chat Application</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-gallery.html" class='sidebar-link'>
-                    <i class="bi bi-image-fill"></i>
-                    <span>Photo Gallery</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="application-checkout.html" class='sidebar-link'>
-                    <i class="bi bi-basket-fill"></i>
-                    <span>Checkout Page</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-person-badge-fill"></i>
-                    <span>Authentication</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="auth-login.html" class="submenu-link">Login</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="auth-register.html" class="submenu-link">Register</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="auth-forgot-password.html" class="submenu-link">Forgot Password</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-x-octagon-fill"></i>
-                    <span>Errors</span>
-                </a>
-                
-                <ul class="submenu ">
-                    
-                    <li class="submenu-item  ">
-                        <a href="error-403.html" class="submenu-link">403</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="error-404.html" class="submenu-link">404</a>
-                        
-                    </li>
-                    
-                    <li class="submenu-item  ">
-                        <a href="error-500.html" class="submenu-link">500</a>
-                        
-                    </li>
-                    
-                </ul>
-                
-
-            </li>
-            
-            <li class="sidebar-title">Raise Support</li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="https://zuramai.github.io/mazer/docs" class='sidebar-link'>
-                    <i class="bi bi-life-preserver"></i>
-                    <span>Documentation</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer/blob/main/CONTRIBUTING.md" class='sidebar-link'>
-                    <i class="bi bi-puzzle"></i>
-                    <span>Contribute</span>
-                </a>
-                
-
-            </li>
-            
-            <li
-                class="sidebar-item  ">
-                <a href="https://github.com/zuramai/mazer#donation" class='sidebar-link'>
-                    <i class="bi bi-cash"></i>
-                    <span>Donate</span>
-                </a>
-                
-
-            </li>>
-         -->
             
         </ul>
     </div>
@@ -806,33 +187,13 @@
                                 </li>
                                 
                             </ul>
-                            <div class=" mt-2" style="margin-right: 20px">
-                                
-                                <div class="dropdown">
-                                        <button class="btn dropdown-toggle me-15" type="button"
-                                            id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                             <i class="fa-regular fa-address-book fs-4"></i>
-                                        </button>
-                                        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton" >
-                                            
-                                            
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#tambahsantri">Tambah Santri</a>
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#tambahpelanggaran">Tambah Pelanggaran</a>
-                                            <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#tambahprestasi">Tambah Prestasi</a>
-                                        </div>
-                                </div>
-                            </div>
                             
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex"> 
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                            <p class="mb-0 text-sm text-gray-600">User</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
@@ -914,457 +275,7 @@
             </header>
 
                           
-            <div id="main-content">       
-                                {{-- MODAL TAMBAH SANTRI --}}
-                                        <div class="modal fade text-left modal-borderless" id="tambahsantri" tabindex="-1"
-                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Masukkan Data Santri</h5>
-                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <i data-feather="x"></i>
-                                                        </button>
-                                                    </div>
-                                                    <form method="post" action="{{ route('storetambah') }}" enctype="multipart/form-data">
-                    
-                                                        @csrf
-                                                                        
-                                                                {{-- <section id="multiple-column-form">
-                                                                    <div class="row match-height">
-                                                                        <div class="col-12">
-                                                                            <div class="card">
-                                                                                <div class="card-content">
-                                                                                    <div class="card-body">
-                                                                                        <form class="form">
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="first-name-column">Nama Lengkap</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="Nama Lengkap" name="nama_santri">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <label>Tingkatan/Kelas</label>
-                                                                                                    <div class="input-group mb-3">
-                                                                                                        <select class="form-select" id="inputGroupSelect01" name="angkatan_santri">
-                                                                                                            <option selected>Pilih...</option>
-                                                                                                            <option>Mustawa 1</option>
-                                                                                                            <option>Mustawa 2</option>
-                                                                                                            <option>Mustawa 3</option>
-                                                                                                        </select>
-                                                                                                        <label class="input-group-text" for="inputGroupSelect01">Tingkatan</label>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="city-column">Domisili</label>
-                                                                                                        <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
-                                                                                                            name="domisili_santri">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <label for="basicInput">Tanggal Lahir</label>
-                                                                                                    <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">                                                                
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="company-column">ALamat Lengkap</label>
-                                                                                                        <input type="text" id="company-column" class="form-control"
-                                                                                                            name="alamat_santri" placeholder="Alamat Lengkap">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <label for="basicInput">Jenis Kelamin Santri</label>                                                                
-                                                                                                    <div class="form-check">
-                                                                                                        <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Ikhwan">
-                                                                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                                                                            Ikhwan
-                                                                                                        </label>
-                                                                                                    </div>
-                                                                                                    <div class="form-check">
-                                                                                                        <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Akhwat">
-                                                                                                        <label class="form-check-label" for="flexRadioDefault1">
-                                                                                                            Akhwat
-                                                                                                        </label>
-                                                                                                    </div>    
-                                                                                                </div>
-                                    
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="formFile" class="form-label">Photo Santri</label>
-                                                                                                        <input class="form-control" name="photo_santri" type="file" id="formFile">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                
-                                                                                                <div class="col-12 d-flex justify-content-end">
-                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                                                    </div>
-                                                                                            </div>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section> --}}
-
-                                                                
-                                                                    <div class="card">
-                                                                        <div class="card-content">
-                                                                            <div class="card-body">
-                                                                                <form class="form form-horizontal">
-                                                                                    <div class="form-body">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-4">
-                                                                                                <label for="nama_santri">Nama Lengkap</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                        <input type="text" id="nama_santri" class="form-control"
-                                                                                                            placeholder="Nama Lengkap" name="nama_santri">
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for="domisili_santri">Domisili</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                        <input type="text" id="domisili_santri" class="form-control" placeholder="Domisili"
-                                                                                                            name="domisili_santri">
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for="alamat_santri">Alamat Lengkap</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                <input type="text" id="company-column" class="form-control"
-                                                                                                            name="alamat_santri" placeholder="Alamat Lengkap">
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for="angkatan_santri">Angkatan</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                <select class="form-select" id="inputGroupSelect01" name="angkatan_santri">
-                                                                                                    <option selected>Pilih...</option>
-                                                                                                    <option>Mustawa 1</option>
-                                                                                                    <option>Mustawa 2</option>
-                                                                                                    <option>Mustawa 3</option>
-                                                                                                </select>
-                                                                                            
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for=" tgllahir_santri">Tanggal Lahir</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                <input name="tgllahir_santri" id="tgllahir_santri" type="date" class="form-control flatpickr-no-config" placeholder="Select date..">                                                                
-                                                                                                
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for="photo_santri">Photo Santri</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                    <input class="form-control" name="photo_santri" type="file" id="formFile">
-                                                                                            </div>
-                                                                                            <div class="col-md-4">
-                                                                                                <label for=" jk_santri">Jenis Kelamin</label>
-                                                                                            </div>
-                                                                                            <div class="col-md-8 form-group">
-                                                                                                <div class="form-check">
-                                                                                                    <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Ikhwan">
-                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                                                                        Ikhwan
-                                                                                                    </label>
-                                                                                                </div>
-                                                                                                <div class="form-check">
-                                                                                                    <input class="form-check-input" type="radio" name="jk_santri" id="flexRadioDefault1" value="Akhwat">
-                                                                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                                                                        Akhwat
-                                                                                                    </label>
-                                                                                                </div>  
-                                                                                            </div>
-                                                                                            
-                                                                                            <br>
-                                                                                           
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                            <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-light-secondary"
-                                                                                    data-bs-dismiss="modal">
-                                                                                    <i class="bx bx-x d-block d-sm-none"></i>
-                                                                                    <span class="d-none d-sm-block">Close</span>
-                                                                                </button>
-                                                                                <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>        
-                                                                        
-                                    
-                                                    </form>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        {{-- MODAL PRESTASI --}}
-                                        <div class="modal fade text-left modal-borderless" id="tambahpelanggaran" tabindex="-1"
-                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Masukkan Data Pelanggaran</h5>
-                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <i data-feather="x"></i>
-                                                        </button>
-                                                    </div>
-                                                    <form method="post" action="{{ route('storepelanggaran') }}" enctype="multipart/form-data">
-                    
-                                                        @csrf       
-                                                                {{-- <section id="multiple-column-form">
-                                                                    <div class="row match-height">
-                                                                        <div class="col-12">
-                                                                            <div class="card">
-                                                                                <div class="card-content">
-                                                                                    <div class="card-body">
-                                                                                        <form class="form">
-                                                                                            <div class="row">
-                                                                                               
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="first-name-column">nama_santri</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="Nama santri" name="nama_santri">
-                                                                                                    </div>
-                                                                                                </div> 
-                                    
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="first-name-column">Jenis Pelanggaran</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="Nama pelanggaran" name="nama_pelanggaran">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="mb-3">
-                                                                                                        <label for="first-name-column">Kategori Pelanggaran</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="Kategori pelanggaran" name="kategori_pelanggaran">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                
-                                                                                                
-                                                                                                <div class="col-12 d-flex justify-content-end">
-                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                                                    
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section> --}}
-                                                                                
-                                                                <div class="card">
-                                                                    <div class="card-content">
-                                                                        <div class="card-body">
-                                                                            <form class="form form-horizontal">
-                                                                                <div class="form-body">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="nama_santri">Nama Santri</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                                    <input type="text" id="nama_santri" class="form-control"
-                                                                                                        placeholder="Nama Santri" name="nama_santri">
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="nama_pelanggaran">Pelanggaran</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                                    <input type="text" id="nama_pelanggaran" class="form-control"
-                                                                                                        placeholder="Nama pelanggaran" name="nama_pelanggaran">
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="kategori_pelanggaran">Jenis</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                                <select class="form-select" id="inputGroupSelect01" name="kategori_pelanggaran">
-                                                                                                    <option selected>Pilih...</option>
-                                                                                                    <option>Ringan</option>
-                                                                                                    <option>Sedang</option>
-                                                                                                    <option>Berat</option>
-                                                                                                </select>
-                                                                                            
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="deskripsi_pelanggaran">Deskripsi</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                            
-                                                                                            <textarea class="form-control" id="deskripsi_pelanggaran" class="form-control"
-                                                                                            placeholder="Deskripsi Pelanggaran" name="deskripsi_pelanggaran" rows="3"></textarea>
-                                                                                        </div>
-                                                                                        
-                                                                                        
-                                                                                        <br>
-                                                                                        
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-light-secondary"
-                                                                                data-bs-dismiss="modal">
-                                                                                <i class="bx bx-x d-block d-sm-none"></i>
-                                                                                <span class="d-none d-sm-block">Close</span>
-                                                                            </button>
-                                                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                        
-                                    
-                                                    </form>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="modal fade text-left modal-borderless" id="tambahprestasi" tabindex="-1"
-                                            role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title">Masukkan Data Prestasi</h5>
-                                                        <button type="button" class="close rounded-pill" data-bs-dismiss="modal"
-                                                            aria-label="Close">
-                                                            <i data-feather="x"></i>
-                                                        </button>
-                                                    </div>
-                                                    <form method="post" action="{{ route('storeprestasi') }}" enctype="multipart/form-data">
-                    
-                                                        @csrf                               
-                                                                        
-                                                                {{-- <section id="multiple-column-form">
-                                                                    <div class="row match-height">
-                                                                        <div class="col-12">
-                                                                            <div class="card">
-                                                                                <div class="card-content">
-                                                                                    <div class="card-body">
-                                                                                        <form class="form">
-                                                                                            <div class="row">
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="first-name-column">Nama Lengkap</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="Nama lengkap" name="nama_santri">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="first-name-column">Kategori Prestasi </label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="kategori prestasi" name="kategori_prestasi">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-md-6 col-12">
-                                                                                                    <div class="form-group">
-                                                                                                        <label for="first-name-column">Keterangan Prestasi</label>
-                                                                                                        <input type="text" id="first-name-column" class="form-control"
-                                                                                                            placeholder="keterangan prestasi" name="keterangan_prestasi">
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div class="col-12 d-flex justify-content-end">
-                                                                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                                                    
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </section> --}}
-                                                                                
-                                                                        
-                                                                <div class="card">
-                                                                    <div class="card-content">
-                                                                        <div class="card-body">
-                                                                            <form class="form form-horizontal">
-                                                                                <div class="form-body">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="nama_santri">Nama Santri</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                                    <input type="text" id="nama_santri" class="form-control"
-                                                                                                        placeholder="Nama Santri" name="nama_santri">
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="nama_santri">Nama Prestasi</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                                    <input type="text" id="nama_prestasi" class="form-control"
-                                                                                                        placeholder="Nama Prestasi" name="nama_prestasi">
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="kategori_prestasi">Kategori</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                            <input type="text" id="first-name-column" class="form-control"
-                                                                                            placeholder="kategori prestasi" name="kategori_prestasi">
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                            <label for="keterangan_prestasi">Deskripsi</label>
-                                                                                        </div>
-                                                                                        <div class="col-md-8 form-group">
-                                                                                            
-                                                                                            <textarea class="form-control" id="keterangan_prestasi" class="form-control"
-                                                                                            placeholder="Deskripsi Prestasi" name="keterangan_prestasi" rows="3"></textarea>
-                                                                                        </div>
-                                                                                        
-                                                                                        
-                                                                                        <br>
-                                                                                        
-                                                                                    </div>
-                                                                                </div>
-                                                                            </form>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-light-secondary"
-                                                                                data-bs-dismiss="modal">
-                                                                                <i class="bx bx-x d-block d-sm-none"></i>
-                                                                                <span class="d-none d-sm-block">Close</span>
-                                                                            </button>
-                                                                            <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                
-                                    
-                                                    </form>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-
-                             {{-- Modal End --}}
-
-
-
-
-                                  
-
-                
-                
-                
+            <div id="main-content">              
                 
                                         <div class=" text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
@@ -1382,27 +293,9 @@
                                     </li>
                                 </ul>
                             </div>
-                        </center>
-                        <a class="btn btn-md btn-primary " style="margin-bottom:20px" href="{{route('tambahsantri')}}"><i class="fas fa-plus-circle"></i> Add New Data</a>  
+                        </center> 
                     </div>
-                </div>
-
-
-                @if (Session::has('add'))
-                <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('add') }}</center>
-                </div>
-            @endif
-            @if (Session::has('success'))
-                <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('success') }}</center>
-                </div>
-            @endif
-            @if (Session::has('destroy'))
-            <div class="alert alert-success" role="alert"><center>
-                    {{ Session::get('destroy') }}</center>
-                </div>
-                @endif          
+                </div>        
                    
 
                 <div class="row">
@@ -1428,7 +321,7 @@
                         
                                                             <div class="card">
                                                                 <div class="card-body py-4 px-4">
-                                                                    <div class="d-flex align-items-center">
+                                                                    <div class="d-flex align-items-center justify-content-between">
                                                                             
                                                                         <div class="avatar avatar-xl">
                                                                             <img src="storage/images/{{ $item->photo_santri }}">
@@ -1437,14 +330,11 @@
                                                                             <h5 class="font-bold">{{$item->nama_santri}}</h5>
                                                                             <h6 class="text-muted mb-0">{{$item->angkatan_santri}}</h6>
                                                                         </div>
+                                                                        <div>
+                                                                        <a href="{{route('detailsantri',$item->id)}}"><i class="bi bi-eye-fill"></i></a>
+
+                                                                        </div>
                                                                     </div>
-                                                                    <br>
-                                                                    
-                                                                    <center>
-                                                                        <a href="{{route('detailsantri',$item->id)}}" class="btn icon btn-primary " > Detail</a>
-                                                                        <a href="{{ route('editsantri',$item->id) }}" class="btn icon btn-warning"> Edit</a>
-                                                                        <a class="btn icon btn-danger" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"> Delete </a>
-                                                                    </center>
                                                                         
                                                                     
                                                                 </div>
@@ -1480,7 +370,6 @@
                                                     <th scope="col">Angkatan</th>
                                                     <th scope="col">Jenis Kelamin</th>
                                                     <th scope="col">Ttl</th>
-                                                    <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -1494,10 +383,6 @@
                                                     <td>{{$item->angkatan_santri}}</td>
                                                     <td>{{$item->jk_santri}}</td>
                                                     <td>{{$item->tgllahir_santri}}</td>
-                                                    <td class="text-center">
-                                                        <a class="btn btn-warning rounded-pill m-2" href="{{route('editsantri',$item->id)}}"><i class="fa fa-solid fa-pen"></i></a>
-                                                        <a class="btn btn-light rounded-pill m-2" href="{{route('hapussantri',$item->id)}}" onclick="return confirm('Mau Dihapus!?')"><i class="fa fa-solid fa-trash"></i></a>
-                                                    </td>
                                                 </tr>
                                                 <?php
                                                     $no++;
@@ -1544,59 +429,94 @@
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-    <script src="assets/extensions/toastify-js/src/toastify.js"></script>
-<script src="assets/static/js/pages/toastify.js"></script>
+    <script src="{{ asset('template/dist/assets') }}/extensions/toastify-js/src/toastify.js"></script>
+<script src="{{ asset('template/dist/assets') }}/static/js/pages/toastify.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
 {{-- Toastr --}}
- @if (Session::has('add'))
- <script>
+ {{-- @if (Session::has('add'))
+    <script>
+        toastr.options = {
+            "progressBar" : true,
+            "closeButton" : true,
+        }
+        toastr.success("{{ Session::get('add') }}",'Success!', {timeOut:10000});
+    </script>
+    @endif
+    @if (Session::has('destroy'))
+    <script>
     toastr.options = {
         "progressBar" : true,
         "closeButton" : true,
     }
-    toastr.success("{{ Session::get('add') }}",'Success!', {timeOut:10000});
- </script>
-@endif
-@if (Session::has('destroy'))
-<script>
-   toastr.options = {
-       "progressBar" : true,
-       "closeButton" : true,
-   }
-   toastr.success("{{ Session::get('destroy') }}",'Success!', {timeOut:10000});
-</script>
-@endif
-@if (Session::has('success'))
-<script>
-   toastr.options = {
-       "progressBar" : true,
-       "closeButton" : true,
-   }
-   toastr.success("{{ Session::get('success') }}",'Success!', {timeOut:10000});
-</script>
-@endif
+    toastr.success("{{ Session::get('destroy') }}",'Success!', {timeOut:10000});
+    </script>
+    @endif
+    @if (Session::has('success'))
+    <script>
+    toastr.options = {
+        "progressBar" : true,
+        "closeButton" : true,
+    }
+    toastr.success("{{ Session::get('success') }}",'Success!', {timeOut:10000});
+    </script>
+@endif --}}
+
+
+<!-- Include JS for Toastify -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<!-- Your other scripts -->
     
-    
+<script src="{{ asset('template/dist/assets') }}/extensions/sweetalert2/sweetalert2.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/static/js/pages/sweetalert2.js"></script>
+
+<script>
+    @if(session('add'))
+    Toastify({
+                text: "{{ session('add') }}",
+                duration: 12000, // Durasi toast dalam milidetik (3 detik)
+                close: true, // Menampilkan tombol close
+                gravity: "top", // Posisi toast (top, bottom, atau center)
+                position: "right", // Posisi toast (left, right, atau center)
+                backgroundColor: "linear-gradient(to right, #79D7FF, #128DDB)",
+                stopOnFocus: true, // Tidak menutup toast saat di-hover                
+            }).showToast();
+    @endif
+    @if(session('update'))
+    Toastify({
+                text: "{{ session('update') }}",
+                duration: 12000, // Durasi toast dalam milidetik (3 detik)
+                close: true, // Menampilkan tombol close
+                gravity: "top", // Posisi toast (top, bottom, atau center)
+                position: "right", // Posisi toast (left, right, atau center)
+                backgroundColor: "linear-gradient(to right, #FFF500, #DDC915)",
+                stopOnFocus: true, // Tidak menutup toast saat di-hover
+            }).showToast();
+    @endif
+    @if(session('destroy'))
+    Toastify({
+                text: "{{ session('destroy') }}",
+                duration: 12000, // Durasi toast dalam milidetik (3 detik)
+                close: true, // Menampilkan tombol close
+                gravity: "top", // Posisi toast (top, bottom, atau center)
+                position: "right", // Posisi toast (left, right, atau center)
+                backgroundColor: "linear-gradient(to right, #8EE16B, #07A86E)",
+                stopOnFocus: true, // Tidak menutup toast saat di-hover
+            }).showToast();
+    @endif
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerBtn = document.querySelector('.burger-btn');
+        const sidebar = document.querySelector('#sidebar .sidebar-wrapper');
+
+        burgerBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('active');
+        });
+    });
+</script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-      
-

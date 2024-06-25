@@ -6,6 +6,7 @@ use App\Models\prestasi;
 use App\Http\Requests\StoreprestasiRequest;
 use App\Http\Requests\UpdateprestasiRequest;
 use Illuminate\Http\Request;
+use App\Models\Santri;
 
 class PrestasiController extends Controller
 {
@@ -15,7 +16,7 @@ class PrestasiController extends Controller
     public function index()
     {
         $query = Prestasi::all();
-        return view ('prestasi.index',compact('query'));
+        return view('prestasi.index', compact('query'));
     }
 
     /** 
@@ -24,7 +25,8 @@ class PrestasiController extends Controller
     public function create()
     {
         $query = Prestasi::all();
-        return view('prestasi.tambah',compact('query'));
+        $querysantri = santri::all();
+        return view('prestasi.tambah', compact('query','querysantri'));
     }
 
     /**
@@ -32,7 +34,7 @@ class PrestasiController extends Controller
      */
     public function store(Request $request)
     {
-         // $rules = [
+        // $rules = [
         //     'nama_santri' => 'required',
         //     'kategori_prestasi' => 'required'
         //    'keterangan_prestasi' => 'required'
@@ -50,10 +52,12 @@ class PrestasiController extends Controller
         $prestasi->nama_prestasi = $request->nama_prestasi;
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
         $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
+        $prestasi->santri_id = $request->santri_id;
 
-        $prestasi->save(); 
 
-        return redirect()->route('prestasi')->with('add','Data Prestasi Berhasil ditambahkan');
+        $prestasi->save();
+
+        return redirect()->route('prestasi')->with('add', 'Data Prestasi Berhasil ditambahkan');
     }
 
     /**
@@ -63,7 +67,7 @@ class PrestasiController extends Controller
     {
         $prestasi = Prestasi::findOrFail($id);
 
-        return view('prestasi.detail',compact('prestasi'));
+        return view('prestasi.detail', compact('prestasi'));
     }
 
     /**
@@ -73,8 +77,7 @@ class PrestasiController extends Controller
     {
         $edit = Prestasi::findOrFail($id);
         $query = Prestasi::all();
-        return view ('prestasi.edit',compact('edit'));
-        
+        return view('prestasi.edit', compact('edit'));
     }
 
     /**
@@ -82,14 +85,14 @@ class PrestasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $prestasi = prestasi::findOrFail($id); 
+
+        $prestasi = prestasi::findOrFail($id);
         $prestasi->nama_santri = $request->nama_santri;
         $prestasi->kategori_prestasi = $request->kategori_prestasi;
         $prestasi->keterangan_prestasi = $request->keterangan_prestasi;
 
         $prestasi->save();
-        return redirect()->route('prestasi')->with('success','Data Prestasi Berhasil diupdate');
+        return redirect()->route('prestasi')->with('success', 'Data Prestasi Berhasil diupdate');
     }
 
     /**
@@ -99,6 +102,6 @@ class PrestasiController extends Controller
     {
         $hapus = prestasi::findOrFail($id);
         $hapus->delete();
-        return redirect()->route('prestasi')->with('destroy','Data Prestasi Berhasil dihapus');
+        return redirect()->route('prestasi')->with('destroy', 'Data Prestasi Berhasil dihapus');
     }
 }
