@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.main')
+@section('konten')
 
 <head>
     <meta charset="UTF-8">
@@ -933,6 +933,9 @@
                                                                     <label for="first-name-column">Nama Prestasi</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama Prestasi" name="nama_prestasi">
+                                                                        @error('nama_prestasi')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
@@ -956,6 +959,9 @@
                                                                     <label for="first-name-column">Keterangan Prestasi</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="keterangan prestasi" name="keterangan_prestasi">
+                                                                        @error('keterangan_prestasi')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 d-flex justify-content-end">
@@ -1012,3 +1018,4 @@
     
 </body>
 </html>
+@endsection

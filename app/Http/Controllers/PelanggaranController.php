@@ -39,6 +39,16 @@ class PelanggaranController extends Controller
         $pelanggaran->kategori_pelanggaran = $request->kategori_pelanggaran;
         $pelanggaran->deskripsi_pelanggaran = $request->deskripsi_pelanggaran;
 
+        $rules = [
+            // 'namasantri' => 'required',
+            // 'namapelanggaran' => 'required',
+            // 'jenispelanggaran' => 'required'
+        ];
+        $message = [
+            'required' => 'data yang di input tidak sesuai'
+        ];
+
+        $this->validate($request, $rules, $message);
 
         $pelanggaran->save();
 

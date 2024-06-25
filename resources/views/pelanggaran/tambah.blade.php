@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('template.main')
+@section('konten')
 
 <head>
     <meta charset="UTF-8">
@@ -869,9 +869,12 @@
                                                            
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
-                                                                    <label for="first-name-column">nama santri</label>
+                                                                    <label for="first-name-column">Nama Santri</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama santri" name="nama_santri">
+                                                                        @error('nama_santri')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                    @enderror
                                                                 </div>
                                                             </div> 
 
@@ -880,6 +883,9 @@
                                                                     <label for="first-name-column">Jenis Pelanggaran</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="Nama pelanggaran" name="nama_pelanggaran">
+                                                                        @error('nama_pelanggaran')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6 col-12">
@@ -900,6 +906,9 @@
                                                                     <label for="first-name-column">Keterangan Pelanggaran</label>
                                                                     <input type="text" id="first-name-column" class="form-control"
                                                                         placeholder="keterangan Pelanggaran" name="deskripsi_pelanggaran">
+                                                                        @error('deskripsi_pelanggaran')
+                                                                        <small class="text-danger">{{$message}}</small>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 d-flex justify-content-end">
@@ -955,3 +964,4 @@
     
 </body>
 </html>
+@endsection

@@ -51,15 +51,17 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        // $rules = [
-        //     'nama_santri' => 'required',
-        //     'angkatan' => 'required'
-        // ];
-        // $message = [
-        //     'required' => 'data yang di input tidak sesuai'
-        // ];
+        $rules = [
+            // 'nama_santri' => 'required',
+            // 'jk_santri' => 'required',
+            // 'angkatan_santri' => 'required',
+             // 'tgllahir_santri' => 'required'
+        ];
+        $message = [
+            'required' => 'data yang di input tidak sesuai'
+        ];
 
-        // $this->validate($request, $rules, $message);
+        $this->validate($request, $rules, $message);
 
         $santri = new santri();
         $test = 1;
