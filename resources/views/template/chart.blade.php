@@ -66,7 +66,7 @@
             <li class="sidebar-title">Menu</li>
             
             <li
-                class="sidebar-item ">
+                class="sidebar-item active">
                 <a href="{{route('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
@@ -110,24 +110,7 @@
                     <i class="bi bi-award"></i>
                     <span>Nilai Santri</span>
                 </a>
-            </li>
-
-            <li
-                class="sidebar-item ">
-                <a href="{{route('mutabaah')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Mutaba'ah Santri</span>
-                </a>
-            </li>
-
-            <li
-                class="sidebar-item ">
-                <a href="{{route('nilai')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Nilai Santri</span>
-                </a>
-            </li>
-            </li>
+            </li></li>
         </ul>
     </div>
 </div>
