@@ -67,6 +67,7 @@
                           <th>Nama Santri</th>
                           <th>Jenis Kelamin</th>
                           <th>Angkatan</th>
+                          <th style="align-content: flex-start">COBAA</th>
                           
                         </tr>
                       </thead>
