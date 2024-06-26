@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\mutabaah;
+use App\Http\Requests\Storemutabaah;
+use App\Http\Requests\updatemutabaah;
 use Illuminate\Http\Request;
 
 class MutabaahController extends Controller
@@ -12,7 +14,8 @@ class MutabaahController extends Controller
      */
     public function index(Request $request)
     {
-
+        $query = mutabaah::all();
+        return view ('mutabaah.index',compact('request','query'));
 
     }
     public function detail(Request $request)
@@ -27,7 +30,8 @@ class MutabaahController extends Controller
      */
     public function create(request $request)
     {
-
+        $query = mutabaah::all();
+        return view('mutabaah.tambah',compact('query'));
     }
 
 
