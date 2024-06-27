@@ -6,6 +6,7 @@ use App\Http\Requests\StoresantriRequest;
 use App\Http\Requests\UpdatesantriRequest;
 use Illuminate\Http\Request;
 
+
 class SantriController extends Controller
 {
     /**
@@ -13,18 +14,15 @@ class SantriController extends Controller
      */
     public function index(Request $request)
     {
+        $query = Santri::all();
+
 
 
         // $data =  new santri;
-        $query = Santri::all();
         return view ('santri.index',compact('request','query'));
     }
-    public function detail(Request $request)
-    {
 
 
-        
-    }
  
     // public function dashboard(Request $request)
     // {
@@ -91,8 +89,9 @@ class SantriController extends Controller
         
 
         $santri->save();
-
-        return redirect()->route('santri')->with('add','Data Santri Berhasil ditambahkan!');
+        session()->flash('add', 'Data berhasil ditambahkan!');
+        
+        return redirect()->route('santri');
     }
 
     /**
@@ -145,7 +144,8 @@ class SantriController extends Controller
         }
         
         $santri->save();
-        return redirect()->route('santri')->with('success','Data Santri Berhasil diupdate!');
+        session()->flash('update', 'Data berhasil diupdate!');
+        return redirect()->route('santri');
     }
 
     /**
@@ -155,6 +155,9 @@ class SantriController extends Controller
     {
         $hapus = santri::findOrFail($id);
         $hapus->delete();
-        return redirect()->route('santri')->with('destroy','Data Santri Berhasil dihapus!');
+        
+        session()->flash('destroy', 'Data Santri berhasil dihapus!');
+        return redirect()->route('santri');
+
     }
 }

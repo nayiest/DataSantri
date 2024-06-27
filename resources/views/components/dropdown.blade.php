@@ -1,4 +1,4 @@
-@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white'])
+@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white dark:bg-gray-700'])
 
 @php
 switch ($align) {
@@ -9,7 +9,7 @@ switch ($align) {
         $alignmentClasses = 'origin-top';
         break;
     case 'right':
-    default: 
+    default:
         $alignmentClasses = 'ltr:origin-top-right rtl:origin-top-left end-0';
         break;
 }

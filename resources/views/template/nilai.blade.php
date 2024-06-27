@@ -98,6 +98,62 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+            
+            <li
+                class="sidebar-item ">
+                <a href="{{route('dashboard')}}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>  
+            
+            <li
+                class="sidebar-item ">
+                <a href="{{route('santri')}}" class='sidebar-link'>
+                    <i class="bi bi-file-earmark-medical-fill"></i>
+                    <span>Data Santri</span>
+                </a>
+            </li>
+            
+                <li
+                class="sidebar-item ">
+                <a href="{{route('pelanggaran')}}" class='sidebar-link'>
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <span>Pelanggaran</span>
+                </a>
+            </li>
+
+            <li
+                class="sidebar-item ">
+                <a href="{{route('prestasi')}}" class='sidebar-link'>
+                    <i class="bi bi-trophy"></i>
+                    <span>Prestasi</span>
+                </a>
+            </li>
+
+            <li
+                class="sidebar-item ">
+                <a href="{{route('mutabaah')}}" class='sidebar-link'>
+                    <i class="bi bi-calendar"></i>
+                    <span>Mutaba'ah Santri</span>
+                </a>
+            </li>
+
+            <li
+                class="sidebar-item active">
+                <a href="{{route('nilai')}}" class='sidebar-link'>
+                    <i class="bi bi-award"></i>
+                    <span>Nilai Santri</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+        </div>
         <div id="main" class='layout-navbar navbar-fixed'>
             <header>
                 <nav class="navbar navbar-expand navbar-light navbar-top">

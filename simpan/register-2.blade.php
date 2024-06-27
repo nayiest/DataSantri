@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -25,10 +25,10 @@
 <div class="row h-100">
     <div class="col-lg-5 col-12">
         <div id="auth-left">
-            {{-- <div class="auth-logo">
+             <div class="auth-logo">
                 <a href="index.html"><img src="{{ asset('template/dist') }}/assets/compiled/svg/logo.svg" alt="Logo"></a>
                 
-            </div> --}}
+            </div> 
             <x-guest-layout>
             <h1 class="auth-title">Sign Up</h1>
             <p class="auth-subtitle mb-5">Input your data to register to Data Santri.</p>
@@ -88,37 +88,7 @@
     
         
         
-{{--     
-            <!-- Name -->
-            
-    
-            <!-- Email Address -->
-            <div class="mt-4">
-                
-            </div>
-    
-            <!-- Password -->
-            <div class="mt-4">
-                
-            </div>
-    
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                
-            </div>
-    
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-    
-                <x-primary-button class="ms-4">
-                    {{ __('Register') }}
-                </x-primary-button>
-            </div> --}}
-        
-        
     
 </body>
 
-</html> --}}
+</html>

@@ -100,7 +100,7 @@
             class="sidebar-item ">
             <a href="{{ route('prestasi') }}" class='sidebar-link'>
                 <i class="bi bi-trophy"></i>
-            <span>prestasi</span>
+            <span>Prestasi</span>
             </a>
        </li>
 
@@ -815,10 +815,10 @@
                             </ul>
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <div class="user-menu d-flex">
+                                    <div class="user-menu d-flex"> 
                                         <div class="user-name text-end me-3">
-                                            <h6 class="mb-0 text-gray-600">John Ducky</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                            <h6 class="mb-0 text-gray-600">{{ Auth::user()->name }}</h6>
+                                            <p class="mb-0 text-sm text-gray-600">User</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
@@ -827,12 +827,14 @@
                                         </div>
                                     </div>
                                 </a>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
+
+                                <ul class="dropdown-menu dropdown-menu-end x-slot" aria-labelledby="dropdownMenuButton" style="min-width: 11rem;">
                                     <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                        <h6 class="dropdown-header">Hello, {{ Auth::user()->name }}</h6>
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
-                                            Profile</a></li>
+                                    <li><x-dropdown-link :href="route('profile.edit')" class="dropdown-item"><i class="icon-mid bi bi-person me-2"></i>
+                                                {{ __('Profile') }}
+                                            </x-dropdown-link></li>
                                     <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
                                             Settings</a></li>
                                     <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
@@ -840,9 +842,57 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                    <li><form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <a class="dropdown-item" href="#" :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();"><i class="icon-mid bi bi-box-arrow-left me-2"></i>{{ __('Log Out') }}</a></li>
+                                                    </form>
                                 </ul>
+
+
+
+
+
+
+
+                                {{-- <div class="hidden sm:flex sm:items-center sm:ms-6">
+                                    <x-dropdown align="right" width="48">
+                                        <x-slot name="trigger">
+                                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                                <div>{{ Auth::user()->name }}</div>
+                    
+                                                <div class="ms-1">
+                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </div>
+                                            </button>
+                                        </x-slot>
+                    
+                                        <x-slot name="content">
+                                            <x-dropdown-link :href="route('profile.edit')">
+                                                {{ __('Profile') }}
+                                            </x-dropdown-link>
+                    
+                                            <!-- Authentication -->
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                    
+                                                <x-dropdown-link :href="route('logout')"
+                                                        onclick="event.preventDefault();
+                                                                    this.closest('form').submit();">
+                                                    {{ __('Log Out') }}
+                                                </x-dropdown-link>
+                                            </form>
+                                        </x-slot>
+                                    </x-dropdown>
+                                </div> --}}
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -924,9 +974,6 @@
                                 <div class="row match-height">
                                     <div class="col-12">
                                         <div class="card">
-                                            <div class="card-header">
-                                                <h4 class="card-title">Masukkan Data Santri</h4>
-                                            </div>
                                             <div class="card-content">
                                                 <div class="card-body">
                                                     <form class="form">
@@ -1007,11 +1054,15 @@
 
                                                             <div class="col-md-6 col-12">
                                                                 <div class="mb-3">
-                                                                    <label for="formFile" class="form-label">Photo Santri</label>
                                                                     <input type="file" id="formFile" name="photo_santri" class="image-crop-filepond" image-crop-aspect-ratio="1:1">
+<<<<<<< HEAD
+                            
+                                                                    
+=======
                                                                     @error('photo_santri')
                                                                     <small class="text-danger">{{$message}}</small>
                                                                      @enderror
+>>>>>>> a657f2a54621d89aa43a53ec48ee0bd5bdf3376d
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 d-flex justify-content-end">
@@ -1042,26 +1093,33 @@
     <script src="{{ asset('template/dist/assets') }}/static/js/components/dark.js"></script>
     <script src="{{ asset('template/dist/assets') }}/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="{{ asset('template/dist/assets') }}/compiled/js/app.js"></script>
-    
-    
-</body>
-</html>
 
 
-
-
-
-
-
-
-
-
-
-
-
-            
+    <script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-filter/filepond-plugin-image-filter.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/filepond/filepond.js"></script>
+<script src="{{ asset('template/dist/assets') }}/extensions/toastify-js/src/toastify.js"></script>
+<script src="{{ asset('template/dist/assets') }}/static/js/pages/filepond.js"></script>
         
       
+
+<script>
+    @if(session('status'))
+        Toastify({
+            text: "{{ session('status') }}",
+            duration: 3000, // 3 seconds
+            gravity: "bottom", // 'top' or 'bottom'
+            position: "right", // 'left', 'center' or 'right'
+            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+        }).showToast();
+    @endif
+</script>
     
 </body>
 </html>
