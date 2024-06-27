@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_pelanggaran');
             $table->string('kategori_pelanggaran');
             $table->string('deskripsi_pelanggaran'); 
+            $table->foreignId('santri_id');
             $table->timestamps();
         });
     }

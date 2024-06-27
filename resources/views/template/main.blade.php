@@ -79,8 +79,9 @@
                     <i class="bi bi-file-earmark-medical-fill"></i>
                     <span>Data Santri</span>
                 </a>
+            </li>
 
-                <li
+            <li
                 class="sidebar-item ">
                 <a href="{{route('pelanggaran')}}" class='sidebar-link'>
                     <i class="bi bi-exclamation-triangle"></i>
@@ -110,7 +111,6 @@
                     <i class="bi bi-award"></i>
                     <span>Nilai Santri</span>
                 </a>
-            </li>
             </li>
         </ul>
     </div>
@@ -197,7 +197,7 @@
                                     aria-expanded="false">
                                      <i class="fa-regular fa-address-book fs-4"></i>
                                 </button>
-                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton" >
+                                <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                                     
                                     
                                     <a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -295,8 +295,8 @@
             </div>
         </nav>
     </header>
-    
-        </div>
+</div>
+
         <div id="main">
             <header class="mb-3">
                 <a href="#" class="burger-btn d-block d-xl-none">
